@@ -48,10 +48,10 @@ public class AdminDAO{
 				r.setAddress(rs1.getString(5));
 				r.setState(rs1.getString(6));
 				r.setCity(rs1.getString(7));
-				r.setPinCode(rs1.getString(8));
+				r.setPinCode(rs1.getInt(8));
 				r.setNationality(rs1.getString(9));
-				r.setMobileNo(rs1.getString(10));
-				r.setAadharNo(rs1.getString(11));
+				r.setMobileNo(rs1.getLong(10));
+				r.setAadharNo(rs1.getLong(11));
 				r.setPanCardNo(rs1.getString(12));				
 				r.setEmailId(rs1.getString(13));				
 				r.setAccountType(rs1.getString(14));				

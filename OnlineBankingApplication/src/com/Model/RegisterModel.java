@@ -1,6 +1,7 @@
 package com.Model;
 
 import java.sql.Date;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class RegisterModel {
@@ -8,21 +9,21 @@ public class RegisterModel {
 	private String customerName;
 	private String customerFathersName;
 	private String gender;
-	private String dateOfBirth;
+	private Date dateOfBirth;
 	private String address;
 	private String state;
 	private String city;		
-	private String pinCode;
+	private int pinCode;
 	private String nationality;
-	private String mobileNo;
-	private String aadharNo;
+	private long mobileNo;
+	private long aadharNo;
 	private String panCardNo;
 	private String emailId;
 	private String accountType;
 	private String branchName;
 	private String status;
 	
-	SimpleDateFormat formatter = new SimpleDateFormat("d-MMM-yyyy"); 
+	SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy"); 
 	public String getCustomerName() {
 		return customerName;
 	}
@@ -41,11 +42,17 @@ public class RegisterModel {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public String getDateOfBirth() {
+	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
-	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateOfBirth=formatter.format(dateOfBirth);
+	public void setDateOfBirth(String dateOfBirth) {
+		try {
+			this.dateOfBirth=(Date)formatter.parse(dateOfBirth);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	public String getAddress() {
 		return address;
@@ -65,10 +72,10 @@ public class RegisterModel {
 	public void setCity(String city) {
 		this.city = city;
 	}
-	public String getPinCode() {
+	public int getPinCode() {
 		return pinCode;
 	}
-	public void setPinCode(String pinCode) {
+	public void setPinCode(int pinCode) {
 		this.pinCode = pinCode;
 	}
 	public String getNationality() {
@@ -77,16 +84,16 @@ public class RegisterModel {
 	public void setNationality(String nationality) {
 		this.nationality = nationality;
 	}
-	public String getMobileNo() {
+	public long getMobileNo() {
 		return mobileNo;
 	}
-	public void setMobileNo(String mobileNo) {
+	public void setMobileNo(long mobileNo) {
 		this.mobileNo = mobileNo;
 	}
-	public String getAadharNo() {
+	public long getAadharNo() {
 		return aadharNo;
 	}
-	public void setAadharNo(String aadharNo) {
+	public void setAadharNo(long aadharNo) {
 		this.aadharNo = aadharNo;
 	}
 	public String getPanCardNo() {

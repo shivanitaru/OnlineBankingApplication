@@ -7,7 +7,7 @@
 	<title>Registration Page</title>
 	</head>
 	<body>
-		<form>
+		<form action="RegisterController" method="get">
 		
 			<label>Full Name:</label>
 			<input type="text" name="name" oninput="inputOn()" size="40" placeholder="Enter your full name" required class="input1"/><br>
