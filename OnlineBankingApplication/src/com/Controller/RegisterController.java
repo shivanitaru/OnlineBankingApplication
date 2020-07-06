@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.sql.Date;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -84,7 +85,11 @@ public class RegisterController extends HttpServlet {
 			{
 				response.sendRedirect("LoginPage.jsp");
 			}
-			
+			else{
+				request.setAttribute("errorMessage", "This email-id is used before. If you already have account please login or use another email-id.");
+	            RequestDispatcher reqDisObj = request.getRequestDispatcher("/RegistrationPage.jsp");
+	            reqDisObj.forward(request, response);  
+			}
 		}
 	}
 

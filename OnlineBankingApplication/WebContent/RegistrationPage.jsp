@@ -10,27 +10,41 @@ pageEncoding="ISO-8859-1"%>
 
 <body>
 	<form action="RegisterController" method="post">
+	
+		<h4>
+				<%
+			    if(null!=request.getAttribute("errorMessage"))
+			    {
+			        out.println(request.getAttribute("errorMessage"));
+			    }
+				%>
+		</h4>
+	
 		<label>Full Name:</label>
-		<input type="text" name="name" oninput="inputOn()" size="40" placeholder="Enter your full name" required
+		<input type="text" name="name" oninput="inputOn()" placeholder="Enter your full name" required
 			class="input1" /><br />
+			
 		<label>Father's Name:</label>
-		<input type="text" name="fname" oninput="inputOn()" size="40" placeholder="Enter your father's name" required
+		<input type="text" name="fname" oninput="inputOn()" placeholder="Enter your father's name" required
 			class="input1" /><br />
 
 		<label>Gender:</label> 
 		<input type="Radio" name="gender" oninput="inputOn()" required value="Male" class="input1" />Male
 		<input type="Radio" name="gender" oninput="inputOn()" required value="Female"class="input1" />Female
-		<input type="radio" name="Gender" oninput="inputOn()" required value="Other" class="input1">Other
+		<input type="Radio" name="gender" oninput="inputOn()" required value="Other" class="input1">Other
 		<br />
+		
 		<label>Date of Birth:</label>
 		<input type="date" name="dob" oninput="inputOn()" required class="input1" /><br />
 
 		<label>Address:</label>
 		<input type="text" name="address" oninput="inputOn()" placeholder="Enter your address" required
 			class="input1" /><br />
+			
 		<label>City:</label>
 		<input type="text" name="city" oninput="inputOn()" placeholder="Enter your city" required
 			class="input1" /><br />
+			
 		<label>State:</label>
 		<input list="states" name="state" oninput="inputOn()" placeholder="Select your state" required class="input1" />
 		<datalist id="states">
@@ -65,25 +79,31 @@ pageEncoding="ISO-8859-1"%>
 			<option>West Bengal</option>
 		</datalist>
 		<br />
+		
 		<label>Pin Code:</label>
-		<input type="text" name="pincode" oninput="inputOn()" placeholder="Enter your pincode" pattern="[0-9]{6}"
+		<input type="text" name="pincode" oninput="inputOn()" placeholder="Enter your pincode" pattern="[1-9]{1}[0-9]{5}" title="e.g. 411001"
 			required class="input1" /><br />
+			
 		<label>Nationality:</label>
-		<input type="text" name="nationality" oninput="inputOn()" placeholder="Enter your nationality" required
-			class="input1" /><br />
+		<input type="text" name="nationality" oninput="inputOn()" placeholder="Enter your nationality" title="e.g. Indian" 
+			required class="input1" /><br />
 
 		<label>Mobile No.:</label>
-		<input type="text" name="mobile" oninput="inputOn()" placeholder="Enter your mobile no." pattern="[0-9]{10}"
+		<input type="text" name="mobile" oninput="inputOn()" placeholder="Enter your mobile no." pattern="[789]{1}[0-9]{9}" title="e.g. 9876543210"
 			required class="input1" /><br />
+			
 		<label>E-mail:</label>
 		<input type="text" name="email" oninput="inputOn()" placeholder="Enter your email id"
-			pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" required class="input1" /><br />
+			pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" title="e.g. abc@gmail.com" required class="input1" /><br />
+			
 		<label>Aadhar No.:</label>
 		<input type="text" name="aadhar" oninput="inputOn()" placeholder="Enter your aadhar no." pattern="[0-9]{16}"
-			required class="input1" /><br />
+			 title="e.g. 1234567890123456" required class="input1" /><br />
+			
 		<label>Pancard No.:</label>
 		<input type="text" name="pancard" oninput="inputOn()" placeholder="Enter your pancard no."
-			pattern="[A-Z0-9]{10}" required class="input1" /><br />
+			pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" title="e.g. ABCDE1234F" required class="input1" /><br />
+			
 		<label>Account Type:</label> <input list="accounts" name="accountType" oninput="inputOn()"
 			placeholder="Select Account Type" required class="input1" />
 		<datalist id="accounts">
@@ -91,6 +111,7 @@ pageEncoding="ISO-8859-1"%>
 			<option>Current</option>
 		</datalist>
 		<br />
+		
 		<label>Branch Name:</label> <input list="branches" name="branchName" oninput="inputOn()"
 			placeholder="Select Branch" required class="input1" />
 		<datalist id="branches">
@@ -100,7 +121,10 @@ pageEncoding="ISO-8859-1"%>
 			<option>Swargate</option>
 		</datalist>
 		<br />
+		
 		<input type="submit" value="Register" />
+		<input type="reset" value="Reset" />
+		
 	</form>
 </body>
 
