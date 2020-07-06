@@ -38,7 +38,7 @@
 			<th>City</th>
 			<th>Pin Code</th>
 			<th>Nationality</th>
-			<th>MobileNo</th>
+			<th>MobileNumber</th>
 			<th>Aadhar card</th>
 			<th>Pan Card</th>
 			<th>Email Id</th>
@@ -66,9 +66,9 @@
 			<td><%=applicantdetails.getCity()%></td>
 			<td><%=applicantdetails.getPinCode()%></td>
 			<td><%=applicantdetails.getNationality()%></td>
-			<td><%=applicantdetails.getMobileNo()%></td>
-			<td><%=applicantdetails.getAadharNo()%></td>
-			<td><%=applicantdetails.getPanCardNo()%></td>
+			<td><%=applicantdetails.getMobileNumber()%></td>
+			<td><%=applicantdetails.getAadharNumber()%></td>
+			<td><%=applicantdetails.getPanCardNumber()%></td>
 			<td><%=applicantdetails.getEmailId()%></td>
 			<td><%=applicantdetails.getAccountType()%></td>
 			<td><%=applicantdetails.getBranchName()%></td>

@@ -34,7 +34,7 @@ public class RegisterController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 			try(PrintWriter out=response.getWriter()){
@@ -43,15 +43,15 @@ public class RegisterController extends HttpServlet {
 			String customerName = request.getParameter("name");
 			String customerFathersName = request.getParameter("fname");
 			String gender = request.getParameter("gender");
-			String dateOfBirth = request.getParameter("dob");
+			Date dateOfBirth = Date.valueOf(request.getParameter("dob"));
 			String address = request.getParameter("address");
 			String city = request.getParameter("city");
 			String state = request.getParameter("state");
 			int pincode = Integer.parseInt(request.getParameter("pincode"));
 			String nationality = request.getParameter("nationality");
-			long mobileNo = Long.parseLong(request.getParameter("mobile"));
-			long aadharNo = Long.parseLong(request.getParameter("aadhar"));
-			String pancard = request.getParameter("pancard");
+			long mobileNumber = Long.parseLong(request.getParameter("mobile"));
+			long aadharNumber = Long.parseLong(request.getParameter("aadhar"));
+			String pancardNumber = request.getParameter("pancard");
 			String email = request.getParameter("email");
 			String accountType = request.getParameter("accountType");
 			String branchName = request.getParameter("branchName");
@@ -67,9 +67,9 @@ public class RegisterController extends HttpServlet {
 			r.setState(state);
 			r.setPinCode(pincode);
 			r.setNationality(nationality);
-			r.setMobileNo(mobileNo);
-			r.setAadharNo(aadharNo);
-			r.setPanCardNo(pancard);
+			r.setMobileNumber(mobileNumber);
+			r.setAadharNumber(aadharNumber);
+			r.setPanCardNumber(pancardNumber);
 			r.setEmailId(email);
 			r.setAccountType(accountType);
 			r.setBranchName(branchName);
@@ -77,7 +77,7 @@ public class RegisterController extends HttpServlet {
 			
 			List<RegisterModel>lst=new ArrayList<RegisterModel>();
 			lst.add(r);
-			
+			System.out.println(r.getDateOfBirth());
 			RegisterDAO rd=new RegisterDAO();
 			int c=rd.savedata(lst);
 			if(c>0)
@@ -91,9 +91,4 @@ public class RegisterController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
 }

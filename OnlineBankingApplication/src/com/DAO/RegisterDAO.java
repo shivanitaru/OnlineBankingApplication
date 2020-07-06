@@ -1,6 +1,7 @@
 package com.DAO;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -28,15 +29,15 @@ public class RegisterDAO {
 			ps1.setString(1,r.getCustomerName());
 			ps1.setString(2,r.getCustomerFathersName());
 			ps1.setString(3,r.getGender());
-			ps1.setDate(4,r.getDateOfBirth());
+			ps1.setString(4,r.getDateOfBirth());
 			ps1.setString(5,r.getAddress());
 			ps1.setString(6,r.getState());
 			ps1.setString(7,r.getCity());
 			ps1.setInt(8,r.getPinCode());
 			ps1.setString(9,r.getNationality());
-			ps1.setLong(10,r.getMobileNo());
-			ps1.setLong(11,r.getAadharNo());
-			ps1.setString(12,r.getPanCardNo());
+			ps1.setLong(10,r.getMobileNumber());
+			ps1.setLong(11,r.getAadharNumber());
+			ps1.setString(12,r.getPanCardNumber());
 			ps1.setString(13,r.getEmailId());
 			ps1.setString(14,r.getAccountType());
 			ps1.setString(15,r.getBranchName());

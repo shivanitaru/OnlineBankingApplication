@@ -16,6 +16,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.DAO.AdminDAO;
+import com.Model.RegisterModel;
 /**
  * Servlet implementation class SendEmailServlet
  */
@@ -31,41 +34,46 @@ public void getEmail(String email){}
     	
 		GeneratePassword generate = new GeneratePassword();
 		String ReceiverAddress=request.getParameter("emailId");
-	System.out.println("Add="+ReceiverAddress);
-    	final String username = "vini.mehta78@gmail.com";
-        final String password = "qgtvqkizrzaurqwp";
-        String bodyMessage="Hii...You created new Account in our Bank\n Your password is : "+generate.generatePassword();
-        Properties prop = new Properties();
- 		prop.put("mail.smtp.host", "smtp.gmail.com");
-        prop.put("mail.smtp.port", "587");
-        prop.put("mail.smtp.auth", "true");
-        prop.put("mail.smtp.starttls.enable", "true"); 
-         
-         Session session = Session.getInstance(prop,
-                 new javax.mail.Authenticator() {
-                     protected PasswordAuthentication getPasswordAuthentication() {
-                         return new PasswordAuthentication(username, password);
-                     }
-                 });
-
-         try {
-
-             Message message = new MimeMessage(session);
-             message.setFrom(new InternetAddress(username));
-             message.setRecipients(
-                     Message.RecipientType.TO,
-                     InternetAddress.parse(ReceiverAddress)
-             );
-             message.setSubject("New Account request approved");
-             message.setText(bodyMessage);
-
-             Transport.send(message);
-
-             System.out.println("Done");
-
-         } catch (MessagingException e) {
-             e.printStackTrace();
-         }
+		
+		AdminDAO dbobj = new AdminDAO();
+		RegisterModel list = dbobj.getApprovedData(ReceiverAddress);
+		
+		
+		
+//    	final String username = "vini.mehta78@gmail.com";
+//        final String password = "qgtvqkizrzaurqwp";
+//        String bodyMessage="Hii...You created new Account in our Bank\n Your password is : "+generate.generatePassword();
+//        Properties prop = new Properties();
+// 		prop.put("mail.smtp.host", "smtp.gmail.com");
+//        prop.put("mail.smtp.port", "587");
+//        prop.put("mail.smtp.auth", "true");
+//        prop.put("mail.smtp.starttls.enable", "true"); 
+//         
+//         Session session = Session.getInstance(prop,
+//                 new javax.mail.Authenticator() {
+//                     protected PasswordAuthentication getPasswordAuthentication() {
+//                         return new PasswordAuthentication(username, password);
+//                     }
+//                 });
+//
+//         try {
+//
+//             Message message = new MimeMessage(session);
+//             message.setFrom(new InternetAddress(username));
+//             message.setRecipients(
+//                     Message.RecipientType.TO,
+//                     InternetAddress.parse(ReceiverAddress)
+//             );
+//             message.setSubject("New Account request approved");
+//             message.setText(bodyMessage);
+//
+//             Transport.send(message);
+//
+//             System.out.println("Done");
+//
+//         } catch (MessagingException e) {
+//             e.printStackTrace();
+//         }
 	}
 
 }
