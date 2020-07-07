@@ -4,11 +4,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login Page</title>
+<title>Index Page</title>
 </head>
 <body>
 	<center>
-		<h4>Welcome to Login Page..</h4>
+		<h3>welcome to index Page...</h3>
+		<form action="RegistrationPage.jsp">
+			<button type="submit">Register</button><br><br>
+		</form>
+		<form action="LoginPage.jsp">
+			<button type="submit">Login</button><br><br>
+		</form>
 	</center>
 </body>
 </html>

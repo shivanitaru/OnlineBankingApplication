@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.sql.Date;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,12 +33,10 @@ public class RegisterController extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-			try(PrintWriter out=response.getWriter()){
+		try(PrintWriter out=response.getWriter()){
 			
 			response.setContentType("text/html;charset=UTF-8");
 			String customerName = request.getParameter("name");
@@ -83,7 +82,11 @@ public class RegisterController extends HttpServlet {
 			{
 				response.sendRedirect("LoginPage.jsp");
 			}
-			
+			else{
+				request.setAttribute("errorMessage", "This email-id is used before. If you already have account please login or use another email-id.");
+	            RequestDispatcher reqDisObj = request.getRequestDispatcher("/RegistrationPage.jsp");
+	            reqDisObj.forward(request, response);  
+			}
 		}
 	}
 
