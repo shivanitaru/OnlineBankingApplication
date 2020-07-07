@@ -77,7 +77,6 @@ public class RegisterController extends HttpServlet {
 			
 			List<RegisterModel>lst=new ArrayList<RegisterModel>();
 			lst.add(r);
-			System.out.println(r.getDateOfBirth());
 			RegisterDAO rd=new RegisterDAO();
 			int c=rd.savedata(lst);
 			if(c>0)

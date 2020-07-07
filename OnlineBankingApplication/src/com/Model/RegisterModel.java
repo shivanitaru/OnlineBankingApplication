@@ -20,10 +20,9 @@ public class RegisterModel {
 	private String emailId;
 	private String accountType;
 	private String branchName;
-	private String status;
-	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("d-mmm-yyyy");
-	
+	private String status;	
 	SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy"); 
+	
 	public String getCustomerName() {
 		return customerName;
 	}

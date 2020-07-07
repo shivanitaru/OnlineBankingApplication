@@ -19,8 +19,8 @@ pageEncoding="ISO-8859-1"%>
 
 		<label>Gender:</label> 
 		<input type="Radio" name="gender" oninput="inputOn()" required value="Male" class="input1" />Male
-		<input type="Radio" name="gender" oninput="inputOn()" required value="Female"class="input1" />Female
-		<input type="radio" name="Gender" oninput="inputOn()" required value="Other" class="input1">Other
+		<input type="Radio" name="gender" oninput="inputOn()" required value="Female" class="input1" />Female
+		<input type="radio" name="gender" oninput="inputOn()" required value="Other" class="input1"/>Other
 		<br />
 		<label>Date of Birth:</label>
 		<input type="date" name="dob" oninput="inputOn()" required class="input1" /><br />
