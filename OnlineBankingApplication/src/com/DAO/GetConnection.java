@@ -14,7 +14,7 @@ public class GetConnection {
 	  try {
 	   	 Class.forName(driver);
 	   	 con=DriverManager.getConnection(url,username,password);
-	   	 System.out.println("Connection "+con);
+	   	 //System.out.println("Connection "+con);
 	  }
 	  catch(Exception e){
 	    	System.out.println(e);	

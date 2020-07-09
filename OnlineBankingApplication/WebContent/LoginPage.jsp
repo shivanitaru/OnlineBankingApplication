@@ -8,7 +8,23 @@
 </head>
 <body>
 	<center>
-		<h4>Welcome to Login Page..</h4>
+		<form action="LoginController" method="get">
+			<h4>
+					<%
+				    if(null!=request.getAttribute("errorMessage"))
+				    {
+				        out.println(request.getAttribute("errorMessage"));
+				    }
+					%>
+			</h4>
+			<label>Username: </label>
+			<input type="text" name="uname" placeholder="Enter your username" required><br>
+			<label>Password: </label>
+			<input type="password" name="pass" placeholder="Enter your password" required><br>
+			<input type="submit" value="Login"><br>
+			Don't have an account? <a href="RegistrationPage.jsp">Register Now</a><br>
+			<a href="#">Forgot Your Password? </a><br>
+		</form>
 	</center>
 </body>
 </html>
