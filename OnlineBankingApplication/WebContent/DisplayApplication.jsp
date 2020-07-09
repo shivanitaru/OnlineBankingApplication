@@ -78,7 +78,7 @@
 				<button type="button" value="Approve" onclick="accountApproved('<%=emailId%>')">Approve</button>
 			</td>
 			<td>
-				<input type="button" onClick="donotSubmit();" value="Reject" align="middle" height="30" width="100" />
+				<button type="button" value="Approve" onclick="accountRejected('<%=emailId%>')">Reject</button>
 			</td>
 		</tr>
 	<%
@@ -91,14 +91,12 @@
 	%>
 	</table>
 	<script>
-function myFunction(name) {
-  alert("hello"+name);
-}
+
 function accountApproved(emailId) {
-	window.location.assign("/OnlineBankingApplication/SendEmailServlet?emailId="+emailId);
+	window.location.assign("/OnlineBankingApplication/SendEmailServlet?emailId="+emailId+"&status=Approved");
 }
-function donotSubmit() {
-	window.open("Sendemail.jsp", "_self");
+function accountRejected(emailId) {
+	window.location.assign("/OnlineBankingApplication/SendEmailServlet?emailId="+emailId+"&status=Rejected");
 }
 </script>
 	</body>

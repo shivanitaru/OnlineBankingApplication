@@ -1,0 +1,242 @@
+CREATE table CustomerRegisterDetails
+(
+	Customer_Name varchar2(50),
+	Customer_Fathers_Name varchar2(50),
+	Gender varchar2(12), 
+	DOB Date,
+	Address varchar2(100),
+	State varchar(50),
+	City varchar(50),
+	PinCode number(6),
+	Nationality varchar2(20),
+	Mobile_Number number(10),
+	Aadhar_Number number(16),
+	PanCard_Number varchar2(10),
+	Email_Id varchar2(30) primary key,
+	Account_Type varchar2(15),
+	Branch_Name varchar2(20),
+	Status varchar2(20),
+	CHECK(Status IN('Approved','Rejected','Pending'))
+);
+
+CREATE table CustomerPersonalDetails
+(
+	Customer_Name varchar2(50),
+	Customer_Fathers_Name varchar2(50),
+	DOB date,
+	Gender varchar(20),
+	Nationality varchar(20),
+	Mobile_Number number(10),
+	Email_Id varchar2(50) primary key
+);
+
+CREATE table CustomerAddressDetails
+(
+	Address varchar2(100),
+	State varchar(50),
+	City varchar(50),
+	PinCode number(6),
+	Email_Id varchar2(50),
+	foreign key (Email_Id) references CustomerPersonalDetails(Email_Id) ON DELETE CASCADE
+);
+
+CREATE table CustomerIdentityDetails
+(
+	Aadhar_No number(16),
+	PanCard_No varchar2(10),
+	Email_Id varchar2(50),
+	foreign key(Email_Id) references CustomerPersonalDetails(Email_Id) ON DELETE CASCADE
+);
+
+CREATE table BranchDetails
+(
+	Branch_Name varchar2(20) primary key,
+	IFSC_Code varchar2(12),
+	MICR_Code varchar2(10)
+);
+
+CREATE table AccountDetails
+(	
+	Account_No number(7) primary key, 
+	Account_Holder_Name varchar2(50),
+	Account_Type varchar2(15),
+	Balance number(12) not null,
+	Branch_Name varchar2(20) references BranchDetails(Branch_Name) ON DELETE CASCADE,
+	Email_Id varchar2(50) references CustomerPersonalDetails(Email_Id) ON DELETE CASCADE
+);
+
+CREATE TABLE LoginDetails
+(
+	Email_Id varchar2(50) references CustomerPersonalDetails(Email_Id) ON DELETE CASCADE, 
+	Password varchar2(30)
+);
+==================================================================
+desc CustomerRegisterDetails
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CUSTOMER_NAME                                      VARCHAR2(50)
+ CUSTOMER_FATHERS_NAME                              VARCHAR2(50)
+ GENDER                                             VARCHAR2(12)
+ DOB                                                DATE
+ ADDRESS                                            VARCHAR2(100)
+ STATE                                              VARCHAR2(50)
+ CITY                                               VARCHAR2(50)
+ PINCODE                                            NUMBER(6)
+ NATIONALITY                                        VARCHAR2(20)
+ MOBILE_NUMBER                                      NUMBER(10)
+ AADHAR_NUMBER                                      NUMBER(12)
+ PANCARD_NUMBER                                     NUMBER(10)
+ EMAIL_ID                                  NOT NULL VARCHAR2(30)
+ ACCOUNT_TYPE                                       VARCHAR2(15)
+ BRANCH_NAME                                        VARCHAR2(20)
+ STATUS                                             VARCHAR2(20)
+
+desc CustomerPersonalDetails
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CUSTOMER_NAME                                      VARCHAR2(50)
+ CUSTOMER_FATHERS_NAME                              VARCHAR2(50)
+ DOB                                                DATE
+ GENDER                                             VARCHAR2(20)
+ NATIONALITY                                        VARCHAR2(20)
+ MOBILE_NUMBER                                      NUMBER(10)
+ EMAIL_ID                                  NOT NULL VARCHAR2(50)
+
+desc CustomerAddressDetails
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ADDRESS                                            VARCHAR2(100)
+ STATE                                              VARCHAR2(50)
+ CITY                                               VARCHAR2(50)
+ PINCODE                                            NUMBER(6)
+ EMAIL_ID                                           VARCHAR2(50)
+
+desc CustomerIdentityDetails;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ AADHAR_NO                                          NUMBER(12)
+ PANCARD_NO                                         NUMBER(10)
+ EMAIL_ID                                           VARCHAR2(50)
+
+desc AccountDetails
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ACCOUNT_NO                                NOT NULL NUMBER(7)
+ ACCOUNT_HOLDER_NAME                                VARCHAR2(50)
+ ACCOUNT_TYPE                                       VARCHAR2(15)
+ BALANCE                                   NOT NULL NUMBER(12)
+ BRANCH_NAME                                        VARCHAR2(20)
+ EMAIL_ID                                           VARCHAR2(50)
+
+ desc LoginDetails
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMAIL_ID                                           VARCHAR2(50)
+ PASSWORD                                           VARCHAR2(30)
+
+
+
+
+insert into BranchDetails values('Bund Garden','BKPN0BUNGRD','411010001');
+
+insert into BranchDetails values('Hadapsar','BKPN0HDPSPN','411010002');
+
+insert into BranchDetails values('J M Road','BKPN0JMRDPN','411010003');
+
+insert into BranchDetails values('Swargate','BKPN0SWRGPN','411010004');
+
+
+delete from  AccountDetails;
+delete from LoginDetails;
+delete from CustomerIdentityDetails;
+delete from CustomerAddressDetails;
+delete from CustomerPersonalDetails;
+
+drop table CustomerRegisterDetails;
+
+CREATE table CustomerRegisterDetails
+(
+	Customer_Name varchar2(50),
+	Customer_Fathers_Name varchar2(50),
+	Gender varchar2(12), 
+	DOB Date,
+	Address varchar2(100),
+	State varchar(50),
+	City varchar(50),
+	PinCode number(6),
+	Nationality varchar2(20),
+	Mobile_Number number(10),
+	Aadhar_Number number(16),
+	PanCard_Number varchar2(10),
+	Email_Id varchar2(30) primary key,
+	Account_Type varchar2(15),
+	Branch_Name varchar2(20),
+	Status varchar2(20),
+	CHECK(Status IN('Approved','Rejected','Pending'))
+);
+
+select * from CustomerRegisterDetails;
+select * from CustomerPersonalDetails;
+
+
+
+
+
+
+
+
+
+
+
+============================================================================================
+CREATE TABLE CUSTOMER_DOCUMENT_Details(
+	Email_Id varchar2(50),
+	Aadhar_Card BLOB,
+	Pan_Card  BLOB,
+	Electricity_Bill BLOB,
+	Income_Certificate BLOB,
+	Photo BLOB,
+	Signature BLOB,
+	foreign key(Email_Id) references Customer_Personal_details(Email_Id)
+);
+
+desc customer_document_details;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMAIL_ID                                           VARCHAR2(50)
+ AADHAR_CARD                                        BLOB
+ PAN_CARD                                           BLOB
+ ELECTRICITY_BILL                                   BLOB
+ INCOME_CERTIFICATE                                 BLOB
+ PHOTO                                              BLOB
+ SIGNATURE                                          BLOB
+============================================================================================
+
+CREATE TABLE Account_Details(
+	Email_Id varchar2(50),
+	Aadhar_Card BLOB,
+	Pan_Card  BLOB,
+	Electricity_Bill BLOB,
+	Income_Certificate BLOB,
+	Photo BLOB,
+	Signature BLOB,
+	foreign key(Email_Id) references Customer_Personal_details(Email_Id)
+);
+
+==================================================================
+ CREATE table remitter(
+	
+);
+
+
+ CREATE sequence Account_Number
+    start with 321141546525
+    Nomaxvalue
+    nocycle;
+
+ CREATE sequence Username
+    start with 'jvhgvj'
+increment by 1
+    no cycle;
+
+
