@@ -23,62 +23,94 @@ import com.Model.BranchModel;
 import com.Model.EmailModel;
 import com.Model.LoginModel;
 import com.Model.RegisterModel;
+
 /**
  * Servlet implementation class SendEmailServlet
  */
 @WebServlet("/SendEmailServlet")
 public class SendEmailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-public void getEmail(String email){}
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	
-		GeneratePassword generate = new GeneratePassword();
-		String ReceiverAddress=request.getParameter("emailId");
-		
-		AdminDAO adminobj = new AdminDAO();
-		RegisterModel approvedUserData = adminobj.getApprovedData(ReceiverAddress);
-		EmailModel emailData = adminobj.savePermanentData(approvedUserData);
-		
-		
-    	final String username = "vini.mehta78@gmail.com";
-        final String password = "qgtvqkizrzaurqwp";
-        String bodyMessage="Hii...You created new Account in our Bank\nAccount Holder's Name"+emailData.getAccountHolderName()+"\nRegistered Mail Id : "+emailData.getEmailId()+"\n Your password is : "+emailData.getPassword()+"\nAccount No : "+emailData.getAccountNumber()+"\nBranch Name : "+emailData.getBranchName()+"\nIFSC code : "+emailData.getIFSCCode()+"\nMICR code : "+emailData.getMICRCode()+"\nInitial Balance : "+emailData.getBalance();
-        System.out.println(bodyMessage);
-        Properties prop = new Properties();
- 		prop.put("mail.smtp.host", "smtp.gmail.com");
-        prop.put("mail.smtp.port", "587");
-        prop.put("mail.smtp.auth", "true");
-        prop.put("mail.smtp.starttls.enable", "true"); 
-         
-         Session session = Session.getInstance(prop,
-                 new javax.mail.Authenticator() {
-                     protected PasswordAuthentication getPasswordAuthentication() {
-                         return new PasswordAuthentication(username, password);
-                     }
-                 });
+	AdminDAO adminobj = new AdminDAO();
 
-         try {
-
-             Message message = new MimeMessage(session);
-             message.setFrom(new InternetAddress(username));
-             message.setRecipients(
-                     Message.RecipientType.TO,
-                     InternetAddress.parse(ReceiverAddress)
-             );
-             message.setSubject("New Account request approved");
-             message.setText(bodyMessage);
-
-             Transport.send(message);
-
-             System.out.println("Done");
-
-         } catch (MessagingException e) {
-             e.printStackTrace();
-         }
+	public void getEmail(String email) {
 	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		String receiverAddress = request.getParameter("emailId");
+		String accountStatus = request.getParameter("status");
+		String bodyMessage = "Dear Customer,\n\t", subject = "New Account request ";
+		if (accountStatus.equalsIgnoreCase("Approved")) {
+			EmailModel emailData = accountApproved(receiverAddress);
+			System.out.println(accountStatus);
+			subject += "approved";
+			bodyMessage += "Your new account has been created in our Bank. Please note the following account details and DO NOT share it with anyone.\n\n\tAccount Holder's Name : "
+					+ emailData.getAccountHolderName() + "\n\n\tRegistered Mail Id : " + emailData.getEmailId()
+					+ "\n\n\tPassword : " + emailData.getPassword() + "\n\n\tAccount No : "
+					+ emailData.getAccountNumber() + "\n\n\tBranch Name : " + emailData.getBranchName()
+					+ "\n\n\tInitial Balance : " + emailData.getBalance()
+					+ "\n\nHope you like our services!\n\nSincere thanks,\nBank.";
+			System.out.println("bodymessage" + bodyMessage);
+			sendMail(receiverAddress, subject, bodyMessage);
+		} else if (accountStatus.equalsIgnoreCase("Rejected")) {
+			System.out.println(accountStatus);
+			accountRejected(receiverAddress, accountStatus);
+			subject += "rejected";
+			bodyMessage += "We are sorry to inform you that your request to create new account in our bank has been rejected due to invalid information. \nPlease register again with valid information.\n\nSincere thanks,\nBank.";
+			System.out.println("bodymessage" + bodyMessage);
+			sendMail(receiverAddress, subject, bodyMessage);
+		}
+		response.sendRedirect("AdminController");
+	}
+
+	private void sendMail(String receiverAddress, String subject, String bodyMessage) {
+		final String username = "vini.mehta78@gmail.com";
+		final String password = "qgtvqkizrzaurqwp";
+		Properties prop = new Properties();
+		prop.put("mail.smtp.host", "smtp.gmail.com");
+		prop.put("mail.smtp.port", "587");
+		prop.put("mail.smtp.auth", "true");
+		prop.put("mail.smtp.starttls.enable", "true");
+
+		Session session = Session.getInstance(prop, new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(username, password);
+			}
+		});
+
+		try {
+
+			Message message = new MimeMessage(session);
+			message.setFrom(new InternetAddress(username));
+			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(receiverAddress));
+			message.setSubject(subject);
+			message.setText(bodyMessage);
+
+			Transport.send(message);
+
+			System.out.println("Done");
+
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private EmailModel accountApproved(String receiverAddress) {
+		RegisterModel approvedUserData = adminobj.getApprovedData(receiverAddress);
+		EmailModel emailData = adminobj.savePermanentData(approvedUserData);
+		return emailData;
+	}
+
+	private void accountRejected(String receiverAddress, String accountStatus) {
+		int updateTemp = adminobj.updateTempData(receiverAddress, accountStatus);
+		if (updateTemp > 0)
+			System.out.println("Data successfully updated from Customer Register Details table");
+		else
+			System.out.println("Failed to update data from Customer Register Details table");
+	}
 }
