@@ -83,7 +83,7 @@ public class RegisterController extends HttpServlet {
 			RegisterDAO rd = new RegisterDAO();
 			int c = rd.savedata(lst);
 			if (c > 0) {
-				response.sendRedirect("LoginPage.jsp");
+				response.sendRedirect("RegisterMessage.jsp");
 			} else {
 				request.setAttribute("errorMessage",
 						"This email-id is used before. If you already have account please login or use another email-id.");
