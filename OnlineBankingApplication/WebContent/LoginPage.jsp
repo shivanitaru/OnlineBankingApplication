@@ -8,7 +8,7 @@
 </head>
 <body>
 	<center>
-		<form action="LoginController" method="get">
+		<form action="LoginController" method="post">
 			<h4>
 					<%
 				    if(null!=request.getAttribute("errorMessage"))
@@ -23,7 +23,7 @@
 			<input type="password" name="pass" placeholder="Enter your password" required><br>
 			<input type="submit" value="Login"><br>
 			Don't have an account? <a href="RegistrationPage.jsp">Register Now</a><br>
-			<a href="#">Forgot Your Password? </a><br>
+			<a href="ForgotPassword.jsp">Forgot Your Password? </a><br>
 		</form>
 	</center>
 </body>
