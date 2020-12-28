@@ -133,7 +133,8 @@ public class AdminDAO {
 		saveAddressData.setState(approvedUserData.getState());
 		saveAddressData.setCity(approvedUserData.getCity());
 		saveAddressData.setPinCode(approvedUserData.getPinCode());
-		saveAccountData.setEmailId(approvedUserData.getEmailId());
+		saveAddressData.setEmailId(approvedUserData.getEmailId());
+		System.out.println("address"+approvedUserData.getEmailId()+"hsdbk"+saveAddressData.getEmailId());
 		saveAddress = insertUserAddressData(saveAddressData);
 		if (saveAddress > 0)
 			System.out.println("Data successfully stored in Customer Address Details table\t status="+saveAddress);

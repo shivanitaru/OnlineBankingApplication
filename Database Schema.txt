@@ -70,6 +70,27 @@ CREATE TABLE LoginDetails
 	Email_Id varchar2(50) references CustomerPersonalDetails(Email_Id) ON DELETE CASCADE, 
 	Password varchar2(30)
 );
+
+
+CREATE TABLE BeneficiaryDetails
+(
+	Account_No number(7) references AccountDetails(Account_No) ON DELETE CASCADE,
+	Beneficiary_Account_No number not null,
+	Beneficiary_Name varchar2(50),
+	Branch_Name varchar2(20),
+	IFSC_Code varchar2(12),
+	Bank_Name varchar2(50)
+);
+
+CREATE TABLE TransactionDetails
+(
+	Remitter_Account_No number(7) references AccountDetails(Account_No) ON DELETE CASCADE,
+	Beneficiary_Account_No number(7) references AccountDetails(Account_No) ON DELETE CASCADE,
+	Branch_Name varchar2(20),
+	IFSC_Code varchar2(12),
+	Amount number(12),
+	Date_Of_Transaction date
+);
 ==================================================================
 desc CustomerRegisterDetails
  Name                                      Null?    Type

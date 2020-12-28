@@ -19,6 +19,12 @@ import com.Model.RegisterModel;
 @WebServlet("/AdminController")
 public class AdminController extends HttpServlet {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AdminDAO applicantDetails = new AdminDAO();
 		List<RegisterModel> applicantDetailsList=applicantDetails.getApplicantDetails();

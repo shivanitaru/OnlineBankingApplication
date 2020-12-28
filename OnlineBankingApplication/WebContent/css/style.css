@@ -1,0 +1,71 @@
+/* Header */
+.header-img {
+	margin-left: 2%;
+}
+
+.bank-name {
+	font-size: 2.5rem !important;
+	padding-left: 2%
+}
+
+/* Header */
+
+/* Sidebar */
+#sidebar-wrapper {
+	min-height: 100vh;
+	margin-left: -15rem;
+	-webkit-transition: margin 0.25s ease-out;
+	-moz-transition: margin 0.25s ease-out;
+	-o-transition: margin 0.25s ease-out;
+	transition: margin 0.25s ease-out;
+}
+
+/* Sidebar Body */
+
+#sidebar-wrapper .list-group {
+	width: 15rem;
+}
+
+.list-group-item {
+	font-size: larger;
+	text-align: center !important;
+	block-size: auto;
+}
+
+#sidebar-wrapper .list-group-item-action:hover {
+	background-color: #212529 !important;
+	color: white ;
+}
+
+.active-link{
+	background-color: #212529 !important;
+	color: white !important;
+}
+
+/* Sidebar Body */
+
+/* Sidebar */
+
+/* Page Content  */
+#page-content-wrapper {
+	min-width: 100vw;
+}
+
+.page-bg {
+	background-image: url("../assets/images/ccc.jpg");
+	height: 100%
+}
+
+/* Page Content  */
+@media ( min-width : 212px) {
+	#sidebar-wrapper {
+		margin-left: 0;
+	}
+	#page-content-wrapper {
+		min-width: 0;
+		width: 100%;
+	}
+	#wrapper.toggled #sidebar-wrapper {
+		margin-left: -15rem;
+	}
+}
