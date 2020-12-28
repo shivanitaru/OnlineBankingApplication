@@ -6,13 +6,13 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Login Page</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-	<link rel="stylesheet" type="text/css" href="login_form.css">
+	<link rel="stylesheet" type="text/css" href="css/login_form.css">
 	<link rel="stylesheet" href="all.min.css">
 </head>
 <body>
 	<div class="inner-login">
         <div class="photo">
-            <img src="login_page.png">
+            <img src="assets/images/login_page.png">
             <button class="bt" onclick="location.href='IndexPage.jsp'">Home</button> 
         </div>
         <div class="user-form">

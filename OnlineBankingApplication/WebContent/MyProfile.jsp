@@ -15,14 +15,12 @@
 </head>
 
 <body>
-	<%
-		String uname = (String) session.getAttribute("uname");
-	%>
-	<marquee>
-		<%
-			out.println("Hello " + uname + " , Welcome to Home Page!!!");
-		%>
-	</marquee>
+	<% String uname=(String) session.getAttribute("uname");
+		String CustomerName = (String)session.getAttribute("CustName"); %>
+			<marquee class="bg-light">
+				<% out.println("Hello " + CustomerName + " , Welcome to Home Page!!!"); %>
+			</marquee>
+
 
 	<!-- Header -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <a

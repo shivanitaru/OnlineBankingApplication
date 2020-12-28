@@ -17,9 +17,10 @@
 	</head>
 
 	<body>
-		<% String uname=(String) session.getAttribute("uname"); %>
-			<marquee>
-				<% out.println("Hello " + uname + " , Welcome to Home Page!!!"); %>
+		<% String uname=(String) session.getAttribute("uname");
+		String CustomerName = (String)session.getAttribute("CustName"); %>
+			<marquee class="bg-light">
+				<% out.println("Hello " + CustomerName + " , Welcome to Home Page!!!"); %>
 			</marquee>
 
 			<!-- Header -->

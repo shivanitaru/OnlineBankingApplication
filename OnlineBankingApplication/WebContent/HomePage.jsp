@@ -21,7 +21,7 @@
 
 			<!-- Header -->
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <a class="navbar-brand header-img" href=""> <img
-						src="assets/images/15106766.jpg" width="70px" height="70px" alt="logo" />
+						src="assets/images/bank_logo.png" width="70px" height="70px" alt="logo" />
 				</a> <a class="navbar-brand bank-name" href="#">Bank Name</a>
 
 				<button class="navbar-toggler" id="menu-toggle">

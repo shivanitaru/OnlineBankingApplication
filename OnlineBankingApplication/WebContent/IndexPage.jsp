@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"  href="Home.css">
+<link rel="stylesheet"  href="css/Home.css">
 <link rel="stylesheet"  href="all.min.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,7 +15,7 @@
 <body>
 	<nav>
       <div class="logo">
-       <h1> <img src="bank_logo.png" width="45px" height="55px"> Name bank</h1>
+       <h1> <img src="assets/images/bank_logo.png" width="45px" height="55px"> Name bank</h1>
       </div>
       
       <div class="menu"> 
@@ -31,7 +31,7 @@
 		<section>
 		  <div class="leftside"> 
 			   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-			   <img src="bank_image.jpg">   
+			   <img src="assets/images/bank_image.jpg">   
   		  </div>
 		  <div class="rightside" id="about"> 
 			   <h1>Welcome to the Name Bank</h1>
@@ -52,7 +52,7 @@
 
         <div class="card">
             <div class="image">
-            	<img src="login.jpg" height="300px">
+            	<img src="assets/images/login.jpg" height="300px">
             </div>
             <div class="title">
             	<h1>Log In</h1>
@@ -65,7 +65,7 @@
 
         <div class="card">
             <div class="image">
-            	<img src="register.png" height="300px">
+            	<img src="assets/images/register.png" height="300px">
             </div>
             <div class="title">
             	<h1> Create New Account </h1>
@@ -78,7 +78,7 @@
 
         <div class="card">
             <div class="image">
-            	<img src="bankloan.jpg" height="300px">
+            	<img src="assets/images/bankloan.jpg" height="300px">
             </div>
             <div class="title">
                 <h1> Apply for Loan </h1>
@@ -91,7 +91,7 @@
                 
         <div class="card">
             <div class="image">
-            	<img src="student.jpg" height="300px">
+            	<img src="assets/images/student.jpg" height="300px">
             </div>
             <div class="title">
                 <h1> Student Facilities </h1>
@@ -126,18 +126,5 @@
 	      </ul>
 	    </div>
 	</footer>
-    
-    <!--
-    <center>
-		<h3>welcome to index Page...</h3>
-		<form action="RegistrationPage.jsp">
-			<button type="submit">Register</button><br><br>
-		</form>
-		<form action="LoginPage.jsp"> 
-			<button type="submit">Login</button><br><br>
-		</form>
-	</center>
-    -->      
-	
 </body>
 </html>
