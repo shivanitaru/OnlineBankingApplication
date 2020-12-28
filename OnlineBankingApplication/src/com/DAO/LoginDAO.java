@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.List;
 
 import com.Model.LoginModel;
+import com.Model.RegisterModel;
 
 public class LoginDAO {
 	
@@ -31,6 +32,7 @@ public class LoginDAO {
 			{
 				b=false;
 			}
+			con.close();
 		}
 		catch(Exception e){
 			System.out.println(e);
@@ -57,6 +59,24 @@ public class LoginDAO {
 			System.out.println(e);
 		}
 		return status;
+	}
+	
+	public String GetName(String emailId){
+		con=getConnectionMethod.getConnection();
+		String CustomerName="";
+		try{
+			prepareStatement = con.prepareStatement("select Customer_Name from CustomerPersonalDetails where Email_Id = ?");
+			prepareStatement.setString(1,emailId);
+			resultSet=prepareStatement.executeQuery();
+			if(resultSet.next()){
+				CustomerName = resultSet.getString(1);
+			}
+			con.close();
+		} catch(Exception e){
+			System.out.println(e);
+		}
+		
+		return CustomerName;
 	}
 	
 	

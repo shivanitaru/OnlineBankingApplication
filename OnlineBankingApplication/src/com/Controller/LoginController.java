@@ -56,8 +56,12 @@ public class LoginController extends HttpServlet {
 		boolean b = LoginDaoObj.validate(list); 
 		
 		if(b){
+			LoginModel l = list.get(0);
+			String emailId = l.getEmailId();
+			String CustomerName = LoginDaoObj.GetName(emailId);
+			System.out.println(CustomerName);
             HttpSession session=request.getSession();  
-            session.setAttribute("uname",username);   
+            session.setAttribute("CustName",CustomerName);   
 			response.sendRedirect("HomePage.jsp");
 		}
 		else

@@ -1,0 +1,253 @@
+
+ html{
+	scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding:0; 
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    list-style: none;
+}
+    
+/* HEADER */  
+
+.site-header {
+    width: 100%;
+    height: 90vh;
+    background: #0f8a9d;
+    background: linear-gradient(57deg, rgb(219, 235, 232) , rgb(217, 144, 235) ); 
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); 
+}
+
+
+nav{
+    width: 100%; 
+    height: 90px;
+   background-color: #000;
+    display: flex; 
+    color: rgb(245, 247, 248);
+    
+}
+
+.logo{
+    width: 50%;
+    height: 100px;
+}
+
+.logo h1{
+    line-height: 100px;
+    padding-left: 10px;
+    padding-right: 60px;
+    text-align: left;
+    font-size: 40px;
+    padding-left: 40px;
+}
+.logo img{
+    align-items: flex-start;
+    padding-top: 20px;
+    margin-right: 10px;
+}
+
+.menu{
+    width: 50%; height: 100px;
+}
+
+.menu, ul {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+   justify-content: space-evenly;
+    align-items:center;
+    text-decoration: none;
+}
+.menu, a {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:  center;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+.menu, ul, li {
+    list-style: none;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.menu, ul, li, a:hover{
+	/*background-color:#ffffff;**/
+	color:rgb(54, 97, 238);
+	transition:0.6s ease;
+}
+
+section{ 
+    display: flex;  
+}
+
+.leftside { 
+    width: 45%;
+    height: auto; 
+    overflow: hidden; 
+    margin-top: 80px;
+    margin-left: 30px;
+}
+.leftside img{ 
+    align-items: flex-start; 
+    width: 700px;  
+    height: 400px; 
+}
+
+.rightside{ 
+    width: 55%; 
+    height: 300px; 
+    color: white; 
+    text-align: center; 
+    margin-top: 80px; 
+    padding: 40px;
+}
+
+.rightside, h1{ 
+    text-align: center;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 900;
+    text-transform: uppercase; 
+} 
+.rightside a{ 
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    text-transform: uppercase; 
+} 
+
+.rightside p {  
+    font-size: 1.1rem;
+     padding: 30px 0; 
+    text-align: center;
+}
+
+.rightside button{   
+    color: white;
+    text-transform: uppercase;
+    background: linear-gradient(57deg, #00C6A7 , #1E4D92 ); 
+    border-radius: 25px 5px 25px 5px;
+    border-style: none;
+    padding: 10px 30px ;   
+}
+
+
+
+.rightside button:hover{
+   background: linear-gradient(57deg, #1E4D92, #00C6A7 );   
+}
+
+.container-fluid {
+	background-color:#050505;
+	text-align: left;
+	padding: 60px 50px;
+	color: #ffffff;
+}    
+.container-fluid, ul{
+    text-align:right;
+}  
+
+
+/*About*/
+.about, h2{
+   text-align:center;
+}
+
+.about, p{
+   text-align:left;
+   padding-left: 80px;
+   padding-right: 80px;
+   padding-top: 60px;
+   padding-bottom: 20px;
+}
+
+   
+
+/*FOOTER*/ 
+.footercontact {
+   width: 100%;
+   float: left;
+   padding-left : 60px;
+   background-color:#050505;
+   color: #ffffff;
+   text-align: left;
+}
+  
+.links{
+   align-items: center;
+   display: flex;
+   background-color: rgb(77, 44, 18);
+   width: 100%;
+   height:50px; 
+ }
+ 
+ .links li{
+   font-size: 20px;
+ }
+ 
+ 
+ /*Card*/
+.main{
+   margin: 2%;
+}
+   
+.card{
+  width: 20%;
+  display: inline-block;
+  box-shadow: 2px 2px 20px black;
+  border-radius: 5px; 
+  margin: 2%;
+}
+
+.image img{
+  width: 100%;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px; 
+ }
+
+.title{
+  text-align: center;
+  padding: 10px;
+  
+ }
+
+ .title h1{
+  font-size: 20px;
+  color: #000;
+ }
+
+.des{
+  padding: 0px;
+  text-align: center;
+  padding-top: 10px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+button{
+  margin-top: 40px;
+  margin-bottom: 10px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding:10px;
+}
+
+button:hover{
+  background-color: black;
+  color: white;
+  transition: .5s;
+  cursor: pointer;
+}
+
+

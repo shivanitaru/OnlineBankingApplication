@@ -3,28 +3,43 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login Page</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Login Page</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="login_form.css">
+	<link rel="stylesheet" href="all.min.css">
 </head>
 <body>
-	<center>
-		<form action="LoginController" method="post">
-			<h4>
-					<%
-				    if(null!=request.getAttribute("errorMessage"))
-				    {
-				        out.println(request.getAttribute("errorMessage"));
-				    }
-					%>
-			</h4>
-			<label>Username: </label>
-			<input type="text" name="uname" placeholder="Enter your username" required><br>
-			<label>Password: </label>
-			<input type="password" name="pass" placeholder="Enter your password" required><br>
-			<input type="submit" value="Login"><br>
-			Don't have an account? <a href="RegistrationPage.jsp">Register Now</a><br>
-			<a href="ForgotPassword.jsp">Forgot Your Password? </a><br>
-		</form>
-	</center>
+	<div class="inner-login">
+        <div class="photo">
+            <img src="login_page.png">
+            <button class="bt" onclick="location.href='IndexPage.jsp'">Home</button> 
+        </div>
+        <div class="user-form">
+            <h1>Login here</h1>
+			<form action="LoginController" method="post">
+				<h4>
+						<%
+					    if(null!=request.getAttribute("errorMessage"))
+					    {
+					        out.println(request.getAttribute("errorMessage"));
+					    }
+						%>
+				</h4>
+				<i class="fa fa-user fa-lg fa-fw" ></i>
+				<input type="text" name="uname" placeholder="Enter your username" required><br>
+				<i class="fa fa-key fa-lg fa-fw" ></i>
+				<input type="password" name="pass" placeholder="Enter your password" required><br>
+                <a href="ForgotPassword.jsp">Forgot your password?</a><br></br>
+				<div class="action-btn">
+					<input class="btn primary" type="submit" value="Log In"><br>
+				</div>
+				<br>
+				<div class="registration_link">
+					Don't have an account? <a href="RegistrationPage.jsp">Register Now</a><br>
+				</div>
+			</form>
+		</div>
+	</div>	
 </body>
 </html>
