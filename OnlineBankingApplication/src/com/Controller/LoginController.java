@@ -62,6 +62,7 @@ public class LoginController extends HttpServlet {
 			System.out.println(CustomerName);
             HttpSession session=request.getSession();  
             session.setAttribute("CustName",CustomerName);   
+            session.setAttribute("uname",username);   
 			response.sendRedirect("HomePage.jsp");
 		}
 		else
