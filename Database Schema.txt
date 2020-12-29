@@ -10,7 +10,7 @@ CREATE table CustomerRegisterDetails
 	PinCode number(6),
 	Nationality varchar2(20),
 	Mobile_Number number(10),
-	Aadhar_Number number(16),
+	Aadhaar_Number number(12),
 	PanCard_Number varchar2(10),
 	Email_Id varchar2(30) primary key,
 	Account_Type varchar2(15),
@@ -42,7 +42,7 @@ CREATE table CustomerAddressDetails
 
 CREATE table CustomerIdentityDetails
 (
-	Aadhar_No number(16),
+	Aadhaar_No number(12),
 	PanCard_No varchar2(10),
 	Email_Id varchar2(50),
 	foreign key(Email_Id) references CustomerPersonalDetails(Email_Id) ON DELETE CASCADE
@@ -84,79 +84,22 @@ CREATE TABLE BeneficiaryDetails
 
 CREATE TABLE TransactionDetails
 (
+	Transaction_Id number(5) primary key,
 	Remitter_Account_No number(7) references AccountDetails(Account_No) ON DELETE CASCADE,
 	Beneficiary_Account_No number(7) references AccountDetails(Account_No) ON DELETE CASCADE,
-	Branch_Name varchar2(20),
+	Beneficiary_Name varchar2(20),
 	IFSC_Code varchar2(12),
 	Amount number(12),
-	Date_Of_Transaction date
+	Date_Of_Transaction date,
+	Status varchar2(20),
+	CHECK(Status IN('Success','Failed','Pending'))
 );
-==================================================================
-desc CustomerRegisterDetails
- Name                                      Null?    Type
- ----------------------------------------- -------- ----------------------------
- CUSTOMER_NAME                                      VARCHAR2(50)
- CUSTOMER_FATHERS_NAME                              VARCHAR2(50)
- GENDER                                             VARCHAR2(12)
- DOB                                                DATE
- ADDRESS                                            VARCHAR2(100)
- STATE                                              VARCHAR2(50)
- CITY                                               VARCHAR2(50)
- PINCODE                                            NUMBER(6)
- NATIONALITY                                        VARCHAR2(20)
- MOBILE_NUMBER                                      NUMBER(10)
- AADHAR_NUMBER                                      NUMBER(12)
- PANCARD_NUMBER                                     NUMBER(10)
- EMAIL_ID                                  NOT NULL VARCHAR2(30)
- ACCOUNT_TYPE                                       VARCHAR2(15)
- BRANCH_NAME                                        VARCHAR2(20)
- STATUS                                             VARCHAR2(20)
 
-desc CustomerPersonalDetails
- Name                                      Null?    Type
- ----------------------------------------- -------- ----------------------------
- CUSTOMER_NAME                                      VARCHAR2(50)
- CUSTOMER_FATHERS_NAME                              VARCHAR2(50)
- DOB                                                DATE
- GENDER                                             VARCHAR2(20)
- NATIONALITY                                        VARCHAR2(20)
- MOBILE_NUMBER                                      NUMBER(10)
- EMAIL_ID                                  NOT NULL VARCHAR2(50)
-
-desc CustomerAddressDetails
- Name                                      Null?    Type
- ----------------------------------------- -------- ----------------------------
- ADDRESS                                            VARCHAR2(100)
- STATE                                              VARCHAR2(50)
- CITY                                               VARCHAR2(50)
- PINCODE                                            NUMBER(6)
- EMAIL_ID                                           VARCHAR2(50)
-
-desc CustomerIdentityDetails;
- Name                                      Null?    Type
- ----------------------------------------- -------- ----------------------------
- AADHAR_NO                                          NUMBER(12)
- PANCARD_NO                                         NUMBER(10)
- EMAIL_ID                                           VARCHAR2(50)
-
-desc AccountDetails
- Name                                      Null?    Type
- ----------------------------------------- -------- ----------------------------
- ACCOUNT_NO                                NOT NULL NUMBER(7)
- ACCOUNT_HOLDER_NAME                                VARCHAR2(50)
- ACCOUNT_TYPE                                       VARCHAR2(15)
- BALANCE                                   NOT NULL NUMBER(12)
- BRANCH_NAME                                        VARCHAR2(20)
- EMAIL_ID                                           VARCHAR2(50)
-
- desc LoginDetails
- Name                                      Null?    Type
- ----------------------------------------- -------- ----------------------------
- EMAIL_ID                                           VARCHAR2(50)
- PASSWORD                                           VARCHAR2(30)
-
-
-
+CREATE SEQUENCE Transaction_Id
+	start with 21001
+	increment by 1
+	minvalue 21000
+;
 
 insert into BranchDetails values('Bund Garden','BKPN0BUNGRD','411010001');
 
@@ -187,7 +130,7 @@ CREATE table CustomerRegisterDetails
 	PinCode number(6),
 	Nationality varchar2(20),
 	Mobile_Number number(10),
-	Aadhar_Number number(16),
+	Aadhaar_Number number(12),
 	PanCard_Number varchar2(10),
 	Email_Id varchar2(30) primary key,
 	Account_Type varchar2(15),
@@ -200,7 +143,8 @@ select * from CustomerRegisterDetails;
 select * from CustomerPersonalDetails;
 
 
-
+DROP SEQUENCE Transaction_Id;
+drop  TABLE TransactionDetails;
 
 
 
@@ -245,10 +189,6 @@ CREATE TABLE Account_Details(
 );
 
 ==================================================================
- CREATE table remitter(
-	
-);
-
 
  CREATE sequence Account_Number
     start with 321141546525

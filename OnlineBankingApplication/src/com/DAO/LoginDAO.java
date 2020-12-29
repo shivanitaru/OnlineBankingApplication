@@ -9,40 +9,37 @@ import com.Model.LoginModel;
 import com.Model.RegisterModel;
 
 public class LoginDAO {
-	
+
 	public static Connection con;
-	GetConnection getConnectionMethod=new GetConnection();
+	GetConnection getConnectionMethod = new GetConnection();
 	public ResultSet resultSet;
 	public PreparedStatement prepareStatement;
-	
-	public boolean validate(List<LoginModel>list) {
-		con=getConnectionMethod.getConnection();
-		LoginModel l=list.get(0);
+
+	public boolean validate(List<LoginModel> list) {
+		con = getConnectionMethod.getConnection();
+		LoginModel l = list.get(0);
 		boolean b = false;
-		
-		try{
-			prepareStatement=con.prepareStatement("select * from LoginDetails where Email_Id=? AND Password=?");
-			prepareStatement.setString(1,l.getEmailId());
-			prepareStatement.setString(2,l.getPassword());
-			resultSet=prepareStatement.executeQuery();
-			if(resultSet.next()){
-				b=true;
-			}
-			else
-			{
-				b=false;
+
+		try {
+			prepareStatement = con.prepareStatement("select * from LoginDetails where Email_Id=? AND Password=?");
+			prepareStatement.setString(1, l.getEmailId());
+			prepareStatement.setString(2, l.getPassword());
+			resultSet = prepareStatement.executeQuery();
+			if (resultSet.next()) {
+				b = true;
+			} else {
+				b = false;
 			}
 			con.close();
-		}
-		catch(Exception e){
+		} catch (Exception e) {
 			System.out.println(e);
 		}
-		
+
 		return b;
 	}
 
 	public int updatePassword(LoginModel updatePassword) {
-		con=getConnectionMethod.getConnection();
+		con = getConnectionMethod.getConnection();
 		int status = 0;
 		try {
 			prepareStatement = con.prepareStatement("Update LoginDetails set Password = ? where Email_Id = ?");
@@ -60,24 +57,24 @@ public class LoginDAO {
 		}
 		return status;
 	}
-	
-	public String GetName(String emailId){
-		con=getConnectionMethod.getConnection();
-		String CustomerName="";
-		try{
-			prepareStatement = con.prepareStatement("select Customer_Name from CustomerPersonalDetails where Email_Id = ?");
-			prepareStatement.setString(1,emailId);
-			resultSet=prepareStatement.executeQuery();
-			if(resultSet.next()){
+
+	public String GetName(String emailId) {
+		con = getConnectionMethod.getConnection();
+		String CustomerName = "";
+		try {
+			prepareStatement = con
+					.prepareStatement("select Customer_Name from CustomerPersonalDetails where Email_Id = ?");
+			prepareStatement.setString(1, emailId);
+			resultSet = prepareStatement.executeQuery();
+			if (resultSet.next()) {
 				CustomerName = resultSet.getString(1);
 			}
 			con.close();
-		} catch(Exception e){
+		} catch (Exception e) {
 			System.out.println(e);
 		}
-		
+
 		return CustomerName;
 	}
-	
-	
+
 }

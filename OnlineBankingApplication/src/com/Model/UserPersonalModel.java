@@ -8,7 +8,7 @@ public class UserPersonalModel {
 	private String nationality;
 	private long mobileNumber;
 	private String emailId;
-	//SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
+	// SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
 
 	public String getCustomerName() {
 		return customerName;
@@ -39,8 +39,8 @@ public class UserPersonalModel {
 	}
 
 	public void setDateOfBirth(String dateOfBirth) {
-		//this.dateOfBirth = formatter.format(dateOfBirth);
-		this.dateOfBirth=dateOfBirth;
+		// this.dateOfBirth = formatter.format(dateOfBirth);
+		this.dateOfBirth = dateOfBirth;
 	}
 
 	public String getNationality() {
@@ -66,6 +66,5 @@ public class UserPersonalModel {
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
-
 
 }

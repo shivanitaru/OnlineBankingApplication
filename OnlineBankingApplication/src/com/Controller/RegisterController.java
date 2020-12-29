@@ -53,7 +53,7 @@ public class RegisterController extends HttpServlet {
 			int pincode = Integer.parseInt(request.getParameter("pincode"));
 			String nationality = request.getParameter("nationality");
 			long mobileNumber = Long.parseLong(request.getParameter("mobile"));
-			long aadharNumber = Long.parseLong(request.getParameter("aadhar"));
+			long aadhaarNumber = Long.parseLong(request.getParameter("aadhaar"));
 			String pancardNumber = request.getParameter("pancard");
 			String email = request.getParameter("email");
 			String accountType = request.getParameter("accountType");
@@ -71,7 +71,7 @@ public class RegisterController extends HttpServlet {
 			r.setPinCode(pincode);
 			r.setNationality(nationality);
 			r.setMobileNumber(mobileNumber);
-			r.setAadharNumber(aadharNumber);
+			r.setAadhaarNumber(aadhaarNumber);
 			r.setPanCardNumber(pancardNumber);
 			r.setEmailId(email);
 			r.setAccountType(accountType);

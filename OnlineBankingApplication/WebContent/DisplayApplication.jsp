@@ -6,16 +6,16 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Insert title here</title>
 </head>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script language="javascript" type="text/javascript">
-		
-	</script>
-	
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script language="javascript" type="text/javascript">
+
+</script>
+
 <body leftmargin="0" align="center">
 
 	<h1 align="center">
@@ -27,7 +27,7 @@
 		<b>APPLICANT DETAILS</b>
 	</h2>
 
-	<table cellpadding="5" border="1" align="center" >
+	<table cellpadding="5" border="1" align="center">
 		<tr>
 			<th>Applicant Name</th>
 			<th>Applicant Father Name</th>
@@ -39,7 +39,7 @@
 			<th>Pin Code</th>
 			<th>Nationality</th>
 			<th>MobileNumber</th>
-			<th>Aadhar card</th>
+			<th>Aadhaar card</th>
 			<th>Pan Card</th>
 			<th>Email Id</th>
 			<th>Account Type</th>
@@ -48,9 +48,9 @@
 			<th>Approve</th>
 			<th>Reject</th>
 		</tr>
-	<%!List<RegisterModel> list;
+		<%!List<RegisterModel> list;
 	String emailId;%>
-	<%
+		<%
 		if (!session.isNew()) {
 
 			list = (List<RegisterModel>) session.getAttribute("ApplicantDetails");
@@ -67,12 +67,12 @@
 			<td><%=applicantdetails.getPinCode()%></td>
 			<td><%=applicantdetails.getNationality()%></td>
 			<td><%=applicantdetails.getMobileNumber()%></td>
-			<td><%=applicantdetails.getAadharNumber()%></td>
+			<td><%=applicantdetails.getAadhaarNumber()%></td>
 			<td><%=applicantdetails.getPanCardNumber()%></td>
 			<td><%=applicantdetails.getEmailId()%></td>
 			<td><%=applicantdetails.getAccountType()%></td>
 			<td><%=applicantdetails.getBranchName()%></td>
-			<td><%=applicantdetails.getStatus() %></td>			
+			<td><%=applicantdetails.getStatus() %></td>
 			<%emailId=applicantdetails.getEmailId(); %>
 			<td>
 				<button type="button" value="Approve" onclick="accountApproved('<%=emailId%>')">Approve</button>
@@ -81,26 +81,26 @@
 				<button type="button" value="Approve" onclick="accountRejected('<%=emailId%>')">Reject</button>
 			</td>
 		</tr>
-	<%
+		<%
 		}
 	%>
 
-	
-	<%
+
+		<%
 		}
 	%>
 	</table>
 	<script>
+		function accountApproved(emailId) {
+			window.location.assign("/OnlineBankingApplication/SendEmailServlet?emailId=" + emailId + "&status=Approved");
+		}
 
-function accountApproved(emailId) {
-	window.location.assign("/OnlineBankingApplication/SendEmailServlet?emailId="+emailId+"&status=Approved");
-}
-function accountRejected(emailId) {
-	window.location.assign("/OnlineBankingApplication/SendEmailServlet?emailId="+emailId+"&status=Rejected");
-}
-</script>
-	</body>
+		function accountRejected(emailId) {
+			window.location.assign("/OnlineBankingApplication/SendEmailServlet?emailId=" + emailId + "&status=Rejected");
+		}
+	</script>
+</body>
 
-	
 
-	</html>
+
+</html>

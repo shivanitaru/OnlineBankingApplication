@@ -1,16 +1,16 @@
 package com.Model;
 
 public class UserIdentityModel {
-	private long aadharNumber;
+	private long aadhaarNumber;
 	private String panCardNumber;
 	private String emailId;
 
-	public long getAadharNumber() {
-		return aadharNumber;
+	public long getAadhaarNumber() {
+		return aadhaarNumber;
 	}
 
-	public void setAadharNumber(long aadharNumber) {
-		this.aadharNumber = aadharNumber;
+	public void setAadhaarNumber(long aadhaarNumber) {
+		this.aadhaarNumber = aadhaarNumber;
 	}
 
 	public String getPanCardNumber() {

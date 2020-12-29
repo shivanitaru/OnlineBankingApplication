@@ -7,75 +7,53 @@ pageEncoding="ISO-8859-1"%>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<title>Registration Page</title>
 	<script type="text/javascript">
-	
-	function nonumberspacetext(x){
-		
-		if((x.keyCode > 90 &&  x.keyCode < 97))
-		{
-			alert("No special character allowed");
-			return false;
-		}
-		else if(x.keyCode < 65 &&  x.keyCode > 57  )
-		{
-			alert("No special character allowed");
-			return false;
-		}
-		else if(x.keyCode < 48 &&  x.keyCode > 32  )
-		{
-			alert("No special character allowed");
-			return false;
-		}
-		else if(x.keyCode > 122 )
-		{
-			alert("no special character allowed");
-			return false;
-		}
-		else if(x.keyCode == 32 )
-		{
-			alert("no space allowed");
-			return false;
-		}
-		else if(x.keyCode > 47 && x.keyCode < 58 )
-		{
-			alert("no digit allowed");
-			return false;
-		}
-		return true;
-	}
-	
-	
-	function nonumbertext(x){
-		
-		if((x.keyCode > 90 &&  x.keyCode < 97))
-		{
-			alert("No special character allowed");
-			return false;
-		}
-		else if(x.keyCode < 65 &&  x.keyCode > 57  )
-		{
-			alert("No special character allowed");
-			return false;
-		}
-		else if(x.keyCode < 48 &&  x.keyCode > 32  )
-		{
-			alert("No special character allowed");
-			return false;
-		}
-		else if(x.keyCode > 122 )
-		{
-			alert("no special character allowed");
-			return false;
-		}
-		else if(x.keyCode > 47 && x.keyCode < 58 )
-		{
-			alert("no digit allowed");
-			return false;
-		}
-		return true;
-	}
+		function nonumberspacetext(x) {
 
+			if ((x.keyCode > 90 && x.keyCode < 97)) {
+				alert("No special character allowed");
+				return false;
+			} else if (x.keyCode < 65 && x.keyCode > 57) {
+				alert("No special character allowed");
+				return false;
+			} else if (x.keyCode < 48 && x.keyCode > 32) {
+				alert("No special character allowed");
+				return false;
+			} else if (x.keyCode > 122) {
+				alert("no special character allowed");
+				return false;
+			} else if (x.keyCode == 32) {
+				alert("no space allowed");
+				return false;
+			} else if (x.keyCode > 47 && x.keyCode < 58) {
+				alert("no digit allowed");
+				return false;
+			}
+			return true;
+		}
+
+
+		function nonumbertext(x) {
+
+			if ((x.keyCode > 90 && x.keyCode < 97)) {
+				alert("No special character allowed");
+				return false;
+			} else if (x.keyCode < 65 && x.keyCode > 57) {
+				alert("No special character allowed");
+				return false;
+			} else if (x.keyCode < 48 && x.keyCode > 32) {
+				alert("No special character allowed");
+				return false;
+			} else if (x.keyCode > 122) {
+				alert("no special character allowed");
+				return false;
+			} else if (x.keyCode > 47 && x.keyCode < 58) {
+				alert("no digit allowed");
+				return false;
+			}
+			return true;
+		}
 	</script>
-	
+
 </head>
 
 <body>
@@ -91,12 +69,12 @@ pageEncoding="ISO-8859-1"%>
 			<option value="Mrs">Mrs</option>
 			<option value="Ms">Ms</option>
 		</select>
-		<input type="text" name="FirstName" oninput="inputOn()" placeholder="Enter First Name" required maxlength="15"
-			class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)" />
-		<input type="text" name="MiddleName" oninput="inputOn()" placeholder="Enter middle Name" maxlength="15"
-			class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)" />
-		<input type="text" name="LastName" oninput="inputOn()" placeholder="Enter last Name" required maxlength="15"
-			class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)" />
+		<input type="text" name="FirstName" placeholder="Enter First Name" required maxlength="15" class="input1"
+			autocomplete="off" onkeydown="return nonumberspacetext(event)" />
+		<input type="text" name="MiddleName" placeholder="Enter middle Name" maxlength="15" class="input1"
+			autocomplete="off" onkeydown="return nonumberspacetext(event)" />
+		<input type="text" name="LastName" placeholder="Enter last Name" required maxlength="15" class="input1"
+			autocomplete="off" onkeydown="return nonumberspacetext(event)" />
 		<br />
 
 		<label>Father's / Guardian's Name :</label>
@@ -105,33 +83,33 @@ pageEncoding="ISO-8859-1"%>
 			<option value="Mrs">Mrs</option>
 			<option value="Ms">Ms</option>
 		</select>
-		<input type="text" name="FatherFirstName" oninput="inputOn()" placeholder="Enter First Name" required
-			maxlength="15" class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)" />
-		<input type="text" name="FatherMiddleName" oninput="inputOn()" placeholder="Enter middle Name" maxlength="15"
-			class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)" />
-		<input type="text" name="FatherLastName" oninput="inputOn()" placeholder="Enter last Name" required
-			maxlength="15" class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)" />
+		<input type="text" name="FatherFirstName" placeholder="Enter First Name" required maxlength="15" class="input1"
+			autocomplete="off" onkeydown="return nonumberspacetext(event)" />
+		<input type="text" name="FatherMiddleName" placeholder="Enter middle Name" maxlength="15" class="input1"
+			autocomplete="off" onkeydown="return nonumberspacetext(event)" />
+		<input type="text" name="FatherLastName" placeholder="Enter last Name" required maxlength="15" class="input1"
+			autocomplete="off" onkeydown="return nonumberspacetext(event)" />
 		<br />
 		<label>Gender :</label>
-		<input type="Radio" name="gender" oninput="inputOn()" required value="Male" class="input1" />Male
-		<input type="Radio" name="gender" oninput="inputOn()" required value="Female" class="input1" />Female
-		<input type="Radio" name="gender" oninput="inputOn()" required value="Other" class="input1" />Other
+		<input type="Radio" name="gender" required value="Male" class="input1" />Male
+		<input type="Radio" name="gender" required value="Female" class="input1" />Female
+		<input type="Radio" name="gender" required value="Other" class="input1" />Other
 		<br />
 
 		<label>Date of Birth :</label>
-		<input type="date" name="dob" oninput="inputOn()" required class="input1" /><br />
+		<input type="date" name="dob" required class="input1" /><br />
 
 		<label>Address :</label>
-		<input type="text" name="address" oninput="inputOn()" placeholder="Enter your address" required
-			class="input1" autocomplete="off" /><br />
+		<input type="text" name="address" placeholder="Enter your address" required class="input1"
+			autocomplete="off" /><br />
 
 		<label>City :</label>
-		
-		<input type="text" name="city" oninput="inputOn()" placeholder="Enter your city" required
-			class="input1" autocomplete="off" title="e.g. Pune" onkeydown="return nonumbertext(event)" /><br>
+
+		<input type="text" name="city" placeholder="Enter your city" required class="input1" autocomplete="off"
+			title="e.g. Pune" onkeydown="return nonumbertext(event)" /><br>
 
 		<label>State :</label>
-		<input list="states" name="state" oninput="inputOn()" placeholder="Select your state" required class="input1" />
+		<input list="states" name="state" placeholder="Select your state" required class="input1" />
 		<datalist id="states">
 			<option>Andhra Pradesh</option>
 			<option>Arunachal Pradesh</option>
@@ -166,34 +144,32 @@ pageEncoding="ISO-8859-1"%>
 		<br />
 
 		<label>Pin Code :</label>
-		<input type="text" name="pincode" oninput="inputOn()" placeholder="Enter your pincode"
-			pattern="[1-9]{1}[0-9]{5}" title="e.g. 411001" required class="input1" autocomplete="off" /><br />
+		<input type="text" name="pincode" placeholder="Enter your pincode" pattern="[1-9]{1}[0-9]{5}"
+			title="e.g. 411001" required class="input1" autocomplete="off" /><br />
 
 		<label>Nationality :</label>
-		<input type="text" name="nationality" oninput="inputOn()" placeholder="Enter your nationality"
-			title="e.g. Indian" required class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)"
-			/><br />
+		<input type="text" name="nationality" placeholder="Enter your nationality" title="e.g. Indian" required
+			class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)" /><br />
 
 		<label>Mobile No. :</label>
-		<input type="text" name="mobile" oninput="inputOn()" placeholder="Enter your mobile no."
-			pattern="[789]{1}[0-9]{9}" title="e.g. 9876543210" required class="input1" autocomplete="off" /><br />
+		<input type="text" name="mobile" placeholder="Enter your mobile no." pattern="[789]{1}[0-9]{9}"
+			title="e.g. 9876543210" required class="input1" autocomplete="off" /><br />
 
 		<label>E-mail Id :</label>
-		<input type="text" name="email" oninput="inputOn()" placeholder="Enter your email id"
-			pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" title="e.g. abc@gmail.com" required
-			class="input1" autocomplete="off"/><br />
+		<input type="text" name="email" placeholder="Enter your email id"
+			pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" title="e.g. abc@gmail.com" required class="input1"
+			autocomplete="off" /><br />
 
-		<label>Aadhar No. :</label>
-		<input type="text" name="aadhar" oninput="inputOn()" placeholder="Enter your aadhar no." pattern="[0-9]{16}"
-			title="e.g. 1234567890123456" required class="input1" autocomplete="off"/><br />
+		<label>Aadhaar No. :</label>
+		<input type="text" name="aadhaar" placeholder="Enter your aadhaar no." pattern="[0-9]{12}"
+			title="e.g. 123456789012" required class="input1" autocomplete="off" /><br />
 
 		<label>Pancard No. :</label>
-		<input type="text" name="pancard" oninput="inputOn()" placeholder="Enter your pancard no."
-			pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" title="e.g. ABCDE1234F" required class="input1" autocomplete="off" /><br />
+		<input type="text" name="pancard" placeholder="Enter your pancard no." pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}"
+			title="e.g. ABCDE1234F" required class="input1" autocomplete="off" /><br />
 
 		<label>Account Type :</label>
-		<input list="accounts" name="accountType" oninput="inputOn()" placeholder="Select Account Type" required
-			class="input1" />
+		<input list="accounts" name="accountType" placeholder="Select Account Type" required class="input1" />
 		<datalist id="accounts">
 			<option>Saving</option>
 			<option>Current</option>
@@ -201,8 +177,7 @@ pageEncoding="ISO-8859-1"%>
 		<br />
 
 		<label>Branch Name :</label>
-		<input list="branches" name="branchName" oninput="inputOn()" placeholder="Select Branch" required
-			class="input1" />
+		<input list="branches" name="branchName" placeholder="Select Branch" required class="input1" />
 		<datalist id="branches">
 			<option>Bund Garden</option>
 			<option>Hadapsar</option>
