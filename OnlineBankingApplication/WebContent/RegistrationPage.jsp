@@ -73,7 +73,6 @@ pageEncoding="ISO-8859-1"%>
 		        	out.println(request.getAttribute("errorMessage")); } %>
 				</h4>
 
-<<<<<<< HEAD
 		<label>Your Name :</label>
 		<br>
 		<div class="custom">
@@ -85,25 +84,8 @@ pageEncoding="ISO-8859-1"%>
 			class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)" />
 			<br />
 		</div>
-		
-=======
-		<label>Name :</label>
-		<select>
-			<option value="Mr">Mr</option>
-			<option value="Mrs">Mrs</option>
-			<option value="Ms">Ms</option>
-		</select>
-		<input type="text" name="FirstName" placeholder="Enter First Name" required maxlength="15" class="input1"
-			autocomplete="off" onkeydown="return nonumberspacetext(event)" />
-		<input type="text" name="MiddleName" placeholder="Enter middle Name" maxlength="15" class="input1"
-			autocomplete="off" onkeydown="return nonumberspacetext(event)" />
-		<input type="text" name="LastName" placeholder="Enter last Name" required maxlength="15" class="input1"
-			autocomplete="off" onkeydown="return nonumberspacetext(event)" />
-		<br />
->>>>>>> branch 'dev' of https://github.com/shivanitaru/OnlineBankingApplication.git
 
 		<label>Father's / Guardian's Name :</label>
-<<<<<<< HEAD
 		<br>
 		<div class="custom">
 			<input type="text" name="FatherFirstName" oninput="inputOn()" placeholder="First Name" required
@@ -114,23 +96,8 @@ pageEncoding="ISO-8859-1"%>
 				maxlength="15" class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)" />
 			<br />
 		</div>
-		
-=======
-		<select>
-			<option value="Mr">Mr</option>
-			<option value="Mrs">Mrs</option>
-			<option value="Ms">Ms</option>
-		</select>
-		<input type="text" name="FatherFirstName" placeholder="Enter First Name" required maxlength="15" class="input1"
-			autocomplete="off" onkeydown="return nonumberspacetext(event)" />
-		<input type="text" name="FatherMiddleName" placeholder="Enter middle Name" maxlength="15" class="input1"
-			autocomplete="off" onkeydown="return nonumberspacetext(event)" />
-		<input type="text" name="FatherLastName" placeholder="Enter last Name" required maxlength="15" class="input1"
-			autocomplete="off" onkeydown="return nonumberspacetext(event)" />
-		<br />
->>>>>>> branch 'dev' of https://github.com/shivanitaru/OnlineBankingApplication.git
+
 		<label>Gender :</label>
-<<<<<<< HEAD
 		<br>
 		<div class="custom_radio">
 			<input type="Radio" name="gender" oninput="inputOn()" required value="Male" class="input1" /><span>Male</span>
@@ -138,12 +105,6 @@ pageEncoding="ISO-8859-1"%>
 			<input type="Radio" name="gender" oninput="inputOn()" required value="Other" class="input1" /><span>Other</span>
 			<br>
 		</div>
-=======
-		<input type="Radio" name="gender" required value="Male" class="input1" />Male
-		<input type="Radio" name="gender" required value="Female" class="input1" />Female
-		<input type="Radio" name="gender" required value="Other" class="input1" />Other
-		<br />
->>>>>>> branch 'dev' of https://github.com/shivanitaru/OnlineBankingApplication.git
 
 		<label>Date of Birth :</label>
 		<input type="date" name="dob" required class="input1" /><br />
@@ -153,14 +114,8 @@ pageEncoding="ISO-8859-1"%>
 			autocomplete="off" /><br />
 
 		<label>City :</label>
-<<<<<<< HEAD
 		<input type="text" name="city" oninput="inputOn()" placeholder="Enter your city" required
 			class="input1" autocomplete="off" title="e.g. Pune" onkeydown="return nonumbertext(event)" /><br>
-=======
-
-		<input type="text" name="city" placeholder="Enter your city" required class="input1" autocomplete="off"
-			title="e.g. Pune" onkeydown="return nonumbertext(event)" /><br>
->>>>>>> branch 'dev' of https://github.com/shivanitaru/OnlineBankingApplication.git
 
 		<label>State :</label>
 		<input list="states" name="state" placeholder="Select your state" required class="input1" />
@@ -205,27 +160,15 @@ pageEncoding="ISO-8859-1"%>
 		<input type="text" name="nationality" placeholder="Enter your nationality" title="e.g. Indian" required
 			class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)" /><br />
 
-<<<<<<< HEAD
 		<label>Mobile No :</label>
 		<input type="text" name="mobile" oninput="inputOn()" placeholder="Enter your mobile no."
 			pattern="[789]{1}[0-9]{9}" title="e.g. 9876543210" required class="input1" autocomplete="off" /><br />
-=======
-		<label>Mobile No. :</label>
-		<input type="text" name="mobile" placeholder="Enter your mobile no." pattern="[789]{1}[0-9]{9}"
-			title="e.g. 9876543210" required class="input1" autocomplete="off" /><br />
->>>>>>> branch 'dev' of https://github.com/shivanitaru/OnlineBankingApplication.git
+			
 
-<<<<<<< HEAD
 		<label>Email ID :</label>
 		<input type="text" name="email" oninput="inputOn()" placeholder="Enter your email id"
 			pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" title="e.g. abc@gmail.com" required
 			class="input1" autocomplete="off"/><br />
-=======
-		<label>E-mail Id :</label>
-		<input type="text" name="email" placeholder="Enter your email id"
-			pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" title="e.g. abc@gmail.com" required class="input1"
-			autocomplete="off" /><br />
->>>>>>> branch 'dev' of https://github.com/shivanitaru/OnlineBankingApplication.git
 
 		<label>Aadhaar No. :</label>
 		<input type="text" name="aadhaar" placeholder="Enter your aadhaar no." pattern="[0-9]{12}"

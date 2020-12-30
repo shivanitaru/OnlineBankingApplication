@@ -4,7 +4,6 @@
 <html>
 
 <head>
-<<<<<<< HEAD
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet"  href="css/index.css">
 <link rel="stylesheet"  href="all.min.css">
@@ -13,16 +12,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://assets3.lottiefiles.com/packages/lf20_ihxIYc.json">
 <title>Index Page</title>
-=======
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <link rel="stylesheet" href="css/Home.css">
-    <link rel="stylesheet" href="all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://assets3.lottiefiles.com/packages/lf20_ihxIYc.json">
-    <title>Index Page</title>
->>>>>>> branch 'dev' of https://github.com/shivanitaru/OnlineBankingApplication.git
 </head>
 
 <body>
