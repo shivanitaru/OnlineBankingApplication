@@ -52,9 +52,49 @@
 		<!-- Sidebar -->
 		<!-- Page Content -->
 		<div id="page-content-wrapper">
-
-
 			<h1 class="text-center mb-5 mt-2">Change Password</h1>
+			
+			<h4>
+				<%
+				    if(null!=request.getAttribute("errorMessage"))
+				    {
+				        out.println(request.getAttribute("errorMessage"));
+				    }
+				%>
+			</h4>
+			
+			<!-- Fund Transfer -->
+			<div class="mx-4 my-4 row justify-content-center align-items-center">
+				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-8 shadow">
+					<form action="ChangePasswordController" method="post" class="px-4 py-4">
+						<!-- Current Password -->
+						<label for="currentPassword" class="field-label">Current 
+							Password</label> <input type="password" class="form-control" name="currentPassword"
+							id="currentPassword" required onkeypress="return event.charCode >= 48"
+							min="0">
+						<!-- Current Password -->
+						
+						<!-- New Password -->
+						<label for="currentPassword" class="field-label">New 
+							Password</label> <input type="password" class="form-control" name="newPassword"
+							id="newPassword" required onkeypress="return event.charCode >= 48"
+							min="0">
+						<!-- New Password -->
+						
+						<!-- Current Password -->
+						<label for="currentPassword" class="field-label">Confirm New 
+							Password</label> <input type="password" class="form-control" name="confirmNewPassword"
+							id="confirmNewPassword" required onkeypress="return event.charCode >= 48"
+							min="0">
+						<!-- Current Password -->
+
+						<div class="text-center pt-4">
+							<button type="submit" class="btn btn-primary">Change Password</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- Fund Transfer -->
 		</div>
 		<!-- Page Content -->
 

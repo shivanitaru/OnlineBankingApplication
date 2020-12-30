@@ -5,10 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
 
+import com.Model.ChangePasswordModel;
 import com.Model.LoginModel;
-import com.Model.RegisterModel;
 
-public class LoginDAO {
+public class ChangePasswordDAO {
 
 	public static Connection con;
 	GetConnection getConnectionMethod = new GetConnection();
@@ -21,8 +21,6 @@ public class LoginDAO {
 		boolean b = false;
 
 		try {
-			System.out.println(l.getEmailId());
-			System.out.println(l.getPassword());
 			prepareStatement = con.prepareStatement("select * from LoginDetails where Email_Id=? AND Password=?");
 			prepareStatement.setString(1, l.getEmailId());
 			prepareStatement.setString(2, l.getPassword());
@@ -39,44 +37,24 @@ public class LoginDAO {
 
 		return b;
 	}
-
-	public int updatePassword(LoginModel updatePassword) {
+	
+	public boolean updatePassword(String email, String newPassword) {
 		con = getConnectionMethod.getConnection();
-		int status = 0;
+		boolean b = false;
 		try {
 			prepareStatement = con.prepareStatement("Update LoginDetails set Password = ? where Email_Id = ?");
-			prepareStatement.setString(1, updatePassword.getPassword());
-			prepareStatement.setString(2, updatePassword.getEmailId());
+			prepareStatement.setString(1, newPassword);
+			prepareStatement.setString(2, email);
 			resultSet = prepareStatement.executeQuery();
 			if (resultSet.next())
-				status = 1;
+				b = true;
 			else
-				System.out.println("Error:Cannot find in db");
+				b = false;
 			con.close();
-			System.out.println(status);
+
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		return status;
+		return b;
 	}
-
-	public String GetName(String emailId) {
-		con = getConnectionMethod.getConnection();
-		String CustomerName = "";
-		try {
-			prepareStatement = con
-					.prepareStatement("select Customer_Name from CustomerPersonalDetails where Email_Id = ?");
-			prepareStatement.setString(1, emailId);
-			resultSet = prepareStatement.executeQuery();
-			if (resultSet.next()) {
-				CustomerName = resultSet.getString(1);
-			}
-			con.close();
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-
-		return CustomerName;
-	}
-
 }

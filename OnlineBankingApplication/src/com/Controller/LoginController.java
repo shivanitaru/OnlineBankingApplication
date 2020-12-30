@@ -50,10 +50,14 @@ public class LoginController extends HttpServlet {
 		// TODO Auto-generated method stub
 		String username = request.getParameter("uname");
 		String password = request.getParameter("pass");
+		System.out.println(username);
+		System.out.println(password);
 
 		LoginModel LoginModelObj = new LoginModel();
 		LoginModelObj.setEmailId(username);
 		LoginModelObj.setPassword(password);
+		System.out.println(username);
+		System.out.println(password);
 
 		List<LoginModel> list = new ArrayList<LoginModel>();
 		list.add(LoginModelObj);
