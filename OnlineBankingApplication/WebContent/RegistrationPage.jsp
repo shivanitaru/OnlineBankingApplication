@@ -6,6 +6,9 @@ pageEncoding="ISO-8859-1"%>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<title>Registration Page</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/register_form.css">
+    <link rel="stylesheet" href="all.min.css">
 	<script type="text/javascript">
 	
 	function nonumberspacetext(x){
@@ -79,44 +82,52 @@ pageEncoding="ISO-8859-1"%>
 </head>
 
 <body>
-	<form action="RegisterController" method="post">
-		<h4>
-			<% if(null!=request.getAttribute("errorMessage")) {
-        out.println(request.getAttribute("errorMessage")); } %>
-		</h4>
+	<div class="inner">
+	    <div class="photo">
+	        <img src="..\images\Register.svg">
+	        <button class="bt" onclick="location.href='IndexPage.jsp'">Home</button> 
+	    </div>
+	    <div class="user-form">
+        	<h1>Welcome! Register here</h1>
+			<form action="RegisterController" method="post">
+				<h4>
+					<% if(null!=request.getAttribute("errorMessage")) {
+		        	out.println(request.getAttribute("errorMessage")); } %>
+				</h4>
 
-		<label>Name :</label>
-		<select>
-			<option value="Mr">Mr</option>
-			<option value="Mrs">Mrs</option>
-			<option value="Ms">Ms</option>
-		</select>
-		<input type="text" name="FirstName" oninput="inputOn()" placeholder="Enter First Name" required maxlength="15"
+		<label>Your Name :</label>
+		<br>
+		<div class="custom">
+			<input type="text" name="FirstName" oninput="inputOn()" placeholder="First Name" required maxlength="15"
 			class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)" />
-		<input type="text" name="MiddleName" oninput="inputOn()" placeholder="Enter middle Name" maxlength="15"
+			<input type="text" name="MiddleName" oninput="inputOn()" placeholder="Middle Name" maxlength="15"
 			class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)" />
-		<input type="text" name="LastName" oninput="inputOn()" placeholder="Enter last Name" required maxlength="15"
+			<input type="text" name="LastName" oninput="inputOn()" placeholder="Last Name" required maxlength="15"
 			class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)" />
-		<br />
+			<br />
+		</div>
+		
 
 		<label>Father's / Guardian's Name :</label>
-		<select>
-			<option value="Mr">Mr</option>
-			<option value="Mrs">Mrs</option>
-			<option value="Ms">Ms</option>
-		</select>
-		<input type="text" name="FatherFirstName" oninput="inputOn()" placeholder="Enter First Name" required
-			maxlength="15" class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)" />
-		<input type="text" name="FatherMiddleName" oninput="inputOn()" placeholder="Enter middle Name" maxlength="15"
-			class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)" />
-		<input type="text" name="FatherLastName" oninput="inputOn()" placeholder="Enter last Name" required
-			maxlength="15" class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)" />
-		<br />
+		<br>
+		<div class="custom">
+			<input type="text" name="FatherFirstName" oninput="inputOn()" placeholder="First Name" required
+				maxlength="15" class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)" />
+			<input type="text" name="FatherMiddleName" oninput="inputOn()" placeholder="Middle Name" maxlength="15"
+				class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)" />
+			<input type="text" name="FatherLastName" oninput="inputOn()" placeholder="Last Name" required
+				maxlength="15" class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)" />
+			<br />
+		</div>
+		
 		<label>Gender :</label>
-		<input type="Radio" name="gender" oninput="inputOn()" required value="Male" class="input1" />Male
-		<input type="Radio" name="gender" oninput="inputOn()" required value="Female" class="input1" />Female
-		<input type="Radio" name="gender" oninput="inputOn()" required value="Other" class="input1" />Other
-		<br />
+		<br>
+		<div class="custom_radio">
+			<input type="Radio" name="gender" oninput="inputOn()" required value="Male" class="input1" /><span>Male</span>
+			<input type="Radio" name="gender" oninput="inputOn()" required value="Female" class="input1" /><span>Female</span>
+			<input type="Radio" name="gender" oninput="inputOn()" required value="Other" class="input1" /><span>Other</span>
+			<br>
+		</div>
 
 		<label>Date of Birth :</label>
 		<input type="date" name="dob" oninput="inputOn()" required class="input1" /><br />
@@ -126,7 +137,6 @@ pageEncoding="ISO-8859-1"%>
 			class="input1" autocomplete="off" /><br />
 
 		<label>City :</label>
-		
 		<input type="text" name="city" oninput="inputOn()" placeholder="Enter your city" required
 			class="input1" autocomplete="off" title="e.g. Pune" onkeydown="return nonumbertext(event)" /><br>
 
@@ -174,11 +184,11 @@ pageEncoding="ISO-8859-1"%>
 			title="e.g. Indian" required class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)"
 			/><br />
 
-		<label>Mobile No. :</label>
+		<label>Mobile No :</label>
 		<input type="text" name="mobile" oninput="inputOn()" placeholder="Enter your mobile no."
 			pattern="[789]{1}[0-9]{9}" title="e.g. 9876543210" required class="input1" autocomplete="off" /><br />
 
-		<label>E-mail Id :</label>
+		<label>Email ID :</label>
 		<input type="text" name="email" oninput="inputOn()" placeholder="Enter your email id"
 			pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" title="e.g. abc@gmail.com" required
 			class="input1" autocomplete="off"/><br />
@@ -211,10 +221,15 @@ pageEncoding="ISO-8859-1"%>
 		</datalist>
 		<br />
 
-		<input type="submit" value="Register" />
-		<input type="reset" value="Reset" /><br>
+		<div class="action-btn">
+			<input class="btn primary" type="submit" value="Register" />
+			<input class="btn primary" type="reset" value="Reset" /><br>
+        </div>
+		
 		Already have an account? <a href="LoginPage.jsp">Click here to Login</a><br>
 	</form>
+	</div>
+	</div>
 </body>
 
 </html>
