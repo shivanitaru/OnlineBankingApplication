@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.DAO.BeneficiaryDAO;
 import com.DAO.ChangePasswordDAO;
 import com.Model.ChangePasswordModel;
 import com.Model.LoginModel;
@@ -48,7 +47,7 @@ public class ChangePasswordController extends HttpServlet {
 		//doGet(request, response);
 		HttpSession session = request.getSession();
 		String email = (String) session.getAttribute("uname");
-		
+		System.out.println(email);
 		String currentPassword = request.getParameter("currentPassword");
 		String newPassword = request.getParameter("newPassword");
 		String confirmNewPassword = request.getParameter("confirmNewPassword");

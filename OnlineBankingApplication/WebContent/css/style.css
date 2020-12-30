@@ -97,3 +97,11 @@ input[type=number] {
 	}
 }
 
+th, td {
+  padding: 20px;
+  text-align: center;
+}
+
+h1{
+	margin-top: 50px;
+}

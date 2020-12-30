@@ -34,7 +34,7 @@
 				<input type="password" name="pass" placeholder="Enter your password" required><br>
 				<a href="ForgotPassword.jsp">Forgot your password?</a><br></br>
 				<div class="action-btn">
-					<input class="btn primary" type="submit" value="Log In"><br>
+					<input id="login_btn" class="btn primary" type="submit" value="Log In"><br>
 				</div>
 				<br>
 				<div class="registration_link">
