@@ -55,13 +55,13 @@ public class ForgotPasswordController extends HttpServlet {
 		String bodyMessage = "Dear customer,\n"
 				+ "We heard that you lost your Bank account password. Sorry about that!\n"
 				+ "But don’t worry! You can now reset your password by clicking the below link or copying and pasting it into your browser:\n\n"
-				+ "http://localhost:8087/OnlineBankingApplication/ResetPassword.jsp\n\n"
+				+ "http://localhost:8097/OnlineBankingApplication/ResetPassword.jsp\n\n"
 				+ "If you didn't request this, please ignore this email. If you experience any difficulty, please visit our website.\n"
-				+ "http://localhost:8087/OnlineBankingApplication/HomePage.jsp\n"
+				+ "http://localhost:8097/OnlineBankingApplication/HomePage.jsp\n"
 				+ "Your password won't change until you access the link above and create a new one.\n\n"
 				+ "Thank you,\n" + "Bank";
 		final String username = "vini.mehta78@gmail.com";
-		final String password = "qgtvqkizrzaurqwp";
+		final String password = "stjtyoknzieatkaw";
 		Properties prop = new Properties();
 		prop.put("mail.smtp.host", "smtp.gmail.com");
 		prop.put("mail.smtp.port", "587");

@@ -9,6 +9,8 @@ pageEncoding="ISO-8859-1"%>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="css/register_form.css">
     <link rel="stylesheet" href="all.min.css">
+    	<link rel="stylesheet" href="css/style.css" />
+    
 	<script type="text/javascript">
 		function nonumberspacetext(x) {
 
@@ -154,7 +156,7 @@ pageEncoding="ISO-8859-1"%>
 
 		<label>Pin Code :</label>
 		<input type="number" name="pincode" placeholder="Enter your pincode" pattern="[1-9]{1}[0-9]{5}"
-			title="e.g. 411001" required class="input1" autocomplete="off" /><br />
+			title="e.g. 411001" required class="input1" autocomplete="off"  onkeypress="return event.charCode >= 48" min="0"/><br />
 
 		<label>Nationality :</label>
 		<input type="text" name="nationality" placeholder="Enter your nationality" title="e.g. Indian" required
@@ -162,7 +164,7 @@ pageEncoding="ISO-8859-1"%>
 
 		<label>Mobile No :</label>
 		<input type="number" name="mobile" oninput="inputOn()" placeholder="Enter your mobile no."
-			pattern="[789]{1}[0-9]{9}" title="e.g. 9876543210" required class="input1" autocomplete="off" /><br />
+			pattern="[789]{1}[0-9]{9}" title="e.g. 9876543210" required class="input1" autocomplete="off" onkeypress="return event.charCode >= 48" min="0"/><br />
 			
 
 		<label>Email ID :</label>
@@ -172,7 +174,7 @@ pageEncoding="ISO-8859-1"%>
 
 		<label>Aadhaar No. :</label>
 		<input type="number" name="aadhaar" placeholder="Enter your aadhaar no." pattern="[0-9]{12}"
-			title="e.g. 123456789012" required class="input1" autocomplete="off" /><br />
+			title="e.g. 123456789012" required class="input1" autocomplete="off" onkeypress="return event.charCode >= 48" min="0"/><br />
 
 		<label>Pancard No. :</label>
 		<input type="text" name="pancard" placeholder="Enter your pancard no." pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}"

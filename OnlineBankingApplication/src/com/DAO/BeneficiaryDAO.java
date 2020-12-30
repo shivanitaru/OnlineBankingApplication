@@ -55,5 +55,41 @@ public class BeneficiaryDAO {
 
 		return accountNumber;
 	}
+	public boolean validateBeneficiaryAccountNumber(long remitterAccountNumber, long beneficiaryAccountNumber) {
+		con = getConnectionMethod.getConnection();
+		boolean b=false;
+		try {
+			prepareStatement = con.prepareStatement("select * from BeneficiaryDetails where ACCOUNT_NO=? AND BENEFICIARY_ACCOUNT_NO=?");
+			prepareStatement.setLong(1, remitterAccountNumber);
+			prepareStatement.setLong(2, beneficiaryAccountNumber);
+			resultSet = prepareStatement.executeQuery();
+			if (resultSet.next()) {
+				b = true;
+			}
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 
+		return b;
+	}
+
+	public boolean checkBeneficiaryAccountNumber(long accountNumber, long beneficiaryAccountNumber) {
+		con = getConnectionMethod.getConnection();
+		boolean b=false;
+		try {
+			prepareStatement = con.prepareStatement("select * from BeneficiaryDetails where ACCOUNT_NO=? AND BENEFICIARY_ACCOUNT_NO=?");
+			prepareStatement.setLong(1, accountNumber);
+			prepareStatement.setLong(2, beneficiaryAccountNumber);
+			resultSet = prepareStatement.executeQuery();
+			if (resultSet.next()) {
+				b = true;
+			}
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+		return b;
+	}
 }

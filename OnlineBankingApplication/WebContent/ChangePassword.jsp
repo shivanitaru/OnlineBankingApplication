@@ -54,39 +54,37 @@
 		<div id="page-content-wrapper">
 			<h1 class="text-center mb-5 mt-2">Change Password</h1>
 			
-			<h4>
-				<%
-				    if(null!=request.getAttribute("errorMessage"))
-				    {
-				        out.println(request.getAttribute("errorMessage"));
-				    }
-				%>
-			</h4>
+		
 			
 			<!-- Fund Transfer -->
 			<div class="mx-4 my-4 row justify-content-center align-items-center">
 				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-8 shadow">
 					<form action="ChangePasswordController" method="post" class="px-4 py-4">
+					<h6 style="color:red">
+					<%
+					    if(null!=request.getAttribute("errorMessage"))
+					        out.println(request.getAttribute("errorMessage"));
+					%>
+				</h6>
 						<!-- Current Password -->
 						<label for="currentPassword" class="field-label">Current 
 							Password</label> <input type="password" class="form-control" name="currentPassword"
-							id="currentPassword" required onkeypress="return event.charCode >= 48"
-							min="0">
+							id="currentPassword" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+							title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
 						<!-- Current Password -->
 						
 						<!-- New Password -->
 						<label for="currentPassword" class="field-label">New 
 							Password</label> <input type="password" class="form-control" name="newPassword"
-							id="newPassword" required onkeypress="return event.charCode >= 48"
-							min="0">
+							id="newPassword" required  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+							title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
 						<!-- New Password -->
 						
-						<!-- Current Password -->
+						<!-- Confirm Password -->
 						<label for="currentPassword" class="field-label">Confirm New 
 							Password</label> <input type="password" class="form-control" name="confirmNewPassword"
-							id="confirmNewPassword" required onkeypress="return event.charCode >= 48"
-							min="0">
-						<!-- Current Password -->
+							id="confirmNewPassword" required >
+						<!-- Confirm Password -->
 
 						<div class="text-center pt-4">
 							<button type="submit" class="btn btn-primary">Change Password</button>

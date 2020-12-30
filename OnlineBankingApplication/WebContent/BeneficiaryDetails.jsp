@@ -59,33 +59,41 @@
 			<div class="mx-4 my-4 row justify-content-center align-items-center">
 				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-8 shadow">
 					<form action="AddBeneficiaryController" method="post" class="px-4 py-4">
+					<h6 style="color:red">
+					<%
+					    if(null!=request.getAttribute("invalidBeneficiaryAccountNumberErrorMessage"))
+					        out.println(request.getAttribute("invalidBeneficiaryAccountNumberErrorMessage"));
+					    else if(null!=request.getAttribute("alreadyExistBeneficiaryAccountNumberErrorMessage"))
+					        out.println(request.getAttribute("alreadyExistBeneficiaryAccountNumberErrorMessage"));
+					%>
+				</h6>
 						<h3 class="mx-auto text-center">Add beneficiary</h3>
 						<!-- Beneficiary Account No. -->
 						<label for="beneficiaryAccountNo" class="field-label">Beneficiary
 							Account No.</label> <input type="number" class="form-control" name="beneficiaryAccountNo"
-							id="beneficiaryAccountNo" required pattern="[0-9]{7}"
+							id="beneficiaryAccountNo" required pattern="[0-9]{7}$*"
 							onkeypress="return event.charCode >= 48" min="0">
 						<!-- Beneficiary Account No. -->
 
 						<!-- Beneficiary Name -->
 						<label for="beneficiaryName" class="field-label">Beneficiary
 							Name</label> <input type="text" class="form-control" name="beneficiaryName"
-							id="beneficiaryName" required pattern="^[a-zA-Z]*$">
+							id="beneficiaryName" required pattern="[a-zA-Z0-9\s]+">
 						<!-- Beneficiary Name -->
 
 						<!-- IFSC Code -->
 						<label for="IFSCCode" class="field-label">IFSC Code</label> <input type="text" name="IFSCCode"
-							class="form-control" id="IFSCCode" required pattern="[A-Z]{4}0[A-Z]{6}">
+							class="form-control" id="IFSCCode" required pattern="[A-Z]{4}0[A-Z]{6}"title="ABCD0ABCDEF">
 						<!-- IFSC Code -->
 
 						<!-- Branch Name -->
 						<label for="branchName" class="field-label">Branch Name</label> <input type="text"
-							name="branchName" class="form-control" id="branchName" required pattern="^[a-zA-Z0-9]*$">
+							name="branchName" class="form-control" id="branchName" required pattern="[a-zA-Z0-9\s]+">
 						<!-- Branch Name -->
 
 						<!-- Bank Name -->
 						<label for="bankName" class="field-label">Bank Name</label> <input type="text" name="bankName"
-							class="form-control" id="bankName" required pattern="^[a-zA-Z0-9]*$">
+							class="form-control" id="bankName" required pattern="[a-zA-Z0-9\s]+">
 						<!-- Bank Name -->
 
 						<div class="text-center pt-4">
@@ -108,7 +116,9 @@
 								String query="select * from BeneficiaryDetails where ACCOUNT_NO='" + accountNumber + "'" ;
 								ResultSet rs1=stmt.executeQuery(query); 
 								if (rs1!=null){
+									System.out.println(rs1.isBeforeFirst());
 								%>
+								
 			<table border=1 align=center style="text-align: center">
 				<tr>
 					<th>Account No</th>
@@ -140,13 +150,13 @@
 				</tr>
 			</table>
 			<%}
-								else{%>
+			else{%>
 			<br>
 			<div class="text-center">
 				<h5>No Beneficary Added</h5>
 			</div>
 			<% }
-								} catch (Exception e) { out.print(e.getMessage()); %><br>
+					} catch (Exception e) { out.print(e.getMessage()); %><br>
 			<% } %>
 			<br>
 			<!-- Display Beneficiary List -->

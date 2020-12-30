@@ -32,3 +32,22 @@ fund transfer test cases
 -transaction amount more than balance should not be successful
 -if all fields are correct ->success
 
+============================================================================================
+Selenium test cases:
+
+login test cases:
+-same as above
+
+register test cases:
+-enter vendor, mobile no , enter otp, set pass
+
+forgot pass test cases:
+-enter mobile no, otp
+
+change pass test cases:
+
+my profile test cases:
+
+bank test cases:
+
+

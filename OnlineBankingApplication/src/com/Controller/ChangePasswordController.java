@@ -20,7 +20,7 @@ import com.Model.LoginModel;
 /**
  * Servlet implementation class ChangePassword
  */
-@WebServlet("/ChangePassword")
+@WebServlet("/ChangePasswordController")
 public class ChangePasswordController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -57,6 +57,7 @@ public class ChangePasswordController extends HttpServlet {
 		LoginModel LoginModelObj = new LoginModel();
 		LoginModelObj.setEmailId(email);
 		LoginModelObj.setPassword(currentPassword);
+		System.out.println("test1");
 
 		List<LoginModel> list = new ArrayList<LoginModel>();
 		list.add(LoginModelObj);
@@ -77,14 +78,15 @@ public class ChangePasswordController extends HttpServlet {
 				boolean b2 = ChangePasswordDaoObject.updatePassword(email, newPassword);
 				if(b2){
 					
-					
+					response.sendRedirect("ChangePasswordSuccess.jsp");
+
 				}
 				
 			}
 			else{
 				request.setAttribute("errorMessage",
 						"New Password & Confirm New Password do not match. Please enter again.");
-				RequestDispatcher ReqDisObj = request.getRequestDispatcher("/ChangePasswordController.jsp");
+				RequestDispatcher ReqDisObj = request.getRequestDispatcher("/ChangePassword.jsp");
 				ReqDisObj.forward(request, response);
 				
 			}
@@ -92,8 +94,8 @@ public class ChangePasswordController extends HttpServlet {
 		}
 		else {
 			request.setAttribute("errorMessage",
-					"Current Password is wrong. Please enter the Correct Current Password. ");
-			RequestDispatcher ReqDisObj = request.getRequestDispatcher("/ChangePasswordController.jsp");
+					"Invalid current password. Please enter the Correct Current Password. ");
+			RequestDispatcher ReqDisObj = request.getRequestDispatcher("/ChangePassword.jsp");
 			ReqDisObj.forward(request, response);
 		}
 					

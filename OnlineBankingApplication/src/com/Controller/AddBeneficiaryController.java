@@ -62,6 +62,17 @@ public class AddBeneficiaryController extends HttpServlet {
 		String branchName = request.getParameter("branchName");
 		String bankName = request.getParameter("bankName");
 
+		if (accountNumber == beneficiaryAccountNumber) {
+			request.setAttribute("invalidBeneficiaryAccountNumberErrorMessage",
+					"Invalid beneficiary account number. Cannot add self acount number as beneficiary. Please add some other account number.");
+			RequestDispatcher ReqDisObj = request.getRequestDispatcher("/BeneficiaryDetails.jsp");
+			ReqDisObj.forward(request, response);
+		} else if (BeneficiaryDAOobj.checkBeneficiaryAccountNumber(accountNumber,beneficiaryAccountNumber)) {
+			request.setAttribute("alreadyExistBeneficiaryAccountNumberErrorMessage",
+					"This beneficiary account already exists. Please add some other account number.");
+			RequestDispatcher ReqDisObj = request.getRequestDispatcher("/BeneficiaryDetails.jsp");
+			ReqDisObj.forward(request, response);
+		} else {
 		BeneficiaryModel BeneficiaryModelObj = new BeneficiaryModel();
 		BeneficiaryModelObj.setAccountNumber(accountNumber);
 		BeneficiaryModelObj.setBeneficiaryAccountNumber(beneficiaryAccountNumber);
@@ -82,5 +93,5 @@ public class AddBeneficiaryController extends HttpServlet {
 			reqDisObj.forward(request, response);
 		}
 	}
-
+	}
 }

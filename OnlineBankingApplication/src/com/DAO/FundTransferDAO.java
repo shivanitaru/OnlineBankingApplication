@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.Model.BeneficiaryModel;
 import com.Model.FundTransferModel;
+import com.Model.LoginModel;
 import com.Model.RegisterModel;
 
 public class FundTransferDAO {
@@ -87,5 +88,26 @@ public class FundTransferDAO {
 			System.out.println(e);
 		}
 		return k;
+	}
+
+	
+
+	public boolean validateAmount(long remitterAccountNumber, long amount) {
+		con = getConnectionMethod.getConnection();
+		boolean b=false;
+		try {
+			prepareStatement = con.prepareStatement("select * from AccountDetails where ACCOUNT_NO=? ");
+			prepareStatement.setLong(1, remitterAccountNumber);
+			resultSet = prepareStatement.executeQuery();
+			if (resultSet.next()) {
+				long balance = resultSet.getLong("BALANCE");
+				if(amount<=(balance-1000))
+					b=true;
+			}
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return b;		
 	}
 }

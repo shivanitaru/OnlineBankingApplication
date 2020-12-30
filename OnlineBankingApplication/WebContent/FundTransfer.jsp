@@ -59,6 +59,16 @@
 			<div class="mx-4 my-4 row justify-content-center align-items-center">
 				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-8 shadow">
 					<form action="FundTransferController" method="post" class="px-4 py-4">
+					<h6 style="color:red">
+					<%
+					    if(null!=request.getAttribute("invalidRemitterAccountNumberErrorMessage"))
+					        out.println(request.getAttribute("invalidRemitterAccountNumberErrorMessage"));
+					    else if(null!=request.getAttribute("invalidBeneficiaryAccountNumberErrorMessage"))
+					        out.println(request.getAttribute("invalidBeneficiaryAccountNumberErrorMessage"));
+					    else if(null!=request.getAttribute("invalidAmountErrorMessage"))
+					        out.println(request.getAttribute("invalidAmountErrorMessage"));
+					%>
+				</h6>
 						<!-- Remitter Account No. -->
 						<label for="remitterAccountNo" class="field-label">Remitter
 							Account No.</label> <input type="number" class="form-control" name="remitterAccountNo"
@@ -76,17 +86,17 @@
 						<!-- Beneficiary Name -->
 						<label for="beneficiaryName" class="field-label">Beneficiary
 							Name</label> <input type="text" class="form-control" name="beneficiaryName"
-							id="beneficiaryName" required pattern="^[a-zA-Z]*$">
+							id="beneficiaryName" required pattern="[a-zA-Z0-9\s]+">
 						<!-- Beneficiary Name -->
 
 						<!-- IFSC Code -->
 						<label for="IFSCCode" class="field-label">IFSC Code</label> <input type="text" name="IFSCCode"
-							class="form-control" id="IFSCCode" required pattern="[A-Z]{4}0[A-Z]{6}">
+							class="form-control" id="IFSCCode" required pattern="[A-Z]{4}0[A-Z]{6}" title="ABCD0ABCDEF">
 						<!-- IFSC Code -->
 
 						<!-- Amount -->
 						<label for="amount" class="field-label">Amount</label> <input type="number" name="amount"
-							class="form-control" id="amount" required pattern="^[0-9]*$">
+							class="form-control" id="amount" required pattern="^[0-9]*$" onkeypress="return event.charCode >= 48" min="1">
 						<!-- Amount -->
 
 						<div class="text-center pt-4">
