@@ -1,3 +1,27 @@
+/* Hide Arrows from Input type=number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+	/* Hide Arrows from Input type=number */
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgb(155, 154, 154);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgb(155, 154, 154);
+}
+
 /* Header */
 .header-img {
 	margin-left: 2%;
@@ -56,6 +80,9 @@
 	height: 100%
 }
 
+.field-label{
+	font-size: larger;
+}
 /* Page Content  */
 @media ( min-width : 212px) {
 	#sidebar-wrapper {
@@ -69,3 +96,5 @@
 		margin-left: -15rem;
 	}
 }
+
+

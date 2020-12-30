@@ -17,31 +17,29 @@ import com.Model.LoginModel;
 @WebServlet("/ResetPasswordController")
 public class ResetPasswordController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-   
-    public ResetPasswordController() {
-        super();
-        
-    }
 
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	public ResetPasswordController() {
+		super();
+
 	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		LoginModel updatePassword = new LoginModel();
 		updatePassword.setEmailId((String) session.getAttribute("toMail"));
 		updatePassword.setPassword(request.getParameter("password"));
-		System.out.println(updatePassword.getEmailId()+ " " + updatePassword.getPassword());
+		System.out.println(updatePassword.getEmailId() + " " + updatePassword.getPassword());
 		LoginDAO loginobj = new LoginDAO();
-		int i=loginobj.updatePassword(updatePassword);
-		if(i==1){
+		int i = loginobj.updatePassword(updatePassword);
+		if (i == 1) {
 			System.out.println("password changed");
-		}
-		else
+		} else
 			System.out.println("password not changed");
 		response.sendRedirect("LoginPage.jsp");
 	}

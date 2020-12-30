@@ -45,7 +45,7 @@ public class AdminDAO {
 				r.setPinCode(resultSet.getInt(8));
 				r.setNationality(resultSet.getString(9));
 				r.setMobileNumber(resultSet.getLong(10));
-				r.setAadharNumber(resultSet.getLong(11));
+				r.setAadhaarNumber(resultSet.getLong(11));
 				r.setPanCardNumber(resultSet.getString(12));
 				r.setEmailId(resultSet.getString(13));
 				r.setAccountType(resultSet.getString(14));
@@ -80,22 +80,31 @@ public class AdminDAO {
 				approvedUserData.setPinCode(resultSet.getInt(8));
 				approvedUserData.setNationality(resultSet.getString(9));
 				approvedUserData.setMobileNumber(resultSet.getLong(10));
-				approvedUserData.setAadharNumber(resultSet.getLong(11));
+				approvedUserData.setAadhaarNumber(resultSet.getLong(11));
 				approvedUserData.setPanCardNumber(resultSet.getString(12));
 				approvedUserData.setEmailId(resultSet.getString(13));
 				approvedUserData.setAccountType(resultSet.getString(14));
 				approvedUserData.setBranchName(resultSet.getString(15));
 				approvedUserData.setStatus(resultSet.getString(16));
-//				System.out.println("Name:" + approvedUserData.getCustomerName() + "\nCustFname:"
-//						+ approvedUserData.getCustomerFathersName() + "\nGender:" + approvedUserData.getGender()
-//						+ "\ndob:" + approvedUserData.getDateOfBirth() + "\nadd:" + approvedUserData.getAddress()
-//						+ "\nstate:" + approvedUserData.getState() + "\nCity:" + approvedUserData.getCity()
-//						+ "\npincode:" + approvedUserData.getPinCode() + "\nnatoinality:"
-//						+ approvedUserData.getNationality() + "\nmobno:" + approvedUserData.getMobileNumber()
-//						+ "\naadhar:" + approvedUserData.getAadharNumber() + "\npan:"
-//						+ approvedUserData.getPanCardNumber() + "\nemail:" + approvedUserData.getEmailId()
-//						+ "\nacctype:" + approvedUserData.getAccountType() + "\nbranchname:"
-//						+ approvedUserData.getBranchName() + "\nstatus:" + approvedUserData.getStatus());
+				// System.out.println("Name:" +
+				// approvedUserData.getCustomerName() + "\nCustFname:"
+				// + approvedUserData.getCustomerFathersName() + "\nGender:" +
+				// approvedUserData.getGender()
+				// + "\ndob:" + approvedUserData.getDateOfBirth() + "\nadd:" +
+				// approvedUserData.getAddress()
+				// + "\nstate:" + approvedUserData.getState() + "\nCity:" +
+				// approvedUserData.getCity()
+				// + "\npincode:" + approvedUserData.getPinCode() +
+				// "\nnatoinality:"
+				// + approvedUserData.getNationality() + "\nmobno:" +
+				// approvedUserData.getMobileNumber()
+				// + "\naadhar:" + approvedUserData.getAadharNumber() + "\npan:"
+				// + approvedUserData.getPanCardNumber() + "\nemail:" +
+				// approvedUserData.getEmailId()
+				// + "\nacctype:" + approvedUserData.getAccountType() +
+				// "\nbranchname:"
+				// + approvedUserData.getBranchName() + "\nstatus:" +
+				// approvedUserData.getStatus());
 			} else {
 				System.out.println("Error:Cannot find in db");
 			}
@@ -125,7 +134,7 @@ public class AdminDAO {
 		savePersonalData.setEmailId(approvedUserData.getEmailId());
 		savePersonal = insertUserPersonalData(savePersonalData);
 		if (savePersonal > 0)
-			System.out.println("Data successfully stored in Customer Personal Details table\t status="+savePersonal);
+			System.out.println("Data successfully stored in Customer Personal Details table\t status=" + savePersonal);
 		else
 			System.out.println("Failed to store data in Customer Personal Details table");
 
@@ -134,19 +143,19 @@ public class AdminDAO {
 		saveAddressData.setCity(approvedUserData.getCity());
 		saveAddressData.setPinCode(approvedUserData.getPinCode());
 		saveAddressData.setEmailId(approvedUserData.getEmailId());
-		System.out.println("address"+approvedUserData.getEmailId()+"hsdbk"+saveAddressData.getEmailId());
+		System.out.println("address" + approvedUserData.getEmailId() + "hsdbk" + saveAddressData.getEmailId());
 		saveAddress = insertUserAddressData(saveAddressData);
 		if (saveAddress > 0)
-			System.out.println("Data successfully stored in Customer Address Details table\t status="+saveAddress);
+			System.out.println("Data successfully stored in Customer Address Details table\t status=" + saveAddress);
 		else
 			System.out.println("Failed to store data in Customer Address Details table");
 
-		saveIdentityData.setAadharNumber(approvedUserData.getAadharNumber());
+		saveIdentityData.setAadhaarNumber(approvedUserData.getAadhaarNumber());
 		saveIdentityData.setPanCardNumber(approvedUserData.getPanCardNumber());
 		saveIdentityData.setEmailId(approvedUserData.getEmailId());
 		saveIdentity = insertUserIdentityData(saveIdentityData);
 		if (saveIdentity > 0)
-			System.out.println("Data successfully stored in Customer Identity Details table\t status="+saveIdentity);
+			System.out.println("Data successfully stored in Customer Identity Details table\t status=" + saveIdentity);
 		else
 			System.out.println("Failed to store data in Customer Identity Details table");
 
@@ -154,7 +163,7 @@ public class AdminDAO {
 		saveLoginData.setPassword(GeneratePassword.generatePassword());
 		saveLogin = insertLoginData(saveLoginData);
 		if (saveLogin > 0)
-			System.out.println("Data successfully stored in Login details table\t status="+saveLogin);
+			System.out.println("Data successfully stored in Login details table\t status=" + saveLogin);
 		else
 			System.out.println("Failed to store data in Login details table");
 
@@ -166,26 +175,27 @@ public class AdminDAO {
 		saveAccountData.setEmailId(approvedUserData.getEmailId());
 		saveAccount = insertAccountData(saveAccountData);
 		if (saveAccount > 0)
-			System.out.println("Data successfully stored in Account Details table\t status="+saveAccount);
+			System.out.println("Data successfully stored in Account Details table\t status=" + saveAccount);
 		else
 			System.out.println("Failed to store data in Account Details table");
 
 		getBranchData.setBranchName(approvedUserData.getBranchName());
 		int getBranch = retrieveBranchData(getBranchData);
 		if (getBranch > 0)
-			System.out.println("Data successfully retrieved from Branch Details table\t status="+getBranch);
+			System.out.println("Data successfully retrieved from Branch Details table\t status=" + getBranch);
 		else
 			System.out.println("Failed to retrieved data from Branch Details table");
 
 		if (savePersonal == 1 && saveAddress == 1 && saveIdentity == 1 && saveLogin == 1 && saveAccount == 1
 				&& getBranch == 1) {
-			updateTemp = updateTempData(approvedUserData.getEmailId(),"Approved");
+			updateTemp = updateTempData(approvedUserData.getEmailId(), "Approved");
 			if (updateTemp > 0)
 				System.out.println("Data successfully updated from Customer Register Details table");
 			else
 				System.out.println("Failed to update data from Customer Register Details table");
-		}else{
-			System.out.println("Error to update Customer Register Details table because of failure in insertion of data in one of the permanent table ");
+		} else {
+			System.out.println(
+					"Error to update Customer Register Details table because of failure in insertion of data in one of the permanent table ");
 		}
 
 		if (updateTemp == 1) {
@@ -200,7 +210,6 @@ public class AdminDAO {
 		}
 		return emailData;
 	}
-
 
 	private int insertUserPersonalData(UserPersonalModel savePersonalData) {
 		status = 0;
@@ -245,7 +254,7 @@ public class AdminDAO {
 		con = getConnectionMethod.getConnection();
 		try {
 			prepareStatement = con.prepareStatement("INSERT INTO CustomerIdentityDetails VALUES(?, ?, ?)");
-			prepareStatement.setLong(1, saveIdentityData.getAadharNumber());
+			prepareStatement.setLong(1, saveIdentityData.getAadhaarNumber());
 			prepareStatement.setString(2, saveIdentityData.getPanCardNumber());
 			prepareStatement.setString(3, saveIdentityData.getEmailId());
 			status = prepareStatement.executeUpdate();
@@ -332,7 +341,8 @@ public class AdminDAO {
 
 		return status;
 	}
-	public int updateTempData(String emailId,String accountStatus) {
+
+	public int updateTempData(String emailId, String accountStatus) {
 		con = getConnectionMethod.getConnection();
 		status = 0;
 		try {

@@ -24,19 +24,18 @@ public class AdminController extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 1L;
 
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		AdminDAO applicantDetails = new AdminDAO();
-		List<RegisterModel> applicantDetailsList=applicantDetails.getApplicantDetails();
-		
-		
-		HttpSession session=request.getSession(true);
-		session.setAttribute("ApplicantDetails",applicantDetailsList);
+		List<RegisterModel> applicantDetailsList = applicantDetails.getApplicantDetails();
+
+		HttpSession session = request.getSession(true);
+		session.setAttribute("ApplicantDetails", applicantDetailsList);
 		response.sendRedirect("DisplayApplication.jsp");
 	}
 
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 

@@ -23,31 +23,35 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/ForgotPasswordController")
 public class ForgotPasswordController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ForgotPasswordController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	public ForgotPasswordController() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String receiverAddress = request.getParameter("emailId");
-		HttpSession httpSession=request.getSession(true);
-	    httpSession.setAttribute("toMail",receiverAddress);
-	    
-	    String subject="Bank account password reset link"; 
+		HttpSession httpSession = request.getSession(true);
+		httpSession.setAttribute("toMail", receiverAddress);
+
+		String subject = "Bank account password reset link";
 		String bodyMessage = "Dear customer,\n"
 				+ "We heard that you lost your Bank account password. Sorry about that!\n"
 				+ "But don’t worry! You can now reset your password by clicking the below link or copying and pasting it into your browser:\n\n"
@@ -55,8 +59,7 @@ public class ForgotPasswordController extends HttpServlet {
 				+ "If you didn't request this, please ignore this email. If you experience any difficulty, please visit our website.\n"
 				+ "http://localhost:8087/OnlineBankingApplication/HomePage.jsp\n"
 				+ "Your password won't change until you access the link above and create a new one.\n\n"
-				+ "Thank you,\n"
-				+ "Bank";
+				+ "Thank you,\n" + "Bank";
 		final String username = "vini.mehta78@gmail.com";
 		final String password = "qgtvqkizrzaurqwp";
 		Properties prop = new Properties();
@@ -82,7 +85,7 @@ public class ForgotPasswordController extends HttpServlet {
 			Transport.send(message);
 
 			System.out.println("Done");
-		    response.sendRedirect("/OnlineBankingApplication/ResetPasswordMailSent.jsp");
+			response.sendRedirect("/OnlineBankingApplication/ResetPasswordMailSent.jsp");
 
 		} catch (MessagingException e) {
 			e.printStackTrace();
