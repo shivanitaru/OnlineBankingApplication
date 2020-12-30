@@ -17,7 +17,7 @@
 <body>
     <nav>
         <div class="logo">
-            <h1> <img src="assets/images/bank_logo.png" width="45px" height="55px"> Name bank</h1>
+            <h1> <img src="assets/images/bank_logo.png" width="45px" height="55px"> Bank of Pune</h1>
         </div>
 
         <div class="menu">
@@ -36,8 +36,8 @@
                 <img src="assets/images/bank_image.jpg">
             </div>
             <div class="rightside" id="about">
-                <h1>Welcome to the Name Bank</h1>
-                <p> The bank which knows the value of your money </p>
+                <h1>Welcome to the Bank of Pune!!</h1>
+                <p> " The bank which knows the value of your money " </p>
                 <button onclick="location.href='LoginPage.jsp' ">Log In</button>
                 <br>
                 <button onclick="location.href='RegistrationPage.jsp' ">Create New Account</button>
@@ -87,7 +87,7 @@
             </div>
             <div class="des">
                 <p>We provide all kind of loans.</p>
-                <button>Click here..</button>
+                <button onclick="location.href=#">Click here..</button>
             </div>
         </div>
 
@@ -100,7 +100,7 @@
             </div>
             <div class="des">
                 <p>We are here to help you.</p>
-                <button>Click here..</button>
+                <button onclick="location.href=#">Click here..</button>
             </div>
         </div>
         <!--cards -->

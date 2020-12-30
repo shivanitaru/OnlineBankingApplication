@@ -6,6 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<title>Home Page</title>
 	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet"  href="css/home_page.css">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
@@ -21,7 +22,7 @@
 	<!-- Header -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <a class="navbar-brand header-img" href=""> <img
 				src="assets/images/bank_logo.png" width="70px" height="70px" alt="logo" />
-		</a> <a class="navbar-brand bank-name" href="#">Bank Name</a>
+		</a> <a class="navbar-brand bank-name" href="#">Bank of Pune</a>
 
 		<button class="navbar-toggler" id="menu-toggle">
 			<span class="navbar-toggler-icon"></span>
@@ -54,19 +55,19 @@
 				<marquee>
 					<h2 align="center">
 						<font size="6" color="white">WELCOME TO ONLINE SERVICES OF
-							JM ROAD BANK</font>
+							BANK OF PUNE!!!</font>
 					</h2>
 				</marquee>
 
 				<p align="center">
 					<font size="5" color="white">We provide you the online money
 						transferring and account handling services to make you easy to
-						handle banking activities anywhere and anytime </font>
+						handle banking activities anywhere and anytime!! </font>
 				</p>
 
 				<h3 align="center">
-					<font size="6" color="white">HOPE YOU WILL BE SATISFIED BY
-						THE SERVICE</font>
+					<font size="6" color="white" >HOPE YOU WILL BE SATISFIED BY
+						THE SERVICE!!</font>
 				</h3>
 			</div>
 		</div>

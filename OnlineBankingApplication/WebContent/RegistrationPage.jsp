@@ -7,7 +7,7 @@ pageEncoding="ISO-8859-1"%>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<title>Registration Page</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="css/register_form.css">
+    <link rel="stylesheet" type="text/css" href="css/registerform.css">
     <link rel="stylesheet" href="all.min.css">
     	<link rel="stylesheet" href="css/style.css" />
     
@@ -63,10 +63,10 @@ pageEncoding="ISO-8859-1"%>
 
 <body>
 	<div class="inner">
-	    <div class="photo">
+	    <!--<div class="photo">
 	        <img src="..\images\Register.svg">
 	        <button class="bt" onclick="location.href='IndexPage.jsp'">Home</button> 
-	    </div>
+	    </div>  -->
 	    <div class="user-form">
         	<h1>Welcome! Register here</h1>
 			<form action="RegisterController" method="post">
@@ -200,10 +200,13 @@ pageEncoding="ISO-8859-1"%>
 
 		<div class="action-btn">
 			<input class="btn primary" type="submit" value="Register" />
-			<input class="btn primary" type="reset" value="Reset" /><br>
+			<input class="btn danger" type="reset" value="Reset" /><br>
         </div>
 		
-		Already have an account? <a href="LoginPage.jsp">Click here to Login</a><br>
+		<div class="login_link">
+			Already have an account? <a href="LoginPage.jsp">Click here to Login</a><br>
+		</div>
+		
 	</form>
 	</div>
 	</div>

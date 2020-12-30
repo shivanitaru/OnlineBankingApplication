@@ -22,7 +22,7 @@
 	<!-- Header -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <a class="navbar-brand header-img" href=""> <img
 				src="assets/images/bank_logo.png" width="70px" height="70px" alt="logo" />
-		</a> <a class="navbar-brand bank-name" href="#">Bank Name</a>
+		</a> <a class="navbar-brand bank-name" href="#">Bank of Pune</a>
 
 		<button class="navbar-toggler" id="menu-toggle">
 			<span class="navbar-toggler-icon"></span>
