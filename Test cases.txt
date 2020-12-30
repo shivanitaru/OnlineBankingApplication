@@ -1,0 +1,34 @@
+login test cases
+- correct email, password - dashboard
+- incorrect email, correct pass & vice versa & both incorrect - error message
+
+forgot pass test cases
+- click forgot pass button -> correct mail-> reset pass
+- click forgot pass button -> incorrect mail-> error message
+
+register test cases
+-mobile-digits, starting with,
+-mail-format
+-pincode-digits
+-aadhaar card- digits
+-pan-format
+-date-check if dob is before current date
+-fill all details correctly-register successful page
+
+change pass test cases
+-check if old password is correct -> check if new and confirm new pass are same- if same-> update pass
+-check if old password is incorrect -> error->
+-check if old password is correct->check if new and confirm new pass are not same-> error
+-check if old password is incorrect->check if new and confirm new pass are not same-> error
+
+beneficiary test cases
+-check if self account no can be added in beneficiary table or not
+-ifsc code-format
+
+fund transfer test cases
+-check if remitter and benef acc no. are same or not
+-ifsc code -format
+-negative amount cannot be added
+-transaction amount more than balance should not be successful
+-if all fields are correct ->success
+

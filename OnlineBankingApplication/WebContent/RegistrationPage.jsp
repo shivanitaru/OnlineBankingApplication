@@ -153,7 +153,7 @@ pageEncoding="ISO-8859-1"%>
 		<br />
 
 		<label>Pin Code :</label>
-		<input type="text" name="pincode" placeholder="Enter your pincode" pattern="[1-9]{1}[0-9]{5}"
+		<input type="number" name="pincode" placeholder="Enter your pincode" pattern="[1-9]{1}[0-9]{5}"
 			title="e.g. 411001" required class="input1" autocomplete="off" /><br />
 
 		<label>Nationality :</label>
@@ -161,7 +161,7 @@ pageEncoding="ISO-8859-1"%>
 			class="input1" autocomplete="off" onkeydown="return nonumberspacetext(event)" /><br />
 
 		<label>Mobile No :</label>
-		<input type="text" name="mobile" oninput="inputOn()" placeholder="Enter your mobile no."
+		<input type="number" name="mobile" oninput="inputOn()" placeholder="Enter your mobile no."
 			pattern="[789]{1}[0-9]{9}" title="e.g. 9876543210" required class="input1" autocomplete="off" /><br />
 			
 
@@ -171,7 +171,7 @@ pageEncoding="ISO-8859-1"%>
 			class="input1" autocomplete="off"/><br />
 
 		<label>Aadhaar No. :</label>
-		<input type="text" name="aadhaar" placeholder="Enter your aadhaar no." pattern="[0-9]{12}"
+		<input type="number" name="aadhaar" placeholder="Enter your aadhaar no." pattern="[0-9]{12}"
 			title="e.g. 123456789012" required class="input1" autocomplete="off" /><br />
 
 		<label>Pancard No. :</label>
