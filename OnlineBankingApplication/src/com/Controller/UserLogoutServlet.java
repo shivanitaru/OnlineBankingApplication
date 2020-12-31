@@ -41,7 +41,8 @@ public class UserLogoutServlet extends HttpServlet {
 		//doGet(request, response);
 		HttpSession session = request.getSession(false);
         if (session != null) {
-            session.removeAttribute("user");
+            session.removeAttribute("uname");
+            session.removeAttribute("CustName");
              
             RequestDispatcher dispatcher = request.getRequestDispatcher("LoginPage.jsp");
             dispatcher.forward(request, response);
