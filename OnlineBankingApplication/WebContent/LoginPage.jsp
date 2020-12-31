@@ -31,7 +31,7 @@
 				<i class="fa fa-user fa-lg fa-fw"></i>
 				<input type="text" name="uname" placeholder="Enter your username" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" title="e.g. abc@gmail.com"required><br>
 				<i class="fa fa-key fa-lg fa-fw"></i>
-				<input type="password" name="pass" placeholder="Enter your password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+				<input type="password" name="pass" placeholder="Enter your password"  
 							title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required><br>
 				<a href="ForgotPassword.jsp">Forgot your password?</a><br></br>
 				<div class="action-btn">
