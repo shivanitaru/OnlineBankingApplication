@@ -73,13 +73,18 @@ public class FundTransferController extends HttpServlet {
 					"Invalid remitter account number. Please enter your bank account number.");
 			RequestDispatcher ReqDisObj = request.getRequestDispatcher("/FundTransfer.jsp");
 			ReqDisObj.forward(request, response);
-		} else if ((remitterAccountNumber == beneficiaryAccountNumber) || (!BeneficiaryDAOobj
-				.validateBeneficiaryAccountNumber(remitterAccountNumber, beneficiaryAccountNumber))) {
+		} else if (remitterAccountNumber == beneficiaryAccountNumber) {
 			request.setAttribute("invalidBeneficiaryAccountNumberErrorMessage",
 					"Invalid beneficiary account number. Please enter correct beneficiary account number.");
 			RequestDispatcher ReqDisObj = request.getRequestDispatcher("/FundTransfer.jsp");
 			ReqDisObj.forward(request, response);
-		} else if (!FundTransferDAOobj.validateAmount(remitterAccountNumber, amount)) {
+		}else if(!BeneficiaryDAOobj.validateBeneficiaryAccountNumber(remitterAccountNumber, beneficiaryAccountNumber)){
+			request.setAttribute("beneficiaryDoesNotExistErrorMessage",
+					"This beneficiary account does not exist in your beneficiary list. Please add this beneficiary in your beneficiary list.");
+			RequestDispatcher ReqDisObj = request.getRequestDispatcher("/FundTransfer.jsp");
+			ReqDisObj.forward(request, response);
+		}
+		else if (!FundTransferDAOobj.validateAmount(remitterAccountNumber, amount)) {
 			request.setAttribute("invalidAmountErrorMessage",
 					"Insufficient balance. Minimum balance of Rs 1000 should be in your account. Please enter amount accordingly.");
 			RequestDispatcher ReqDisObj = request.getRequestDispatcher("/FundTransfer.jsp");

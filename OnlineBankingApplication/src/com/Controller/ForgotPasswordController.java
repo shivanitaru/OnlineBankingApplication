@@ -10,12 +10,15 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.DAO.ForgotPasswordDAO;
 
 /**
  * Servlet implementation class ForgotPasswordController
@@ -48,10 +51,19 @@ public class ForgotPasswordController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String receiverAddress = request.getParameter("emailId");
+		
+		ForgotPasswordDAO ForgotPasswordDAOobj = new ForgotPasswordDAO();
+		if(!ForgotPasswordDAOobj.validateEmailId(receiverAddress)){
+			request.setAttribute("invalidEmailIdErrorMessage",
+					"This Email-Id is not registered with Bank of Pune. Please enter a valid Email-Id.");
+			RequestDispatcher ReqDisObj = request.getRequestDispatcher("/ForgotPassword.jsp");
+			ReqDisObj.forward(request, response);
+		}
+		
 		HttpSession httpSession = request.getSession(true);
 		httpSession.setAttribute("toMail", receiverAddress);
 
-		String subject = "Bank account password reset link";
+		String subject = "Bank of Pune: bank account reset password link";
 		String bodyMessage = "Dear customer,\n"
 				+ "We heard that you lost your Bank account password. Sorry about that!\n"
 				+ "But don’t worry! You can now reset your password by clicking the below link or copying and pasting it into your browser:\n\n"

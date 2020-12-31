@@ -65,6 +65,8 @@
 					        out.println(request.getAttribute("invalidRemitterAccountNumberErrorMessage"));
 					    else if(null!=request.getAttribute("invalidBeneficiaryAccountNumberErrorMessage"))
 					        out.println(request.getAttribute("invalidBeneficiaryAccountNumberErrorMessage"));
+					    else if(null!=request.getAttribute("beneficiaryDoesNotExistErrorMessage"))
+					        out.println(request.getAttribute("beneficiaryDoesNotExistErrorMessage"));
 					    else if(null!=request.getAttribute("invalidAmountErrorMessage"))
 					        out.println(request.getAttribute("invalidAmountErrorMessage"));
 					%>
