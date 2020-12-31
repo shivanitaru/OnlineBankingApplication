@@ -29,7 +29,7 @@ pageEncoding="ISO-8859-1"%>
 
       <center>
         <form action="IndexPage.jsp">
-          <button class="btn btn-primary" type="submit">OK</button>
+          <button class="btn btn-primary btn-lg" type="submit">OK</button>
         </form>
       </center>
     </div>

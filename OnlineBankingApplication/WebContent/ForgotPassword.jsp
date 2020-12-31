@@ -17,6 +17,13 @@ pageEncoding="ISO-8859-1"%>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12 text-center">
+                 <h5 style="color:red">
+					<%
+					    if(null!=request.getAttribute("invalidEmailIdErrorMessage"))
+					        out.println(request.getAttribute("invalidEmailIdErrorMessage"));
+					%>
+				</h5>
+                      
                     <h1>
                         <button type="button" class="btn btn-info">
                             <span data-target="#pwdModal" data-toggle="modal">Click here to reset your password!</span>
@@ -51,7 +58,7 @@ pageEncoding="ISO-8859-1"%>
                                             <div class="form-group">
                                                 <input class="form-control input-lg" placeholder="abc@gmail.com"
                                                     name="emailId" />
-                                            </div>
+                                                                         </div>
                                             <input class="btn btn-lg btn-primary btn-block"
                                                 value="Send reset password link" type="submit" />
                                         </form>

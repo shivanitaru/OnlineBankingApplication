@@ -116,7 +116,6 @@
 								String query="select * from BeneficiaryDetails where ACCOUNT_NO='" + accountNumber + "'" ;
 								ResultSet rs1=stmt.executeQuery(query); 
 								if (rs1!=null){
-									System.out.println(rs1.isBeforeFirst());
 								%>
 								
 			<table border=1 align=center style="text-align: center">

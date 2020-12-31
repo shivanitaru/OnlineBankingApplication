@@ -1,0 +1,1847 @@
+{
+  "id": "c449c182-3e44-4e1d-acda-65d70a4e62f9",
+  "version": "2.0",
+  "name": "Banking system",
+  "url": "http://localhost:8097/OnlineBankingApplication/",
+  "tests": [{
+    "id": "54fc2435-4fc3-46d5-a2e2-fb0b81428540",
+    "name": "Correct Forgot password process",
+    "commands": [{
+      "id": "b6ff6aaf-60e5-4900-8a5d-51ee7d16bfce",
+      "comment": "",
+      "command": "open",
+      "target": "LoginPage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "16112de6-d416-4a59-833e-4e0e0b78852a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Forgot your password?",
+      "targets": [
+        ["linkText=Forgot your password?", "linkText"],
+        ["css=a:nth-child(8)", "css:finder"],
+        ["xpath=//a[contains(text(),'Forgot your password?')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'ForgotPassword.jsp')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Forgot your password?')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c4b3d48e-e38a-43f8-9996-1bb9151fb6da",
+      "comment": "",
+      "command": "click",
+      "target": "css=span",
+      "targets": [
+        ["css=span", "css:finder"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Click here to reset your password!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f342e5b-be78-4c8e-95a9-cea226d3ba28",
+      "comment": "",
+      "command": "type",
+      "target": "name=emailId",
+      "targets": [
+        ["name=emailId", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='emailId']", "xpath:attributes"],
+        ["xpath=//div[@id='pwdModal']/div/div/div[2]/div/div/div/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "vini.mehta78@gmail.com"
+    }, {
+      "id": "a8fc5293-7c5b-4ef8-a255-2b5b5c4e2038",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-lg",
+      "targets": [
+        ["css=.btn-lg", "css:finder"],
+        ["xpath=//input[@value='Send reset password link']", "xpath:attributes"],
+        ["xpath=//div[@id='pwdModal']/div/div/div[2]/div/div/div/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "328e9e59-fb5a-447b-a50e-71ee97c126fa",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b03b3b0-1ca7-45f4-a1b7-975a03a5228b",
+      "comment": "",
+      "command": "open",
+      "target": "ResetPassword.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "14abc4cd-68dd-42e0-b76f-6ab68933d5f1",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Vini1234"
+    }, {
+      "id": "99882d55-1e88-46e8-873f-41f6aeef5dbb",
+      "comment": "",
+      "command": "type",
+      "target": "id=confirmPassword",
+      "targets": [
+        ["id=confirmPassword", "id"],
+        ["name=confirmPassword", "name"],
+        ["css=#confirmPassword", "css:finder"],
+        ["xpath=//input[@id='confirmPassword']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Vini1234"
+    }, {
+      "id": "555edfdd-62cb-424c-b5ae-5ef77c9c9773",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='Reset Password']", "xpath:attributes"],
+        ["xpath=//div[@id='CheckPasswordMatch']/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "69261e22-d37a-4b12-a1bc-5fe1baad8ba2",
+      "comment": "",
+      "command": "type",
+      "target": "name=uname",
+      "targets": [
+        ["name=uname", "name"],
+        ["css=input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='uname']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "vini.mehta78@gmail.com"
+    }, {
+      "id": "42d2fb8c-7ec5-4444-be9f-8c9dedcee272",
+      "comment": "",
+      "command": "type",
+      "target": "name=pass",
+      "targets": [
+        ["name=pass", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='pass']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Vini1234"
+    }, {
+      "id": "e948076f-7f05-4cc7-9cfd-2c378fdfb5d5",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=pass",
+      "targets": [
+        ["name=pass", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='pass']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }]
+  }, {
+    "id": "c5682d2c-840e-49c5-835e-d03454baaef1",
+    "name": "Invalid Email Id",
+    "commands": [{
+      "id": "f97ca05a-f8ea-48a2-a816-254c6ca3f47b",
+      "comment": "",
+      "command": "open",
+      "target": "LoginPage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "92876cbf-051c-4c3b-a7da-1c0dd01e58c1",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Forgot your password?",
+      "targets": [
+        ["linkText=Forgot your password?", "linkText"],
+        ["css=a:nth-child(8)", "css:finder"],
+        ["xpath=//a[contains(text(),'Forgot your password?')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'ForgotPassword.jsp')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Forgot your password?')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ecb446c1-b16f-474e-a002-e53ff1e064a0",
+      "comment": "",
+      "command": "click",
+      "target": "css=span",
+      "targets": [
+        ["css=span", "css:finder"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Click here to reset your password!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a5f71d07-d1ae-485c-afe3-bc963ad181f0",
+      "comment": "",
+      "command": "click",
+      "target": "name=emailId",
+      "targets": [
+        ["name=emailId", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='emailId']", "xpath:attributes"],
+        ["xpath=//div[@id='pwdModal']/div/div/div[2]/div/div/div/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b6e2347a-0c3b-458f-95e8-a80736f8ff1f",
+      "comment": "",
+      "command": "type",
+      "target": "name=emailId",
+      "targets": [
+        ["name=emailId", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='emailId']", "xpath:attributes"],
+        ["xpath=//div[@id='pwdModal']/div/div/div[2]/div/div/div/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "abc@gmail.com"
+    }, {
+      "id": "e92df5b1-31ba-410e-ac14-126375c0892d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-lg",
+      "targets": [
+        ["css=.btn-lg", "css:finder"],
+        ["xpath=//input[@value='Send reset password link']", "xpath:attributes"],
+        ["xpath=//div[@id='pwdModal']/div/div/div[2]/div/div/div/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "23ed39d4-347a-4b53-9231-db928940bf4d",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "6a2e785c-6b92-4e21-b752-e86e280ebdcb",
+    "name": "Check if Remitter and Beneficiary are same",
+    "commands": [{
+      "id": "e9cfb97f-22c5-4e8b-8e18-97982c3a572e",
+      "comment": "",
+      "command": "open",
+      "target": "FundTransfer.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ae238301-20b8-42a6-a034-fccdf62c405f",
+      "comment": "",
+      "command": "type",
+      "target": "id=remitterAccountNo",
+      "targets": [
+        ["id=remitterAccountNo", "id"],
+        ["name=remitterAccountNo", "name"],
+        ["css=#remitterAccountNo", "css:finder"],
+        ["xpath=//input[@id='remitterAccountNo']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2700001"
+    }, {
+      "id": "a45c47eb-e949-4361-9df6-514d406cdbeb",
+      "comment": "",
+      "command": "type",
+      "target": "id=beneficiaryAccountNo",
+      "targets": [
+        ["id=beneficiaryAccountNo", "id"],
+        ["name=beneficiaryAccountNo", "name"],
+        ["css=#beneficiaryAccountNo", "css:finder"],
+        ["xpath=//input[@id='beneficiaryAccountNo']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "2700001"
+    }, {
+      "id": "b68121fc-1f88-4638-a03f-4dba6fece18f",
+      "comment": "",
+      "command": "type",
+      "target": "id=beneficiaryName",
+      "targets": [
+        ["id=beneficiaryName", "id"],
+        ["name=beneficiaryName", "name"],
+        ["css=#beneficiaryName", "css:finder"],
+        ["xpath=//input[@id='beneficiaryName']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Vini"
+    }, {
+      "id": "2c7fceac-c41c-467f-935a-769a346f4387",
+      "comment": "",
+      "command": "type",
+      "target": "id=IFSCCode",
+      "targets": [
+        ["id=IFSCCode", "id"],
+        ["name=IFSCCode", "name"],
+        ["css=#IFSCCode", "css:finder"],
+        ["xpath=//input[@id='IFSCCode']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "SDDS0SDDSSD"
+    }, {
+      "id": "9d6fad0f-af70-4ed2-a8bb-4e0877a66f59",
+      "comment": "",
+      "command": "type",
+      "target": "id=amount",
+      "targets": [
+        ["id=amount", "id"],
+        ["name=amount", "name"],
+        ["css=#amount", "css:finder"],
+        ["xpath=//input[@id='amount']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[5]", "xpath:idRelative"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "4813194e-c0df-41af-a99f-04db2bc3cfa2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Transfer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "c2426b6f-be00-4132-b6e1-d72babc48b32",
+    "name": "Check IFSC Code",
+    "commands": [{
+      "id": "973c94ad-ef24-42be-9926-1dd9fe9d9fae",
+      "comment": "",
+      "command": "open",
+      "target": "FundTransfer.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6cfe15b9-1183-4ee7-a68f-47eb1147ea7b",
+      "comment": "",
+      "command": "type",
+      "target": "id=remitterAccountNo",
+      "targets": [
+        ["id=remitterAccountNo", "id"],
+        ["name=remitterAccountNo", "name"],
+        ["css=#remitterAccountNo", "css:finder"],
+        ["xpath=//input[@id='remitterAccountNo']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2700001"
+    }, {
+      "id": "affbea08-71aa-4e01-94b4-0b1037ec4fbf",
+      "comment": "",
+      "command": "type",
+      "target": "id=beneficiaryAccountNo",
+      "targets": [
+        ["id=beneficiaryAccountNo", "id"],
+        ["name=beneficiaryAccountNo", "name"],
+        ["css=#beneficiaryAccountNo", "css:finder"],
+        ["xpath=//input[@id='beneficiaryAccountNo']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "2700002"
+    }, {
+      "id": "7366a317-f4ce-42f4-a800-976d955431da",
+      "comment": "",
+      "command": "type",
+      "target": "id=beneficiaryName",
+      "targets": [
+        ["id=beneficiaryName", "id"],
+        ["name=beneficiaryName", "name"],
+        ["css=#beneficiaryName", "css:finder"],
+        ["xpath=//input[@id='beneficiaryName']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Vini"
+    }, {
+      "id": "234d2f2f-dcb5-4f8d-a32d-b90e0108f40a",
+      "comment": "",
+      "command": "type",
+      "target": "id=IFSCCode",
+      "targets": [
+        ["id=IFSCCode", "id"],
+        ["name=IFSCCode", "name"],
+        ["css=#IFSCCode", "css:finder"],
+        ["xpath=//input[@id='IFSCCode']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "dvdf"
+    }, {
+      "id": "071a4375-30d4-49a7-ae4d-a3b917938448",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Transfer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0129eb36-728c-47e4-b3fa-e6762bfa804d",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "53967ba9-8058-43b1-9445-f9f7da17b882",
+    "name": "Check negative amount",
+    "commands": [{
+      "id": "17516d90-b164-4f45-9cd1-1860e42ccae6",
+      "comment": "",
+      "command": "open",
+      "target": "FundTransfer.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "53029a10-2908-45cc-99a4-6b8380334bed",
+      "comment": "",
+      "command": "type",
+      "target": "id=remitterAccountNo",
+      "targets": [
+        ["id=remitterAccountNo", "id"],
+        ["name=remitterAccountNo", "name"],
+        ["css=#remitterAccountNo", "css:finder"],
+        ["xpath=//input[@id='remitterAccountNo']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2700001"
+    }, {
+      "id": "85cf20f2-b748-4867-b311-0bdca8ff69f1",
+      "comment": "",
+      "command": "type",
+      "target": "id=beneficiaryAccountNo",
+      "targets": [
+        ["id=beneficiaryAccountNo", "id"],
+        ["name=beneficiaryAccountNo", "name"],
+        ["css=#beneficiaryAccountNo", "css:finder"],
+        ["xpath=//input[@id='beneficiaryAccountNo']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "2700002"
+    }, {
+      "id": "f67ef5fc-f38d-49f0-b87e-7614076bc473",
+      "comment": "",
+      "command": "type",
+      "target": "id=beneficiaryName",
+      "targets": [
+        ["id=beneficiaryName", "id"],
+        ["name=beneficiaryName", "name"],
+        ["css=#beneficiaryName", "css:finder"],
+        ["xpath=//input[@id='beneficiaryName']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Vini"
+    }, {
+      "id": "adc148d1-2af5-4846-82b7-87492dea4852",
+      "comment": "",
+      "command": "type",
+      "target": "id=IFSCCode",
+      "targets": [
+        ["id=IFSCCode", "id"],
+        ["name=IFSCCode", "name"],
+        ["css=#IFSCCode", "css:finder"],
+        ["xpath=//input[@id='IFSCCode']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "SDDS0SDDSSD"
+    }, {
+      "id": "602bc27e-7813-4313-892a-11604a8e5002",
+      "comment": "",
+      "command": "type",
+      "target": "id=amount",
+      "targets": [
+        ["id=amount", "id"],
+        ["name=amount", "name"],
+        ["css=#amount", "css:finder"],
+        ["xpath=//input[@id='amount']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[5]", "xpath:idRelative"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "-10"
+    }, {
+      "id": "4c4ca2c4-f794-49c7-8534-3ce9808fa1a1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Transfer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "6edb766f-3b5c-47f0-b077-56c1583ce8f5",
+    "name": "Check amount more than balance",
+    "commands": [{
+      "id": "548dd8b7-d37b-4c85-998e-99eb3f595cd2",
+      "comment": "",
+      "command": "open",
+      "target": "FundTransfer.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e65d4509-3b80-4618-ae86-d871401f5b54",
+      "comment": "",
+      "command": "type",
+      "target": "id=remitterAccountNo",
+      "targets": [
+        ["id=remitterAccountNo", "id"],
+        ["name=remitterAccountNo", "name"],
+        ["css=#remitterAccountNo", "css:finder"],
+        ["xpath=//input[@id='remitterAccountNo']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2700001"
+    }, {
+      "id": "d403ec2e-dca2-4c2f-920a-49b7a18e7e61",
+      "comment": "",
+      "command": "type",
+      "target": "id=beneficiaryAccountNo",
+      "targets": [
+        ["id=beneficiaryAccountNo", "id"],
+        ["name=beneficiaryAccountNo", "name"],
+        ["css=#beneficiaryAccountNo", "css:finder"],
+        ["xpath=//input[@id='beneficiaryAccountNo']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "2700002"
+    }, {
+      "id": "8c022404-0b9f-4134-adda-bfe8662c1001",
+      "comment": "",
+      "command": "type",
+      "target": "id=beneficiaryName",
+      "targets": [
+        ["id=beneficiaryName", "id"],
+        ["name=beneficiaryName", "name"],
+        ["css=#beneficiaryName", "css:finder"],
+        ["xpath=//input[@id='beneficiaryName']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Vini"
+    }, {
+      "id": "0a701644-a1de-4dfe-adef-eef112f09dbc",
+      "comment": "",
+      "command": "type",
+      "target": "id=IFSCCode",
+      "targets": [
+        ["id=IFSCCode", "id"],
+        ["name=IFSCCode", "name"],
+        ["css=#IFSCCode", "css:finder"],
+        ["xpath=//input[@id='IFSCCode']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "SDDS0SDDSSD"
+    }, {
+      "id": "5ab6f27f-fd6b-45fa-ae8e-7400f5c9c2e6",
+      "comment": "",
+      "command": "type",
+      "target": "id=amount",
+      "targets": [
+        ["id=amount", "id"],
+        ["name=amount", "name"],
+        ["css=#amount", "css:finder"],
+        ["xpath=//input[@id='amount']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[5]", "xpath:idRelative"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "4000"
+    }, {
+      "id": "7e0ee09c-b660-450d-8753-55f6b367b1ee",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Transfer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "4c2b09b9-4771-44b1-8572-bc8f007e969f",
+    "name": "Correct fields-success",
+    "commands": [{
+      "id": "a87a4d2a-9eb0-414f-82dd-be5d50ddc804",
+      "comment": "",
+      "command": "open",
+      "target": "FundTransfer.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a0bf768f-a921-42eb-8df2-7edba0e65fdd",
+      "comment": "",
+      "command": "type",
+      "target": "id=remitterAccountNo",
+      "targets": [
+        ["id=remitterAccountNo", "id"],
+        ["name=remitterAccountNo", "name"],
+        ["css=#remitterAccountNo", "css:finder"],
+        ["xpath=//input[@id='remitterAccountNo']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2700001"
+    }, {
+      "id": "2377186d-ba2b-48a5-bebf-d16dbef7cd44",
+      "comment": "",
+      "command": "type",
+      "target": "id=beneficiaryAccountNo",
+      "targets": [
+        ["id=beneficiaryAccountNo", "id"],
+        ["name=beneficiaryAccountNo", "name"],
+        ["css=#beneficiaryAccountNo", "css:finder"],
+        ["xpath=//input[@id='beneficiaryAccountNo']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "2700002"
+    }, {
+      "id": "f412a312-3b35-4053-89de-41ef63ccf13f",
+      "comment": "",
+      "command": "type",
+      "target": "id=beneficiaryName",
+      "targets": [
+        ["id=beneficiaryName", "id"],
+        ["name=beneficiaryName", "name"],
+        ["css=#beneficiaryName", "css:finder"],
+        ["xpath=//input[@id='beneficiaryName']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Vini"
+    }, {
+      "id": "db6c1fbb-b1bd-4836-915d-5ccbb5ed140b",
+      "comment": "",
+      "command": "type",
+      "target": "id=IFSCCode",
+      "targets": [
+        ["id=IFSCCode", "id"],
+        ["name=IFSCCode", "name"],
+        ["css=#IFSCCode", "css:finder"],
+        ["xpath=//input[@id='IFSCCode']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "SDDS0SDDSSD"
+    }, {
+      "id": "a4283694-31b4-4174-8373-00a8916af43d",
+      "comment": "",
+      "command": "type",
+      "target": "id=amount",
+      "targets": [
+        ["id=amount", "id"],
+        ["name=amount", "name"],
+        ["css=#amount", "css:finder"],
+        ["xpath=//input[@id='amount']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[5]", "xpath:idRelative"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "500"
+    }, {
+      "id": "5577559b-b2ae-45d8-85f4-ceb9d1d7866d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Transfer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "62736523-4a0f-4fcd-b1dd-0f0bcbe37523",
+    "name": "check if self account no can be added in beneficiary table",
+    "commands": [{
+      "id": "3ecd302d-dce8-483b-90a9-f18f130a1d2b",
+      "comment": "",
+      "command": "open",
+      "target": "BeneficiaryDetails.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e9a3ea3b-4ff2-4aa0-bfdf-7aa34846ccad",
+      "comment": "",
+      "command": "type",
+      "target": "id=beneficiaryAccountNo",
+      "targets": [
+        ["id=beneficiaryAccountNo", "id"],
+        ["name=beneficiaryAccountNo", "name"],
+        ["css=#beneficiaryAccountNo", "css:finder"],
+        ["xpath=//input[@id='beneficiaryAccountNo']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2700001"
+    }, {
+      "id": "0fe0214c-f64c-4887-93ad-e820c4b3e4db",
+      "comment": "",
+      "command": "type",
+      "target": "id=beneficiaryName",
+      "targets": [
+        ["id=beneficiaryName", "id"],
+        ["name=beneficiaryName", "name"],
+        ["css=#beneficiaryName", "css:finder"],
+        ["xpath=//input[@id='beneficiaryName']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Vini"
+    }, {
+      "id": "9aaeeef0-d13e-4d8f-b526-15cd0e7fd0a7",
+      "comment": "",
+      "command": "type",
+      "target": "id=IFSCCode",
+      "targets": [
+        ["id=IFSCCode", "id"],
+        ["name=IFSCCode", "name"],
+        ["css=#IFSCCode", "css:finder"],
+        ["xpath=//input[@id='IFSCCode']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "SDDS0SDDSSD"
+    }, {
+      "id": "73922212-22e1-46b2-ba76-a0becb2fe5d8",
+      "comment": "",
+      "command": "type",
+      "target": "id=branchName",
+      "targets": [
+        ["id=branchName", "id"],
+        ["name=branchName", "name"],
+        ["css=#branchName", "css:finder"],
+        ["xpath=//input[@id='branchName']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "Bund Garden"
+    }, {
+      "id": "fdbb823a-2967-4f72-8242-7e1cdb125a23",
+      "comment": "",
+      "command": "type",
+      "target": "id=bankName",
+      "targets": [
+        ["id=bankName", "id"],
+        ["name=bankName", "name"],
+        ["css=#bankName", "css:finder"],
+        ["xpath=//input[@id='bankName']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[5]", "xpath:idRelative"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "Bank of India"
+    }, {
+      "id": "1c3c527c-8262-4661-82fb-57f5f225830a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "1a4074ea-cbbb-4074-978e-1efbd1b25d28",
+    "name": "check ifsc code format- add beneficiary",
+    "commands": [{
+      "id": "84a55de3-910f-48d3-9213-9ba306ca4431",
+      "comment": "",
+      "command": "open",
+      "target": "BeneficiaryDetails.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dd647d0b-e4c1-4c8e-ad86-98f1ff914e87",
+      "comment": "",
+      "command": "type",
+      "target": "id=beneficiaryAccountNo",
+      "targets": [
+        ["id=beneficiaryAccountNo", "id"],
+        ["name=beneficiaryAccountNo", "name"],
+        ["css=#beneficiaryAccountNo", "css:finder"],
+        ["xpath=//input[@id='beneficiaryAccountNo']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2700001"
+    }, {
+      "id": "cea2c2e1-b519-4d4a-b9a6-c45ecbc86726",
+      "comment": "",
+      "command": "type",
+      "target": "id=beneficiaryName",
+      "targets": [
+        ["id=beneficiaryName", "id"],
+        ["name=beneficiaryName", "name"],
+        ["css=#beneficiaryName", "css:finder"],
+        ["xpath=//input[@id='beneficiaryName']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Vini"
+    }, {
+      "id": "0b3d0d80-391f-4294-bc40-72cab7a3f9ff",
+      "comment": "",
+      "command": "type",
+      "target": "id=IFSCCode",
+      "targets": [
+        ["id=IFSCCode", "id"],
+        ["name=IFSCCode", "name"],
+        ["css=#IFSCCode", "css:finder"],
+        ["xpath=//input[@id='IFSCCode']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "sffsfs"
+    }, {
+      "id": "ed932c28-dc4b-45c2-96bd-9c6bdce751c4",
+      "comment": "",
+      "command": "type",
+      "target": "id=branchName",
+      "targets": [
+        ["id=branchName", "id"],
+        ["name=branchName", "name"],
+        ["css=#branchName", "css:finder"],
+        ["xpath=//input[@id='branchName']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "Bund Garden"
+    }, {
+      "id": "3815bb68-8ff6-40b5-b836-7b52f20eceb9",
+      "comment": "",
+      "command": "type",
+      "target": "id=bankName",
+      "targets": [
+        ["id=bankName", "id"],
+        ["name=bankName", "name"],
+        ["css=#bankName", "css:finder"],
+        ["xpath=//input[@id='bankName']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[5]", "xpath:idRelative"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "Bank of India"
+    }, {
+      "id": "aefdb221-1338-40c6-9d4b-f165e5f62174",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "3802a193-4c3f-46aa-bd4c-a79a0c22df42",
+    "name": "all fields correct-register",
+    "commands": [{
+      "id": "ff5d8646-3a31-4cee-961a-d3bdfb7e3c30",
+      "comment": "",
+      "command": "open",
+      "target": "RegistrationPage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "59df6639-168f-43bf-bba4-5773a2d78e59",
+      "comment": "",
+      "command": "type",
+      "target": "name=FirstName",
+      "targets": [
+        ["name=FirstName", "name"],
+        ["css=.custom:nth-child(4) > .input1:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='FirstName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Shivani"
+    }, {
+      "id": "5cf0bcbe-18a2-4eb2-b721-44ae906456f6",
+      "comment": "",
+      "command": "type",
+      "target": "name=MiddleName",
+      "targets": [
+        ["name=MiddleName", "name"],
+        ["css=.custom:nth-child(4) > .input1:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='MiddleName']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Vijay"
+    }, {
+      "id": "79e8406a-d030-4214-9d61-9505b2f7ee00",
+      "comment": "",
+      "command": "type",
+      "target": "name=LastName",
+      "targets": [
+        ["name=LastName", "name"],
+        ["css=.custom:nth-child(4) > .input1:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='LastName']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Taru"
+    }, {
+      "id": "411e3e83-35ab-4327-ade5-42a37f81981e",
+      "comment": "",
+      "command": "type",
+      "target": "name=FatherFirstName",
+      "targets": [
+        ["name=FatherFirstName", "name"],
+        ["css=.custom:nth-child(7) > .input1:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='FatherFirstName']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Vijay"
+    }, {
+      "id": "62b721ec-08f4-4979-a8b9-d85f7bb63e4a",
+      "comment": "",
+      "command": "type",
+      "target": "name=FatherMiddleName",
+      "targets": [
+        ["name=FatherMiddleName", "name"],
+        ["css=.custom:nth-child(7) > .input1:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='FatherMiddleName']", "xpath:attributes"],
+        ["xpath=//div[2]/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d3f1eab0-4dd6-4d2f-ba7e-46bf31515983",
+      "comment": "",
+      "command": "type",
+      "target": "name=FatherLastName",
+      "targets": [
+        ["name=FatherLastName", "name"],
+        ["css=.custom:nth-child(7) > .input1:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='FatherLastName']", "xpath:attributes"],
+        ["xpath=//div[2]/input[3]", "xpath:position"]
+      ],
+      "value": "Taru"
+    }, {
+      "id": "a153f79b-eec2-4a97-a395-9a1e5fb50843",
+      "comment": "",
+      "command": "click",
+      "target": "css=.custom_radio > .input1:nth-child(3)",
+      "targets": [
+        ["css=.custom_radio > .input1:nth-child(3)", "css:finder"],
+        ["xpath=(//input[@name='gender'])[2]", "xpath:attributes"],
+        ["xpath=//div[3]/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "07bbb82a-af8a-468f-8aa9-ff181a6eeab8",
+      "comment": "",
+      "command": "type",
+      "target": "name=dob",
+      "targets": [
+        ["name=dob", "name"],
+        ["css=.input1:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='dob']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": "1999-11-13"
+    }, {
+      "id": "e2246aab-0867-4cd1-ab9f-27011adb4440",
+      "comment": "",
+      "command": "type",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.input1:nth-child(15)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//form/input[2]", "xpath:position"]
+      ],
+      "value": "Hadapsar"
+    }, {
+      "id": "efe37199-38b0-44e6-89f7-717e4e2d5982",
+      "comment": "",
+      "command": "type",
+      "target": "name=city",
+      "targets": [
+        ["name=city", "name"],
+        ["css=.input1:nth-child(18)", "css:finder"],
+        ["xpath=//input[@name='city']", "xpath:attributes"],
+        ["xpath=//form/input[3]", "xpath:position"]
+      ],
+      "value": "Pune"
+    }, {
+      "id": "fa498d41-7a0e-42a2-a509-a2af2fcd64a3",
+      "comment": "",
+      "command": "type",
+      "target": "name=state",
+      "targets": [
+        ["name=state", "name"],
+        ["css=.input1:nth-child(21)", "css:finder"],
+        ["xpath=//input[@name='state']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "Maharashtra"
+    }, {
+      "id": "d1d676ac-d078-4e34-aa42-2c21330c9472",
+      "comment": "",
+      "command": "type",
+      "target": "name=pincode",
+      "targets": [
+        ["name=pincode", "name"],
+        ["css=.input1:nth-child(25)", "css:finder"],
+        ["xpath=//input[@name='pincode']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "411005"
+    }, {
+      "id": "875a1106-40b8-4b26-bd1a-ccdd978e7606",
+      "comment": "",
+      "command": "type",
+      "target": "name=mobile",
+      "targets": [
+        ["name=mobile", "name"],
+        ["css=.input1:nth-child(31)", "css:finder"],
+        ["xpath=//input[@name='mobile']", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "8149412559"
+    }, {
+      "id": "73fabf88-ba2a-47d8-be54-447713e59e2c",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.input1:nth-child(34)", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "shivani.taru201@gmail.com"
+    }, {
+      "id": "aab9e088-24d0-4098-90a5-0a0636a7a994",
+      "comment": "",
+      "command": "type",
+      "target": "name=nationality",
+      "targets": [
+        ["name=nationality", "name"],
+        ["css=.input1:nth-child(28)", "css:finder"],
+        ["xpath=//input[@name='nationality']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "India"
+    }, {
+      "id": "f7076b8b-6c56-4059-b175-8a5cc9af5507",
+      "comment": "",
+      "command": "type",
+      "target": "name=aadhaar",
+      "targets": [
+        ["name=aadhaar", "name"],
+        ["css=.input1:nth-child(37)", "css:finder"],
+        ["xpath=//input[@name='aadhaar']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "856341526355"
+    }, {
+      "id": "e225993c-520d-4729-92af-e60ca8de343a",
+      "comment": "",
+      "command": "type",
+      "target": "name=pancard",
+      "targets": [
+        ["name=pancard", "name"],
+        ["css=.input1:nth-child(40)", "css:finder"],
+        ["xpath=//input[@name='pancard']", "xpath:attributes"],
+        ["xpath=//input[10]", "xpath:position"]
+      ],
+      "value": "DSDGA1235S"
+    }, {
+      "id": "2106b35e-5bee-4335-956c-83a4878683be",
+      "comment": "",
+      "command": "type",
+      "target": "name=accountType",
+      "targets": [
+        ["name=accountType", "name"],
+        ["css=.input1:nth-child(43)", "css:finder"],
+        ["xpath=//input[@name='accountType']", "xpath:attributes"],
+        ["xpath=//input[11]", "xpath:position"]
+      ],
+      "value": "Saving"
+    }, {
+      "id": "270994cc-507b-4e62-a72b-7fde2713b54e",
+      "comment": "",
+      "command": "type",
+      "target": "name=branchName",
+      "targets": [
+        ["name=branchName", "name"],
+        ["css=.input1:nth-child(47)", "css:finder"],
+        ["xpath=//input[@name='branchName']", "xpath:attributes"],
+        ["xpath=//input[12]", "xpath:position"]
+      ],
+      "value": "Hadapsar"
+    }, {
+      "id": "f17c7ffe-4f37-4b2b-9d19-043583e2bed6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.primary",
+      "targets": [
+        ["css=.primary", "css:finder"],
+        ["xpath=//input[@value='Register']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5800c49b-f479-4608-8a4d-79b4428faf87",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='RegisterMessage']/center/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d43123ae-8381-45f0-b6b1-1cdfc43cb6d5",
+    "name": "Admin approve",
+    "commands": [{
+      "id": "81dc9864-0526-4932-8209-e2e782ca5d66",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8097/OnlineBankingApplication/Admin.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c1cec9f9-6edd-49a0-94af-dfb1cd7feb29",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "796x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "af64fd0a-f21f-4ffa-902b-b76067a99465",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Applicant Requests",
+      "targets": [
+        ["linkText=Applicant Requests", "linkText"],
+        ["css=a", "css:finder"],
+        ["xpath=//a[contains(text(),'Applicant Requests')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'AdminController')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Applicant Requests')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d19d2fcd-be13-40bb-8827-85cffce4bdb5",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) > td:nth-child(17) > button",
+      "targets": [
+        ["css=tr:nth-child(2) > td:nth-child(17) > button", "css:finder"],
+        ["xpath=//button[@value='Approve']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Approve')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e8a7a62-3c28-40f5-8392-4f09aad5bc44",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(3) > td:nth-child(17) > button",
+      "targets": [
+        ["css=tr:nth-child(3) > td:nth-child(17) > button", "css:finder"],
+        ["xpath=(//button[@value='Approve'])[3]", "xpath:attributes"],
+        ["xpath=//tr[3]/td[17]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d700b40f-e020-4331-842e-ccf35645bb7f",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(17) > button",
+      "targets": [
+        ["css=td:nth-child(17) > button", "css:finder"],
+        ["xpath=//button[@value='Approve']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Approve')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "c6ea22a4-b639-4adb-85e5-d9f5b4840b5d",
+    "name": "all fields correct-login",
+    "commands": [{
+      "id": "3a5f58e1-4dbd-42f3-90fe-6c180fa60255",
+      "comment": "",
+      "command": "open",
+      "target": "LoginPage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bd67635f-e00a-494c-8695-5d8be5c4a241",
+      "comment": "",
+      "command": "type",
+      "target": "name=uname",
+      "targets": [
+        ["name=uname", "name"],
+        ["css=input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='uname']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "vini.mehta78@gmail.com"
+    }, {
+      "id": "022acb7f-52e3-4b45-bb68-96460a154ecf",
+      "comment": "",
+      "command": "type",
+      "target": "name=pass",
+      "targets": [
+        ["name=pass", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='pass']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Vini1234"
+    }, {
+      "id": "9be08b91-396e-4eef-91ec-069f86d8ef16",
+      "comment": "",
+      "command": "click",
+      "target": "id=login_btn",
+      "targets": [
+        ["id=login_btn", "id"],
+        ["css=#login_btn", "css:finder"],
+        ["xpath=//input[@id='login_btn']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "0db852b7-343b-41ca-b980-2bb02185ee78",
+    "name": "incorrect email, correct pass",
+    "commands": [{
+      "id": "c28e47e8-6a2a-4d3f-bc75-b193f020eccc",
+      "comment": "",
+      "command": "open",
+      "target": "LoginPage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a978a2f9-dc88-4b1b-8386-c734e5f44a01",
+      "comment": "",
+      "command": "type",
+      "target": "name=uname",
+      "targets": [
+        ["name=uname", "name"],
+        ["css=input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='uname']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "vini.mehta@gmail.com"
+    }, {
+      "id": "7fc5cd20-373f-456a-9add-ea71f18c9d60",
+      "comment": "",
+      "command": "type",
+      "target": "name=pass",
+      "targets": [
+        ["name=pass", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='pass']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Vini1234"
+    }, {
+      "id": "495a4fe2-bec9-4f3b-aefb-4d2ab7395ccf",
+      "comment": "",
+      "command": "click",
+      "target": "id=login_btn",
+      "targets": [
+        ["id=login_btn", "id"],
+        ["css=#login_btn", "css:finder"],
+        ["xpath=//input[@id='login_btn']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f0346767-2b13-4aa0-9fc5-f498355502a5",
+    "name": "correct email, incorrect pass ",
+    "commands": [{
+      "id": "692dd06f-eeb2-454e-806c-49c3861c43ae",
+      "comment": "",
+      "command": "open",
+      "target": "LoginPage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fab8907d-62e7-45d4-8bae-d84486bd938f",
+      "comment": "",
+      "command": "type",
+      "target": "name=uname",
+      "targets": [
+        ["name=uname", "name"],
+        ["css=input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='uname']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "vini.mehta78@gmail.com"
+    }, {
+      "id": "682dad69-c9af-4804-a3de-8c95273f7923",
+      "comment": "",
+      "command": "type",
+      "target": "name=pass",
+      "targets": [
+        ["name=pass", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='pass']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Vini12352"
+    }, {
+      "id": "31ecf77f-a34c-4b8c-b683-d57b3a7796b4",
+      "comment": "",
+      "command": "click",
+      "target": "id=login_btn",
+      "targets": [
+        ["id=login_btn", "id"],
+        ["css=#login_btn", "css:finder"],
+        ["xpath=//input[@id='login_btn']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "b39b8825-4ead-427b-9dcb-f04b4dbe7fae",
+    "name": "Check password pattern  ",
+    "commands": [{
+      "id": "c3ea01ae-cee3-4675-a536-eaef2f6be1b0",
+      "comment": "",
+      "command": "open",
+      "target": "LoginPage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e1ecfaee-2097-4723-8695-3a9c1f0b6f3b",
+      "comment": "",
+      "command": "type",
+      "target": "name=uname",
+      "targets": [
+        ["name=uname", "name"],
+        ["css=input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='uname']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "vini.mehta78@gmail.com"
+    }, {
+      "id": "ddeedacc-0342-4163-9e21-e7be57a7c04a",
+      "comment": "",
+      "command": "type",
+      "target": "name=pass",
+      "targets": [
+        ["name=pass", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='pass']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Vini123"
+    }, {
+      "id": "22a99e82-7963-45b5-87ea-6d1f45739956",
+      "comment": "",
+      "command": "click",
+      "target": "id=login_btn",
+      "targets": [
+        ["id=login_btn", "id"],
+        ["css=#login_btn", "css:finder"],
+        ["xpath=//input[@id='login_btn']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "1e42c6a2-ea76-4c2e-b54c-e42ebcfc399e",
+    "name": "Check email pattern  ",
+    "commands": [{
+      "id": "4aeca0e6-02fe-4c78-baf0-6bad68e010ec",
+      "comment": "",
+      "command": "open",
+      "target": "LoginPage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0ebf1085-d46d-4d3c-84de-627905af53cd",
+      "comment": "",
+      "command": "type",
+      "target": "name=uname",
+      "targets": [
+        ["name=uname", "name"],
+        ["css=input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='uname']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "vini"
+    }, {
+      "id": "b4c5cdee-c905-4590-ad1a-448d8b794cf0",
+      "comment": "",
+      "command": "type",
+      "target": "name=pass",
+      "targets": [
+        ["name=pass", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='pass']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Vini1234"
+    }, {
+      "id": "c83bf3c9-60f1-4e53-adbe-4fc31d05a4c8",
+      "comment": "",
+      "command": "click",
+      "target": "id=login_btn",
+      "targets": [
+        ["id=login_btn", "id"],
+        ["css=#login_btn", "css:finder"],
+        ["xpath=//input[@id='login_btn']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "7ae60697-0408-48fc-9ad8-a1afb7a1724e",
+    "name": "all fields correct-change pass",
+    "commands": [{
+      "id": "8f4b666a-0f6e-447a-83b8-3865dd5f9fe7",
+      "comment": "",
+      "command": "open",
+      "target": "ChangePassword.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "94bb0849-b72e-47ed-8c7b-3dbfc821156d",
+      "comment": "",
+      "command": "type",
+      "target": "id=currentPassword",
+      "targets": [
+        ["id=currentPassword", "id"],
+        ["name=currentPassword", "name"],
+        ["css=#currentPassword", "css:finder"],
+        ["xpath=//input[@id='currentPassword']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Shivani12"
+    }, {
+      "id": "01e566ec-928a-4f1c-bc1c-b4eead320cad",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPassword",
+      "targets": [
+        ["id=newPassword", "id"],
+        ["name=newPassword", "name"],
+        ["css=#newPassword", "css:finder"],
+        ["xpath=//input[@id='newPassword']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Vini1234"
+    }, {
+      "id": "b6dbb645-c41a-4fd9-a60c-75c7ab884833",
+      "comment": "",
+      "command": "type",
+      "target": "id=confirmNewPassword",
+      "targets": [
+        ["id=confirmNewPassword", "id"],
+        ["name=confirmNewPassword", "name"],
+        ["css=#confirmNewPassword", "css:finder"],
+        ["xpath=//input[@id='confirmNewPassword']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Vini1234"
+    }, {
+      "id": "67054a16-b594-47c9-923d-bcb012873fac",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Change Password')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca09d70c-adbb-42e2-9546-4f1d1607b849",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='RegisterMessage']/center/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "631bb341-6162-4a08-bd32-77bcee9e03de",
+      "comment": "",
+      "command": "type",
+      "target": "name=uname",
+      "targets": [
+        ["name=uname", "name"],
+        ["css=input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='uname']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "vini.mehta78@gmail.com"
+    }, {
+      "id": "fe09bb28-4eb4-4e91-89ae-776c98798c64",
+      "comment": "",
+      "command": "type",
+      "target": "name=pass",
+      "targets": [
+        ["name=pass", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='pass']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Vini1234"
+    }, {
+      "id": "0f4913fd-334b-439f-8fda-99af149838f2",
+      "comment": "",
+      "command": "click",
+      "target": "id=login_btn",
+      "targets": [
+        ["id=login_btn", "id"],
+        ["css=#login_btn", "css:finder"],
+        ["xpath=//input[@id='login_btn']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "72447d4e-d3d9-4266-92da-5abdd6f584e9",
+    "name": "incorrect old password",
+    "commands": [{
+      "id": "f7db6469-3775-4b37-ae2a-699d50bef45d",
+      "comment": "",
+      "command": "open",
+      "target": "ChangePassword.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "659d1e9e-a1a8-4018-b4b4-33d333c3150e",
+      "comment": "",
+      "command": "type",
+      "target": "id=currentPassword",
+      "targets": [
+        ["id=currentPassword", "id"],
+        ["name=currentPassword", "name"],
+        ["css=#currentPassword", "css:finder"],
+        ["xpath=//input[@id='currentPassword']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Shivani1"
+    }, {
+      "id": "42c5bc1f-5636-448e-8dd5-1f1ee9777e61",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPassword",
+      "targets": [
+        ["id=newPassword", "id"],
+        ["name=newPassword", "name"],
+        ["css=#newPassword", "css:finder"],
+        ["xpath=//input[@id='newPassword']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Vini1234"
+    }, {
+      "id": "4f0854af-1db3-4b37-8b27-97b0c1dcb103",
+      "comment": "",
+      "command": "type",
+      "target": "id=confirmNewPassword",
+      "targets": [
+        ["id=confirmNewPassword", "id"],
+        ["name=confirmNewPassword", "name"],
+        ["css=#confirmNewPassword", "css:finder"],
+        ["xpath=//input[@id='confirmNewPassword']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Vini1234"
+    }, {
+      "id": "16c8ced1-b9f5-4138-8463-e983d1a5d922",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Change Password')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "43508c8a-c2e7-4fb5-973a-a468ddcbc7d1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='RegisterMessage']/center/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b9f47b7a-f352-456e-adfb-c6e9008e8089",
+      "comment": "",
+      "command": "type",
+      "target": "name=uname",
+      "targets": [
+        ["name=uname", "name"],
+        ["css=input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='uname']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "vini.mehta78@gmail.com"
+    }, {
+      "id": "720c38f0-e1ee-45ed-8a52-b18f3fa1428b",
+      "comment": "",
+      "command": "type",
+      "target": "name=pass",
+      "targets": [
+        ["name=pass", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='pass']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Vini1234"
+    }, {
+      "id": "72325fda-48c7-46f2-8118-b28fd0188013",
+      "comment": "",
+      "command": "click",
+      "target": "id=login_btn",
+      "targets": [
+        ["id=login_btn", "id"],
+        ["css=#login_btn", "css:finder"],
+        ["xpath=//input[@id='login_btn']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "938d6ac0-70a2-41fd-a0a2-61103495162d",
+    "name": "new pass and confirm new pass not same",
+    "commands": [{
+      "id": "f8a824d6-4db8-4f9b-9785-1aacd3b2bdf5",
+      "comment": "",
+      "command": "open",
+      "target": "ChangePassword.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "15c2a9f4-b7ab-4a4a-b4f1-1fffa74702d9",
+      "comment": "",
+      "command": "type",
+      "target": "id=currentPassword",
+      "targets": [
+        ["id=currentPassword", "id"],
+        ["name=currentPassword", "name"],
+        ["css=#currentPassword", "css:finder"],
+        ["xpath=//input[@id='currentPassword']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Shivani1"
+    }, {
+      "id": "ed22d7d3-e9cc-4d27-bd27-bfc719319204",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPassword",
+      "targets": [
+        ["id=newPassword", "id"],
+        ["name=newPassword", "name"],
+        ["css=#newPassword", "css:finder"],
+        ["xpath=//input[@id='newPassword']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Vini1234"
+    }, {
+      "id": "20fc28fc-5d3b-4e84-b9fb-e11eadae08b4",
+      "comment": "",
+      "command": "type",
+      "target": "id=confirmNewPassword",
+      "targets": [
+        ["id=confirmNewPassword", "id"],
+        ["name=confirmNewPassword", "name"],
+        ["css=#confirmNewPassword", "css:finder"],
+        ["xpath=//input[@id='confirmNewPassword']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Vini1235"
+    }, {
+      "id": "b45be7f3-c138-4c90-b4f3-d37bf49ad292",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='page-content-wrapper']/div/div/form/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Change Password')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "14a80c7b-df1b-41fa-b2ba-7594af341e9a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='RegisterMessage']/center/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "756dfbde-45be-44e1-bd3c-c5d609bdfbdf",
+      "comment": "",
+      "command": "type",
+      "target": "name=uname",
+      "targets": [
+        ["name=uname", "name"],
+        ["css=input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='uname']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "vini.mehta78@gmail.com"
+    }, {
+      "id": "d8e47789-bf7c-4cad-99f9-538685e010a4",
+      "comment": "",
+      "command": "type",
+      "target": "name=pass",
+      "targets": [
+        ["name=pass", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='pass']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Vini1234"
+    }, {
+      "id": "09ec2fd2-c8d2-4b15-a0a7-fe41c2ee529d",
+      "comment": "",
+      "command": "click",
+      "target": "id=login_btn",
+      "targets": [
+        ["id=login_btn", "id"],
+        ["css=#login_btn", "css:finder"],
+        ["xpath=//input[@id='login_btn']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "537e59db-5dfe-4e66-b605-cb9559f0218a",
+    "name": "Forgot Password",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["54fc2435-4fc3-46d5-a2e2-fb0b81428540", "c5682d2c-840e-49c5-835e-d03454baaef1"]
+  }, {
+    "id": "9be4ee5a-663e-40be-88d4-7866183bcc65",
+    "name": "Fund Transfer",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["c2426b6f-be00-4132-b6e1-d72babc48b32", "6edb766f-3b5c-47f0-b077-56c1583ce8f5", "53967ba9-8058-43b1-9445-f9f7da17b882", "6a2e785c-6b92-4e21-b752-e86e280ebdcb", "4c2b09b9-4771-44b1-8572-bc8f007e969f"]
+  }, {
+    "id": "43c0f914-2076-479c-b719-4681add4cb42",
+    "name": "Add Beneficiary",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["62736523-4a0f-4fcd-b1dd-0f0bcbe37523", "1a4074ea-cbbb-4074-978e-1efbd1b25d28"]
+  }, {
+    "id": "95d7859f-34b1-43fd-a1d3-44ec4b922033",
+    "name": "Register",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["3802a193-4c3f-46aa-bd4c-a79a0c22df42"]
+  }, {
+    "id": "22a68f30-d07c-4800-b8b3-627b057ca632",
+    "name": "Login",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["c6ea22a4-b639-4adb-85e5-d9f5b4840b5d", "1e42c6a2-ea76-4c2e-b54c-e42ebcfc399e", "f0346767-2b13-4aa0-9fc5-f498355502a5", "0db852b7-343b-41ca-b980-2bb02185ee78", "b39b8825-4ead-427b-9dcb-f04b4dbe7fae"]
+  }, {
+    "id": "b2c1de28-5bbe-423d-916d-e6351a9eb5f0",
+    "name": "Change Password",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["72447d4e-d3d9-4266-92da-5abdd6f584e9", "938d6ac0-70a2-41fd-a0a2-61103495162d", "7ae60697-0408-48fc-9ad8-a1afb7a1724e"]
+  }],
+  "urls": ["http://localhost:8097/OnlineBankingApplication/ResetPassword.jsp", "http://localhost:8097/OnlineBankingApplication/", "http://localhost:8097/OnlineBankingApplication/Admin.jsp"],
+  "plugins": []
+}
