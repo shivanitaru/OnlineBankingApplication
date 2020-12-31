@@ -1251,7 +1251,7 @@
         ["xpath=//input[@name='pass']", "xpath:attributes"],
         ["xpath=//input[2]", "xpath:position"]
       ],
-      "value": "Vini1234"
+      "value": "Shivani12"
     }, {
       "id": "9be08b91-396e-4eef-91ec-069f86d8ef16",
       "comment": "",

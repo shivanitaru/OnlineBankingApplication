@@ -48,7 +48,6 @@ public class LoginController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("test1");
 		String username = request.getParameter("uname");
 		String password = request.getParameter("pass");
 		System.out.println(username);

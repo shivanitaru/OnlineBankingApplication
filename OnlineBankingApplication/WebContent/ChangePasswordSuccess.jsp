@@ -11,6 +11,13 @@
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 </head>
 <body>
+<%response.setHeader("Cache-Control","no-cache,no-store,must-revalidate"); // http 1.1
+response.setHeader("Pragma","no-cache"); // http 1.0
+response.setHeader("Expires","0"); // proxies
+
+if(session.getAttribute("uname")==null){
+response.sendRedirect("LoginPage.jsp");}
+ %>
 	<div id="RegisterMessage">
 		<center>
 

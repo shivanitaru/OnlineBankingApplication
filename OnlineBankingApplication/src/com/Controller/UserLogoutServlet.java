@@ -31,6 +31,11 @@ public class UserLogoutServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		HttpSession session = request.getSession();
+            session.removeAttribute("uname");
+            session.removeAttribute("CustName");
+            session.invalidate();
+            response.sendRedirect("LoginPage.jsp");
 	}
 
 	/**
@@ -39,14 +44,7 @@ public class UserLogoutServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
-		HttpSession session = request.getSession(false);
-        if (session != null) {
-            session.removeAttribute("uname");
-            session.removeAttribute("CustName");
-             
-            RequestDispatcher dispatcher = request.getRequestDispatcher("LoginPage.jsp");
-            dispatcher.forward(request, response);
-        }
+		
 	}
 
 }

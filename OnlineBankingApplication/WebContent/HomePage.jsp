@@ -13,7 +13,15 @@
 </head>
 
 <body>
-	<% String uname=(String) session.getAttribute("uname");
+
+<%
+response.setHeader("Cache-Control","no-cache,no-store,must-revalidate"); // http 1.1
+response.setHeader("Pragma","no-cache"); // http 1.0
+response.setHeader("Expires","0"); // proxies
+
+if(session.getAttribute("uname")==null){
+response.sendRedirect("LoginPage.jsp");}
+ String uname=(String) session.getAttribute("uname");
 		String CustomerName = (String)session.getAttribute("CustName"); %>
 	<marquee class="bg-light">
 		<% out.println("Hello " + CustomerName + " , Welcome to Home Page!!!"); %>
@@ -45,7 +53,7 @@
 				<a href="MyProfile.jsp" class="list-group-item list-group-item-action bg-light">My
 					Profile</a>
 				<a href="ChangePassword.jsp" class="list-group-item list-group-item-action bg-light">Change Password</a>
-				<a href="IndexPage.jsp" class="list-group-item list-group-item-action bg-light">Logout</a>
+				<a href="UserLogoutServlet" class="list-group-item list-group-item-action bg-light">Logout</a>
 			</div>
 		</div>
 		<!-- Sidebar -->

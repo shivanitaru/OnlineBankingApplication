@@ -14,7 +14,13 @@
 </head>
 
 <body>
-	<% String uname=(String) session.getAttribute("uname");
+	<% response.setHeader("Cache-Control","no-cache,no-store,must-revalidate"); // http 1.1
+	response.setHeader("Pragma","no-cache"); // http 1.0
+	response.setHeader("Expires","0"); // proxies
+
+	if(session.getAttribute("uname")==null){
+	response.sendRedirect("LoginPage.jsp");}
+String uname=(String) session.getAttribute("uname");
 		String CustomerName = (String)session.getAttribute("CustName"); %>
 	<marquee class="bg-light">
 		<% out.println("Hello " + CustomerName + " , Welcome to Home Page!!!"); %>
