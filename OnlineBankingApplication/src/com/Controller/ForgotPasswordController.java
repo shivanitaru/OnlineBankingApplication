@@ -59,49 +59,19 @@ public class ForgotPasswordController extends HttpServlet {
 			RequestDispatcher ReqDisObj = request.getRequestDispatcher("/ForgotPassword.jsp");
 			ReqDisObj.forward(request, response);
 		}
-		
-		HttpSession httpSession = request.getSession(true);
-		httpSession.setAttribute("toMail", receiverAddress);
 
-		String subject = "Bank of Pune: bank account reset password link";
+		String subject = "Bank account reset password link";
 		String bodyMessage = "Dear customer,\n"
 				+ "We heard that you lost your Bank account password. Sorry about that!\n"
 				+ "But don’t worry! You can now reset your password by clicking the below link or copying and pasting it into your browser:\n\n"
-				+ "http://localhost:8097/OnlineBankingApplication/ResetPassword.jsp\n\n"
-				+ "If you didn't request this, please ignore this email. If you experience any difficulty, please visit our website.\n"
-				+ "http://localhost:8097/OnlineBankingApplication/HomePage.jsp\n"
+				+ "http://localhost:8097/OnlineBankingApplication/ResetPassword.jsp\n\n\n"
+				+ "If you didn't request this, please ignore this email. If you experience any difficulty using our services, please visit our website.\n"
+				+ "http://localhost:8097/OnlineBankingApplication/HomePage.jsp\n\n"
 				+ "Your password won't change until you access the link above and create a new one.\n\n"
-				+ "Thank you,\n" + "Bank";
-		final String username = "vini.mehta78@gmail.com";
-		final String password = "stjtyoknzieatkaw";
-		Properties prop = new Properties();
-		prop.put("mail.smtp.host", "smtp.gmail.com");
-		prop.put("mail.smtp.port", "587");
-		prop.put("mail.smtp.auth", "true");
-		prop.put("mail.smtp.starttls.enable", "true");
-
-		Session session = Session.getInstance(prop, new javax.mail.Authenticator() {
-			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication(username, password);
-			}
-		});
-
-		try {
-
-			Message message = new MimeMessage(session);
-			message.setFrom(new InternetAddress(username));
-			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(receiverAddress));
-			message.setSubject(subject);
-			message.setText(bodyMessage);
-
-			Transport.send(message);
-
-			System.out.println("Done");
-			response.sendRedirect("/OnlineBankingApplication/ResetPasswordMailSent.jsp");
-
-		} catch (MessagingException e) {
-			e.printStackTrace();
-		}
+				+ "\nHappy banking!\n\nRegards,\nBank of Pune.";
+		
+		SendEmailServlet SendEmailServletobj = new SendEmailServlet(); 
+		SendEmailServletobj.sendMail(receiverAddress, subject, bodyMessage);
+		response.sendRedirect("/OnlineBankingApplication/ResetPasswordMailSent.jsp");
 	}
-
 }

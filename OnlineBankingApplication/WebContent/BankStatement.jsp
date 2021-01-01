@@ -52,8 +52,8 @@ String uname=(String) session.getAttribute("uname"); String CustomerName=(String
 					Transfer</a> <a href="MyProfile.jsp" class="list-group-item list-group-item-action bg-light">My
 					Profile</a> <a href="ChangePassword.jsp"
 					class="list-group-item list-group-item-action bg-light">Change
-					Password</a> <a href="/UserLogoutServlet"
-					class="list-group-item list-group-item-action bg-light">Logout</a>
+					Password</a> 				<a href="UserLogoutServlet" class="list-group-item list-group-item-action bg-light">Logout</a>
+
 			</div>
 		</div>
 		<!-- Sidebar -->

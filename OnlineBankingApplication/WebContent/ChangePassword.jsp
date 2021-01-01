@@ -54,7 +54,7 @@
 					Profile</a>
 				<a href="ChangePassword.jsp" class="list-group-item active-link list-group-item-action">Change
 					Password</a>
-				<a href="/UserLogoutServlet" class="list-group-item list-group-item-action bg-light">Logout</a>
+				<a href="UserLogoutServlet" class="list-group-item list-group-item-action bg-light">Logout</a>
 			</div>
 		</div>
 		<!-- Sidebar -->

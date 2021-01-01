@@ -98,7 +98,7 @@ public class AdminDAO {
 				// "\nnatoinality:"
 				// + approvedUserData.getNationality() + "\nmobno:" +
 				// approvedUserData.getMobileNumber()
-				// + "\naadhar:" + approvedUserData.getAadharNumber() + "\npan:"
+				// + "\naadhaar:" + approvedUserData.getAadhaarNumber() + "\npan:"
 				// + approvedUserData.getPanCardNumber() + "\nemail:" +
 				// approvedUserData.getEmailId()
 				// + "\nacctype:" + approvedUserData.getAccountType() +
@@ -143,7 +143,6 @@ public class AdminDAO {
 		saveAddressData.setCity(approvedUserData.getCity());
 		saveAddressData.setPinCode(approvedUserData.getPinCode());
 		saveAddressData.setEmailId(approvedUserData.getEmailId());
-		System.out.println("address" + approvedUserData.getEmailId() + "hsdbk" + saveAddressData.getEmailId());
 		saveAddress = insertUserAddressData(saveAddressData);
 		if (saveAddress > 0)
 			System.out.println("Data successfully stored in Customer Address Details table\t status=" + saveAddress);
@@ -304,17 +303,18 @@ public class AdminDAO {
 
 		con = getConnectionMethod.getConnection();
 		try {
-			prepareStatement = con.prepareStatement("select * from AccountDetails");
+			int count=0;
+			prepareStatement = con.prepareStatement("select count(ACCOUNT_NO) from AccountDetails");
 			resultSet = prepareStatement.executeQuery();
 			while (resultSet.next()) {
-				accountNumber++;
+				count = resultSet.getInt(1);
 			}
-			accountNumber++;
+			accountNumber += count+1;
 			con.close();
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		System.out.println("Accunt no generate " + accountNumber);
+		System.out.println("Account no. generated " + accountNumber);
 		return accountNumber;
 	}
 
