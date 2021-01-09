@@ -25,7 +25,7 @@ pageEncoding="ISO-8859-1"%>
 				</h5>
                       
                     <h1>
-                        <button type="button" class="btn btn-info">
+                        <button name="forgotbtn" type="button" class="btn btn-info">
                             <span data-target="#pwdModal" data-toggle="modal">Click here to reset your password!</span>
                         </button>
                     </h1>
