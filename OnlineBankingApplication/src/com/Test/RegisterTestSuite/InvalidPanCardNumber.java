@@ -10,14 +10,14 @@ public class InvalidPanCardNumber {
 	public static void main(String[] args) {
 
 		// declaration and instantiation of objects/variables
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
 
 	    // Test name: all fields correct-register
 	    // Step # | name | target | value
 	    // 1 | open | RegistrationPage.jsp | 
-	    driver.get("http://localhost:8097/OnlineBankingApplication/RegistrationPage.jsp");
+	    driver.get("http://localhost:8092/OnlineBankingApplication/RegistrationPage.jsp");
 	    // 2 | type | name=FirstName | Shivani
 	    driver.findElement(By.name("FirstName")).sendKeys("Shivani");
 	    // 3 | type | name=MiddleName | Vijay

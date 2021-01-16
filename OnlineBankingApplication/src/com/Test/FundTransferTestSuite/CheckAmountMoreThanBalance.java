@@ -8,13 +8,24 @@ public class CheckAmountMoreThanBalance {
 	public static void main(String[] args) {
 
 		// declaration and instantiation of objects/variables
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
 	// Test name: Check amount more than balance
+		
+		// Step # | name | target | value
+	    // 1 | open | LoginPage.jsp | 
+		driver.get("http://localhost:8092/OnlineBankingApplication/LoginPage.jsp");
+		// 2 | type | name=uname | shivani.taru201@gmail.com
+		driver.findElement(By.name("uname")).sendKeys("shivani.taru201@gmail.com");
+		// 3 | type | name=pass | UsgrvQ85
+	    driver.findElement(By.name("pass")).sendKeys("Vini1234");
+	    // 4 | click | css=login_btn | 
+	    driver.findElement(By.id("login_btn")).click();
+	    
     // Step # | name | target | value
     // 1 | open | FundTransfer.jsp | 
-    driver.get("http://localhost:8097/OnlineBankingApplication/FundTransfer.jsp");
+    driver.get("http://localhost:8092/OnlineBankingApplication/FundTransfer.jsp");
     // 2 | type | id=remitterAccountNo | 2700001
     driver.findElement(By.id("remitterAccountNo")).sendKeys("2700001");
     // 3 | type | id=beneficiaryAccountNo | 2700002

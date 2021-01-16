@@ -17,7 +17,7 @@ public class CheckIFSCCodeFormatAddBeneficiary {
 		// 2 | type | name=uname | shivani.taru201@gmail.com
 		driver.findElement(By.name("uname")).sendKeys("shivani.taru201@gmail.com");
 		// 3 | type | name=pass | UsgrvQ85
-	    driver.findElement(By.name("pass")).sendKeys("UsgrvQ85");
+	    driver.findElement(By.name("pass")).sendKeys("Vini1234");
 	    // 4 | click | css=login_btn | 
 	    driver.findElement(By.id("login_btn")).click();
 	    

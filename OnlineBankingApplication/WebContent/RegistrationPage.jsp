@@ -199,8 +199,8 @@ pageEncoding="ISO-8859-1"%>
 		<br />
 
 		<div class="action-btn">
-			<input class="btn primary" type="submit" value="Register" />
-			<input class="btn danger" type="reset" value="Reset" /><br>
+			<input class="btn primary" name="submit" type="submit" value="Register" />
+			<input class="btn danger" name="cancel" type="reset" value="Reset" /><br>
         </div>
 		
 		<div class="login_link">

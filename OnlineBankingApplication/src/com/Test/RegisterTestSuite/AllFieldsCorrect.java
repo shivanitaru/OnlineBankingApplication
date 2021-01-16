@@ -10,14 +10,14 @@ public class AllFieldsCorrect {
 	public static void main(String[] args) {
 
 		// declaration and instantiation of objects/variables
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
 
 	    // Test name: all fields correct-register
 	    // Step # | name | target | value
 	    // 1 | open | RegistrationPage.jsp | 
-	    driver.get("http://localhost:8097/OnlineBankingApplication/RegistrationPage.jsp");
+	    driver.get("http://localhost:8092/OnlineBankingApplication/RegistrationPage.jsp");
 	    // 2 | type | name=FirstName | Shivani
 	    driver.findElement(By.name("FirstName")).sendKeys("Shivani");
 	    // 3 | type | name=MiddleName | Vijay
@@ -33,7 +33,7 @@ public class AllFieldsCorrect {
 	    // 8 | click | css=.custom_radio > .input1:nth-child(3) | 
 	    driver.findElement(By.cssSelector(".custom_radio > .input1:nth-child(3)")).click();
 	    // 9 | type | name=dob | 1999-11-13
-	    driver.findElement(By.name("dob")).sendKeys("1999-11-13");
+	    driver.findElement(By.name("dob")).sendKeys("13-11-2020");
 	    // 10 | type | name=address | Hadapsar
 	    driver.findElement(By.name("address")).sendKeys("Hadapsar");
 	    // 11 | type | name=city | Pune
@@ -45,7 +45,7 @@ public class AllFieldsCorrect {
 	    // 14 | type | name=mobile | 8149412559
 	    driver.findElement(By.name("mobile")).sendKeys("8149412559");
 	    // 15 | type | name=email | shivani.taru201@gmail.com
-	    driver.findElement(By.name("email")).sendKeys("shivani.taru20@gmail.com");
+	    driver.findElement(By.name("email")).sendKeys("shivani.taru0@gmail.com");
 	    // 16 | type | name=nationality | India
 	    driver.findElement(By.name("nationality")).sendKeys("India");
 	    // 17 | type | name=aadhaar | 856341526355
@@ -57,10 +57,8 @@ public class AllFieldsCorrect {
 	    // 20 | type | name=branchName | Hadapsar
 	    driver.findElement(By.name("branchName")).sendKeys("Hadapsar");
 	    // 21 | click | css=.primary | 
-	    driver.findElement(By.cssSelector(".primary")).click();
-	    // 22 | click | css=.btn | 
-	    driver.findElement(By.cssSelector(".btn")).click();
-
+	    driver.findElement(By.name("submit")).click();
+	    
 
 	}
 }
