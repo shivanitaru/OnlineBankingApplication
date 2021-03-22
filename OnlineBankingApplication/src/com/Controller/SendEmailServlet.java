@@ -69,8 +69,8 @@ public class SendEmailServlet extends HttpServlet {
 		}
 	}
 	protected void sendMail(String receiverAddress, String subject, String bodyMessage) {
-		final String username = "vini.mehta78@gmail.com";
-		final String password = "stjtyoknzieatkaw";
+		final String username = ""; /* add sender email id in quotes */
+		final String password = ""; /* add sender app password in quotes */
 		Properties prop = new Properties();
 		prop.put("mail.smtp.host", "smtp.gmail.com");
 		prop.put("mail.smtp.port", "587");

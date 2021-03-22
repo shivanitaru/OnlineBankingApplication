@@ -134,8 +134,8 @@
 					<th>Branch Name</th>
 					<th>Bank Name</th>
 				</tr>
-				<tr>
 					<% while (rs1.next()) { %>
+				<tr>
 					<td>
 						<%=rs1.getLong("BENEFICIARY_ACCOUNT_NO")%>
 					</td>
@@ -153,8 +153,8 @@
 					<td>
 						<%=rs1.getString("BANK_NAME")%>
 					</td>
-					<% } %>
 				</tr>
+					<% } %>
 			</table>
 			<%}
 			else{%>
